@@ -1,4 +1,4 @@
-Nº,Project,TestClassName,#Assrtions,#Conditions,#TryCatch,#Loop,#Hamcrest,#Mockito,#BadApi,#LOC,#Expressions,#Depth,#Vocabulary,#Understandability,#BodySize,#Dexterity,#NonWhiteCharacters
+Nº,Project,TestClassName,Assrtions,Conditions,TryCatch,Loop,Hamcrest,Mockito,BadApi,LOC,Expressions,Depth,Vocabulary,Understandability,BodySize,Dexterity,NonWhiteCharacters
 1,RxJava,TestSingleThreadedObservable,0,0,2,1,0,0,0,55,95,18,28,1333,120,3,952
 2,RxJava,ConvertToCylonDetector,0,0,0,0,0,0,0,3,19,6,9,166,6,2,231
 3,RxJava,ParallelFilterTest,4,0,2,2,0,0,0,69,221,17,41,2848,290,2,1604
