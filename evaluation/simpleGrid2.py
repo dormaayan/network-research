@@ -50,21 +50,11 @@ def load_frame():
     frame1['TestClassName'] = frame1.apply(lambda row: label_rename(row), axis=1)
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
     frame = pd.merge(frame1, frame2, on='TestClassName')
-    frame = frame.drop(['module', 'path_test','test_name','path_src',
+    frame = frame.drop(['project', 'module', 'path_test','test_name','path_src',
                         'class_name','TestClassName','commit','Nº','Project'], axis=1)
     frame = frame.sample(frac=1).reset_index(drop=True)
     frame = frame.dropna()
-
-    projects = ['commons-lang', 'javapoet', 'commons-io', 'jfreechart',
-       'commons-math', 'opengrok', 'checkstyle', 'closure-compiler',
-       'RxJava', 'fastjson', 'cat', 'joda-beans', 'commons-collections',
-       'junit4', 'gson', 'jsoup', 'guice']
-
-    counter = 0
-    for project in projects:
-        frame = frame.replace(project,counter)
-        counter+=1
-
+    
     return frame
 
 def load_quartile(frame):
@@ -79,7 +69,7 @@ def load_quartile(frame):
 
 
 def load_all_data(frame):
-    columns = [frame.project, frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -96,7 +86,7 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
 
 
 def load_all_data_with_mine(frame):
-    columns = [frame.project, frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -116,7 +106,7 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame
 
 
 def load_all_data_static(frame):
-    columns = [frame.project, frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -133,7 +123,7 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
 
 
 def load_all_data_with_mine_static(frame):
-    columns = [frame.project, frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -167,7 +157,7 @@ def import_frame(consider_coverage, my_data):
     if consider_coverage and my_data:
         return load_all_data_with_mine(frame)
     if not consider_coverage and my_data:
-        return load_all_data_static(frame)
+        return load_all_data_with_mine_static(frame)
     if consider_coverage and not my_data:
         return load_all_data(frame)
     else:
@@ -177,14 +167,14 @@ def import_frame(consider_coverage, my_data):
 # Function to create model, required for KerasClassifier
 def create_model(optimizer='adam', activation='linear', init_mode='uniform', dropout_rate=0.1):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(68,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(83,)))
     model.add(keras.layers.Dense(40, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(20, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(2, kernel_initializer=init_mode, activation='softmax'))
 
     model.compile(optimizer=optimizer,
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
+                  loss='mean_squared_error',
+                  metrics=['mae'])
     return model
 
 def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
@@ -312,4 +302,4 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     """
 
 
-simpleGrid(consider_coverage=False)
+simpleGrid(consider_coverage=True)
