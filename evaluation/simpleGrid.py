@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import pandas as pd
 
@@ -50,8 +52,7 @@ def load_frame():
     frame1['TestClassName'] = frame1.apply(lambda row: label_rename(row), axis=1)
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
     frame = pd.merge(frame1, frame2, on='TestClassName')
-    frame = frame.drop(['module', 'path_test','test_name','path_src',
-                        'class_name','TestClassName','commit','Nº','Project'], axis=1)
+    frame = frame.drop(['module', 'path_test','test_name','path_src','class_name','TestClassName','commit','Nº','Project'], axis=1)
     frame = frame.sample(frac=1).reset_index(drop=True)
     frame = frame.dropna()
 

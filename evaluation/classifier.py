@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import pandas as pd
 
@@ -174,7 +176,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform', dro
                   metrics=['accuracy'])
     return model
 
-def classification(consider_coverage=True, my_data=True, n_inner=5, n_outer=10):
+def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -213,9 +215,9 @@ def classification(consider_coverage=True, my_data=True, n_inner=5, n_outer=10):
     #param_grid = get_param_grid(algorithm, metrics)
 
     # define the grid search parameters
-    batch_size = [10, 20, 40, 60, 80, 100]
-    activation = ['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
-    optimizer = ['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
+    batch_size = [100] #, 20, 40, 60, 80, 100]
+    activation = ['softmax'] #, 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
+    optimizer = ['SGD'] #, 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
     dropout_rate = [0.2, 0.25, 0.3]
     param_grid = dict(batch_size=batch_size, optimizer=optimizer, activation=activation, dropout_rate=dropout_rate)
 
