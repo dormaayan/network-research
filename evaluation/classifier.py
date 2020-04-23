@@ -3,6 +3,7 @@
 import numpy as np
 import pandas as pd
 
+import multiprocessing
 
 import matplotlib
 from matplotlib import pyplot as plt
@@ -29,7 +30,8 @@ from tensorflow import keras
 
 matplotlib.use('Agg')
 
-
+import threading
+lock = threading.Lock()
 
 __author__ = "Dor Ma'ayan"
 __email__ = "grano@ifi.uzh.ch"
@@ -218,7 +220,7 @@ def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     batch_size = [100] #, 20, 40, 60, 80, 100]
     activation = ['softmax'] #, 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
     optimizer = ['SGD'] #, 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
-    dropout_rate = [0.2, 0.25, 0.3]
+    dropout_rate = [0.2] #, 0.25, 0.3]
     param_grid = dict(batch_size=batch_size, optimizer=optimizer, activation=activation, dropout_rate=dropout_rate)
 
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
