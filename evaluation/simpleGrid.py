@@ -109,7 +109,7 @@ frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test,
 frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
 frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame.Assrtions, frame.Conditions,frame.TryCatch, frame.Loop,frame.Hamcrest,frame.Mockito,
            frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
-           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters]
+           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
 
     data_x = pd.concat(columns, axis = 1).round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
@@ -146,7 +146,7 @@ frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test,
 frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
 frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame.Assrtions, frame.Conditions,frame.TryCatch, frame.Loop,frame.Hamcrest,frame.Mockito,
            frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
-           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters]
+           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
 
     data_x = pd.concat(columns, axis = 1).round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
@@ -168,7 +168,8 @@ def import_frame(consider_coverage, my_data):
     if consider_coverage and my_data:
         return load_all_data_with_mine(frame)
     if not consider_coverage and my_data:
-        return load_all_data_static(frame)
+        print("Hererere!!!")
+        return load_all_data_with_mine_static(frame)
     if consider_coverage and not my_data:
         return load_all_data(frame)
     else:
@@ -178,7 +179,7 @@ def import_frame(consider_coverage, my_data):
 # Function to create model, required for KerasClassifier
 def create_model(optimizer='adam', activation='linear', init_mode='uniform', dropout_rate=0.1):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(68,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(84,)))
     model.add(keras.layers.Dense(40, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(20, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(2, kernel_initializer=init_mode, activation='softmax'))
@@ -220,21 +221,16 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
 
     print('Import: DONE')
 
-    #pipe = Pipeline([('preprocessing', StandardScaler()),
-    #                 ('classifier', KerasClassifier(build_fn=create_model, verbose=0, epochs=2000))])
 
-    # Set up the algorithms to tune, train and evaluate
-    #param_grid = get_param_grid(algorithm, metrics)
 
     # define the grid search parameters
-    batch_size = [100] #, 20, 40, 60, 80, 100]
-    activation = ['relu', 'linear'] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
-    optimizer = ['Adam', 'Adamax'] #['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
-    dropout_rate = [0.0,0.1,0.2, 0.25, 0.3]
+    batch_size = [10, 20, 40, 60, 80, 100]
+    activation = ['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
+    optimizer = ['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
+    dropout_rate = [0.0 ,0.1 ,0.2, 0.25, 0.3]
     param_grid = dict(batch_size=batch_size, optimizer=optimizer, activation=activation, dropout_rate=dropout_rate)
 
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
-    #outer_cv = RepeatedStratifiedKFold(n_splits=n_outer, random_state=seed)
 
     model = KerasClassifier(build_fn=create_model, verbose=0, epochs=2000)
 
@@ -285,6 +281,12 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
           'Brier Score\t {:.3f}\n'.format(accuracy, precision, recall, f1_score, roc_auc, mae, brier))
     print("---------------------------------")
 
+    means = results.cv_results_.get('mean_test_accuracy')
+    #stds = results.cv_results_.get('std_mean_test_accuracy')
+    params = results.cv_results_.get('params')
+    for mean, param in zip(means, params):
+        print("%f with: %r" % (mean, param))
+
     # save performance metrics
 
     """
@@ -313,4 +315,4 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     """
 
 
-simpleGrid(consider_coverage=False)
+simpleGrid(consider_coverage=False, my_data=True)
