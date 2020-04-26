@@ -70,7 +70,7 @@ def load_quartile(frame):
 
 
 def load_all_data(frame):
-    columns = [frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.project, frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -87,7 +87,7 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
 
 
 def load_all_data_with_mine(frame):
-    columns = [frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.project, frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -99,7 +99,7 @@ frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test,
 frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
 frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame.Assrtions, frame.Conditions,frame.TryCatch, frame.Loop,frame.Hamcrest,frame.Mockito,
            frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
-           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters]
+           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
 
     data_x = pd.concat(columns, axis = 1).round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
@@ -107,7 +107,7 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame
 
 
 def load_all_data_static(frame):
-    columns = [frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.project, frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -124,7 +124,7 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
 
 
 def load_all_data_with_mine_static(frame):
-    columns = [frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
+    columns = [frame.project, frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
 frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
 frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
 frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
@@ -136,7 +136,7 @@ frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test,
 frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
 frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame.Assrtions, frame.Conditions,frame.TryCatch, frame.Loop,frame.Hamcrest,frame.Mockito,
            frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
-           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters]
+           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
 
     data_x = pd.concat(columns, axis = 1).round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
@@ -286,6 +286,15 @@ def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     grid = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
     verbose=20, n_iter=1, n_jobs=-1, return_train_score=True)
+
+                            param_grid=param_grid,
+                            cv=inner_cv,
+                            scoring=get_scoring(),
+                            #refit = False,
+                            refit='roc_auc_scorer',
+                            return_train_score=True,
+                            verbose=1,
+                            n_jobs=-1)
 
     results = cross_validate(estimator=grid,
                              cv=outer_cv,
