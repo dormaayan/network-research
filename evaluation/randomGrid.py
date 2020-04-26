@@ -297,7 +297,8 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     # dictionary summary
     param_grid = dict(
                         nl1=nl1, nl2=nl2, nl3=nl3, nn1=nn1, nn2=nn2, nn3=nn3,
-                        act=activation, l1=l1, l2=l2, lr=lr, decay=decay, dropout=dropout)
+                        act=activation, l1=l1, l2=l2, dropout=dropout)
+                        # lr=lr, decay=decay, dropout=dropout)
 
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
 
