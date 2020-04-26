@@ -234,7 +234,7 @@ act = 'relu', dropout=0, input_shape=84, output_shape=2):
         if dropout!=0:
             model.add(keras.layers.Dropout(dropout))
 
-    model.add(keras.layers.Dense(output_shape, activation='sigmoid'))
+    model.add(keras.layers.Dense(output_shape, activation='softmax'))
     model.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
     return model
 
@@ -275,7 +275,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     decay=[1e-6,1e-9,0]
 
     # activation
-    activation=['relu', 'sigmoid']
+    activation=['relu'] #, 'sigmoid']
 
     # numbers of layers
     nl1 = [0,1,2,3]
