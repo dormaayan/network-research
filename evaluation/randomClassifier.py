@@ -211,7 +211,7 @@ act = 'relu', dropout=0, input_shape=84, output_shape=2):
      #optimizer=opt, metrics=['accuracy'])
     return model
 
-def classification(consider_coverage=True, my_data=True, n_inner=10, n_outer=10):
+def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -285,8 +285,7 @@ def classification(consider_coverage=True, my_data=True, n_inner=10, n_outer=10)
     # inner cross validation
     grid = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
-    verbose=20, n_iter=10, n_jobs=-1)
-
+    verbose=20, n_iter=1, n_jobs=-1, return_train_score=True)
 
     results = cross_validate(estimator=grid,
                              cv=outer_cv,
