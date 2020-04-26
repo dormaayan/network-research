@@ -199,7 +199,7 @@ def create_model( nl1=1, nl2=1,  nl3=1,
 nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
 act = 'relu', dropout=0, input_shape=84, output_shape=2):
 
-    opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
+    #opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
     reg = keras.regularizers.l1_l2(l1=l1, l2=l2)
 
     model = keras.Sequential()
@@ -235,7 +235,9 @@ act = 'relu', dropout=0, input_shape=84, output_shape=2):
             model.add(keras.layers.Dropout(dropout))
 
     model.add(keras.layers.Dense(output_shape, activation='softmax'))
-    model.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
+    model.compile(loss='sparse_categorical_crossentropy', optimizer = 'Adam',
+     metrics=['accuracy'])
+     #optimizer=opt, metrics=['accuracy'])
     return model
 
 def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
@@ -271,8 +273,8 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     print('Import: DONE')
 
     # learning algorithm parameters
-    lr=[1e-2, 1e-3, 1e-4]
-    decay=[1e-6,1e-9,0]
+    #lr=[1e-2, 1e-3, 1e-4]
+    #decay=[1e-6,1e-9,0]
 
     # activation
     activation=['relu'] #, 'sigmoid']
