@@ -12,7 +12,7 @@ from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
 
 from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold, GridSearchCV, StratifiedKFold, \
-    cross_validate
+    cross_validate, RandomizedSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, \
     mean_absolute_error, make_scorer, brier_score_loss, roc_curve
@@ -177,6 +177,7 @@ def import_frame(consider_coverage, my_data):
 
 
 # Function to create model, required for KerasClassifier
+"""
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 , dropout_rate=0.1, first_layer=40, second_layer=20):
     model = keras.Sequential()
@@ -189,6 +190,52 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
     model.compile(optimizer=optimizer,
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
+    return model
+"""
+
+
+
+def create_model( nl1=1, nl2=1,  nl3=1,
+nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
+act = 'relu', dropout=0, input_shape=84, output_shape=2):
+
+    opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
+    reg = keras.regularizers.l1_l2(l1=l1, l2=l2)
+
+    model = keras.Sequential()
+
+    # for the firt layer we need to specify the input dimensions
+    first=True
+
+    for i in range(nl1):
+        if first:
+            model.add(keras.layers.Dense(nn1, input_dim=input_shape, activation=act, kernel_regularizer=reg))
+            first=False
+        else:
+            model.add(keras.layers.Dense(nn1, activation=act, kernel_regularizer=reg))
+        if dropout!=0:
+            model.add(keras.layers.Dropout(dropout))
+
+    for i in range(nl2):
+        if first:
+            model.add(keras.layers.Dense(nn2, input_dim=input_shape, activation=act, kernel_regularizer=reg))
+            first=False
+        else:
+            model.add(keras.layers.Dense(nn2, activation=act, kernel_regularizer=reg))
+        if dropout!=0:
+            model.add(keras.layers.Dropout(dropout))
+
+    for i in range(nl3):
+        if first:
+            model.add(keras.layers.Dense(nn3, input_dim=input_shape, activation=act, kernel_regularizer=reg))
+            first=False
+        else:
+            model.add(keras.layers.Dense(nn3, activation=act, kernel_regularizer=reg))
+        if dropout!=0:
+            model.add(keras.layers.Dropout(dropout))
+
+    model.add(keras.layers.Dense(output_shape, activation='sigmoid'))
+    model.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
     return model
 
 def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
@@ -223,18 +270,32 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
 
     print('Import: DONE')
 
+    # learning algorithm parameters
+    lr=[1e-2, 1e-3, 1e-4]
+    decay=[1e-6,1e-9,0]
 
+    # activation
+    activation=['relu', 'sigmoid']
 
-    # define the grid search parameters
-    batch_size = [100] #[10, 20, 40, 60, 80, 100]
-    activation = ['relu'] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
-    optimizer = ['Adam'] #['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
-    dropout_rate = [0.1] #[0.0 ,0.1 ,0.2, 0.25, 0.3]
-    first_layer = [1000, 100] #, 80, 70, 60, 50, 40] #, 30, 20, 10]
-    second_layer = [20,10] #[50, 40, 30, 20, 10]
-    param_grid = dict(batch_size=batch_size, optimizer=optimizer,
-     activation=activation, dropout_rate=dropout_rate,
-     first_layer=first_layer, second_layer=second_layer)
+    # numbers of layers
+    nl1 = [0,1,2,3]
+    nl2 = [0,1,2,3]
+    nl3 = [0,1,2,3]
+
+    # neurons in each layer
+    nn1=[300,700,1400, 2100,]
+    nn2=[100,400,800]
+    nn3=[50,150,300]
+
+    # dropout and regularisation
+    dropout = [0, 0.1, 0.2, 0.3]
+    l1 = [0, 0.01, 0.003, 0.001,0.0001]
+    l2 = [0, 0.01, 0.003, 0.001,0.0001]
+
+    # dictionary summary
+    param_grid = dict(
+                        nl1=nl1, nl2=nl2, nl3=nl3, nn1=nn1, nn2=nn2, nn3=nn3,
+                        act=activation, l1=l1, l2=l2, lr=lr, decay=decay, dropout=dropout)
 
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
 
@@ -245,15 +306,10 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
 
 
     # inner cross validation
-    results = GridSearchCV(estimator=model,
-                        param_grid=param_grid,
-                        cv=inner_cv,
-                        scoring=get_scoring(),
-                        #refit = False,
-                        refit='roc_auc_scorer',
-                        return_train_score=True,
-                        verbose=1,
-                        n_jobs=-1)
+
+    results = RandomizedSearchCV(estimator=model, cv=inner_cv,
+    param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
+    verbose=20, n_iter=10, n_jobs=-1)
 
     results.fit(data_x, data_y, callbacks=[early_stopping_monitor])
 
