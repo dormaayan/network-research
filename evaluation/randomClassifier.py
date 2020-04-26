@@ -294,7 +294,7 @@ def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
                              scoring=get_scoring(),
                              return_train_score=True,
                              verbose=20,
-                             n_jobs=1)
+                             n_jobs=-1)
 
     #print(results)
 
