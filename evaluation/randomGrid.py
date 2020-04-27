@@ -280,9 +280,9 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     activation=['relu'] #, 'sigmoid']
 
     # numbers of layers
-    nl1 = [1,2,3]#[0,1,2,3]
-    nl2 = [1,2,3]#[0,1,2,3]
-    nl3 = [1,2,3]#[0,1,2,3]
+    nl1 = [0,1,2,3]
+    nl2 = [0,1,2,3]
+    nl3 = [0,1,2,3]
 
     # neurons in each layer
     nn1=[300,700,1400, 2100]
@@ -313,7 +313,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
 
     results = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
-    verbose=20, n_iter=10, n_jobs=-1)
+    verbose=20, n_iter=20, n_jobs=-1)
 
     results.fit(data_x, data_y, callbacks=[early_stopping_monitor])
 
