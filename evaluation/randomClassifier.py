@@ -81,9 +81,10 @@ frame.LCOM3_test, frame.LCOM4_test, frame.CONNECTIVITY_test, frame.LCOM5_test, f
 frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test, frame.NOP_test, frame.McCABE_test,
 frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
 frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
+
+data_x = pd.concat(columns, axis = 1).round(2)
+data_y = pd.concat([frame.mutation], axis = 1)
+return data_x, data_y, len(columns)
 
 
 def load_all_data_with_mine(frame):
@@ -101,9 +102,9 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame
            frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
            frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
 
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
+data_x = pd.concat(columns, axis = 1).round(2)
+data_y = pd.concat([frame.mutation], axis = 1)
+return data_x, data_y, len(columns)
 
 
 def load_all_data_static(frame):
@@ -118,9 +119,10 @@ frame.LCOM3_test, frame.LCOM4_test, frame.CONNECTIVITY_test, frame.LCOM5_test, f
 frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test, frame.NOP_test, frame.McCABE_test,
 frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
 frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
+
+data_x = pd.concat(columns, axis = 1).round(2)
+data_y = pd.concat([frame.mutation], axis = 1)
+return data_x, data_y, len(columns)
 
 
 def load_all_data_with_mine_static(frame):
@@ -138,9 +140,9 @@ frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame
            frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
            frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
 
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
+data_x = pd.concat(columns, axis = 1).round(2)
+data_y = pd.concat([frame.mutation], axis = 1)
+return data_x, data_y, len(columns)
 
 def get_scoring():
     """Returns the scores to evaluate the model"""
