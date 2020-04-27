@@ -280,9 +280,9 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     activation=['relu'] #, 'sigmoid']
 
     # numbers of layers
-    nl1 = [0,1,2,3]
-    nl2 = [0,1,2,3]
-    nl3 = [0,1,2,3]
+    nl1 = [1,2,3]#[0,1,2,3]
+    nl2 = [1,2,3]#[0,1,2,3]
+    nl3 = [1,2,3]#[0,1,2,3]
 
     # neurons in each layer
     nn1=[300,700,1400, 2100,]
