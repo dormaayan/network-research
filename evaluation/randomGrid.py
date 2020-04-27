@@ -285,7 +285,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     nl3 = [1,2,3]#[0,1,2,3]
 
     # neurons in each layer
-    nn1=[300,700,1400, 2100,]
+    nn1=[300,700,1400, 2100]
     nn2=[100,400,800]
     nn3=[50,150,300]
 

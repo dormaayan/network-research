@@ -254,19 +254,22 @@ def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     activation=['relu'] #, 'sigmoid']
 
     # numbers of layers
-    nl1 = [0,1,2,3]
-    nl2 = [0,1,2,3]
-    nl3 = [0,1,2,3]
+
+#The best configuration is {'l2': 0.001, 'nl2': 2, 'nn2': 400, 'nl1': 1, 'l1': 0.001, 'nn3': 150, 'nn1': 1400, 'nl3': 3, 'dropout': 0.1, 'act': 'relu'}
+
+    nl1 = [1] #[0,1,2,3]
+    nl2 = [2] #[0,1,2,3]
+    nl3 = [3] #[0,1,2,3]
 
     # neurons in each layer
-    nn1=[300,700,1400, 2100,]
-    nn2=[100,400,800]
-    nn3=[50,150,300]
+    nn1= [1400] #[300,700,1400, 2100,]
+    nn2= [400] #[100,400,800]
+    nn3= [150] #[50,150,300]
 
     # dropout and regularisation
-    dropout = [0, 0.1, 0.2, 0.3]
-    l1 = [0, 0.01, 0.003, 0.001,0.0001]
-    l2 = [0, 0.01, 0.003, 0.001,0.0001]
+    dropout = [0.1] #[0, 0.1, 0.2, 0.3]
+    l1 = [0.001] #[0, 0.01, 0.003, 0.001,0.0001]
+    l2 = [0.001] #[0, 0.01, 0.003, 0.001,0.0001]
 
     # dictionary summary
     param_grid = dict(
