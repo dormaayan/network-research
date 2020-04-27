@@ -303,7 +303,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
 
     model = KerasClassifier(build_fn=create_model,
-     verbose=0, epochs=2000, batch_size=100)
+     verbose=0, epochs=2000, batch_size=1000)
 
     early_stopping_monitor = keras.callbacks.EarlyStopping(monitor='accuracy', min_delta=0.0003, patience=10, verbose=0, mode='max', restore_best_weights=True)
 
@@ -313,7 +313,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
 
     results = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
-    verbose=20, n_iter=20, n_jobs=-1)
+    verbose=20, n_iter=10, n_jobs=-1)
 
     results.fit(data_x, data_y, callbacks=[early_stopping_monitor])
 
