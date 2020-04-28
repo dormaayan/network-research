@@ -196,7 +196,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 
 def create_model( nl1=1, nl2=1,  nl3=1,
 nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
-act = 'relu', dropout=0, input_shape=84, output_shape=2):
+act = 'relu', dropout=0, input_shape=84, output_shape=1):
 
     #opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
     reg = keras.regularizers.l1_l2(l1=l1, l2=l2)
@@ -234,8 +234,12 @@ act = 'relu', dropout=0, input_shape=84, output_shape=2):
             model.add(keras.layers.Dropout(dropout))
 
     model.add(keras.layers.Dense(output_shape, activation='softmax'))
-    model.compile(loss='sparse_categorical_crossentropy', optimizer = 'Adam',
-     metrics=['accuracy'])
+
+    model.compile(optimizer='adam',
+                  loss='mean_squared_error',
+                  metrics=['mae'])
+    ##model.compile(loss='sparse_categorical_crossentropy', optimizer = 'Adam',
+     #metrics=['accuracy'])
      #optimizer=opt, metrics=['accuracy'])
     return model
 
@@ -304,7 +308,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     model = KerasClassifier(build_fn=create_model,
      verbose=0, epochs=2000, batch_size=50)
 
-    early_stopping_monitor = keras.callbacks.EarlyStopping(monitor='accuracy', min_delta=0.0003, patience=10, verbose=0, mode='max', restore_best_weights=True)
+    #early_stopping_monitor = keras.callbacks.EarlyStopping(monitor='accuracy', min_delta=0.0003, patience=10, verbose=0, mode='max', restore_best_weights=True)
 
 
 
@@ -314,7 +318,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
     verbose=20, n_iter=10, n_jobs=-1)
 
-    results.fit(data_x, data_y, callbacks=[early_stopping_monitor])
+    results.fit(data_x, data_y) #, callbacks=[early_stopping_monitor])
 
     print("-----------------------------")
     print(results.cv_results_.get('mean_test_accuracy'))
