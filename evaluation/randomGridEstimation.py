@@ -316,7 +316,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
 
     results = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
-    verbose=20, n_iter=10, n_jobs=-1)
+    verbose=20, n_iter=1, n_jobs=-1)
 
     results.fit(data_x, data_y) #, callbacks=[early_stopping_monitor])
 
