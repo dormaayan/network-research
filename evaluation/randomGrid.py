@@ -196,7 +196,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 
 def create_model( nl1=1, nl2=1,  nl3=1,
 nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
-act = 'relu', dropout=0, input_shape=84, output_shape=2):
+act = 'relu', dropout=0, optimizer='Adam', input_shape=84, output_shape=2):
 
     #opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
     reg = keras.regularizers.l1_l2(l1=l1, l2=l2)
@@ -234,7 +234,7 @@ act = 'relu', dropout=0, input_shape=84, output_shape=2):
             model.add(keras.layers.Dropout(dropout))
 
     model.add(keras.layers.Dense(output_shape, activation='softmax'))
-    model.compile(loss='sparse_categorical_crossentropy', optimizer = 'Adam',
+    model.compile(loss='sparse_categorical_crossentropy', optimizer = optimizer,
      metrics=['accuracy'])
      #optimizer=opt, metrics=['accuracy'])
     return model
@@ -276,7 +276,9 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     #decay=[1e-6,1e-9,0]
 
     # activation
-    activation=['relu'] #, 'sigmoid']
+    activation= ['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear'] #['relu'] #, 'sigmoid']
+
+    optimizer = ['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
 
     # numbers of layers
     nl1 = [0,1,2,3]
@@ -296,7 +298,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     # dictionary summary
     param_grid = dict(
                         nl1=nl1, nl2=nl2, nl3=nl3, nn1=nn1, nn2=nn2, nn3=nn3,
-                        act=activation, l1=l1, l2=l2, dropout=dropout)
+                        act=activation, l1=l1, l2=l2, dropout=dropout, optimizer=optimizer)
                         # lr=lr, decay=decay, dropout=dropout)
 
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
