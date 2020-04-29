@@ -280,7 +280,7 @@ def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
     outer_cv = RepeatedStratifiedKFold(n_splits=n_outer, random_state=seed)
 
-    model = KerasClassifier(build_fn=create_model, verbose=0, epochs=2000)
+    model = KerasClassifier(build_fn=create_model, verbose=0, epochs=2000, batch_size=450)
 
     early_stopping_monitor = keras.callbacks.EarlyStopping(monitor='accuracy', min_delta=0.0003, patience=10, verbose=0, mode='max', restore_best_weights=True)
 
