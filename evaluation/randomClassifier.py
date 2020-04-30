@@ -227,7 +227,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
+def classification(consider_coverage=True, my_data=True, n_inner=10, n_outer=10):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
