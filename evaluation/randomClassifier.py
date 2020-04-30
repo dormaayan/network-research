@@ -167,7 +167,7 @@ def import_frame(consider_coverage, my_data):
 
 
 
-def create_model( nl1=1, nl2=1,  nl3=1,
+def create_model2( nl1=1, nl2=1,  nl3=1,
 nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
 act = 'relu', dropout=0, input_shape=83, output_shape=2):
 
@@ -210,6 +210,21 @@ act = 'relu', dropout=0, input_shape=83, output_shape=2):
     model.compile(loss='sparse_categorical_crossentropy', optimizer = 'Adam',
      metrics=['accuracy'])
      #optimizer=opt, metrics=['accuracy'])
+    return model
+
+# Function to create model, required for KerasClassifier
+def create_model(optimizer='adam', activation='linear', init_mode='uniform'
+, dropout_rate=0.1, first_layer=40, second_layer=20):
+    model = keras.Sequential()
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(84,)))
+    model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
+    model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
+    model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
+    model.add(keras.layers.Dense(2, kernel_initializer=init_mode, activation='softmax'))
+
+    model.compile(optimizer=optimizer,
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
     return model
 
 def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
@@ -272,10 +287,20 @@ def classification(consider_coverage=True, my_data=True, n_inner=2, n_outer=2):
     #l2 = [0.001] #[0, 0.01, 0.003, 0.001,0.0001]
 
     # dictionary summary
-    param_grid = dict(
-                        nl1=nl1, nl2=nl2, nl3=nl3, nn1=nn1, nn2=nn2, nn3=nn3,
-                        act=activation, l1=l1, l2=l2, dropout=dropout)
+    #param_grid = dict(
+    #                    nl1=nl1, nl2=nl2, nl3=nl3, nn1=nn1, nn2=nn2, nn3=nn3,
+    #                    act=activation, l1=l1, l2=l2, dropout=dropout)
                         # lr=lr, decay=decay, dropout=dropout)
+
+    batch_size = [100] #[10, 20, 40, 60, 80, 100]
+    activation = ['relu'] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
+    optimizer = ['Adam'] #['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
+    dropout_rate = [0.1] #[0.0 ,0.1 ,0.2, 0.25, 0.3]
+    first_layer = [1000, 100] #, 80, 70, 60, 50, 40] #, 30, 20, 10]
+    second_layer = [20,10] #[50, 40, 30, 20, 10]
+    param_grid = dict(batch_size=batch_size, optimizer=optimizer,
+     activation=activation, dropout_rate=dropout_rate,
+     first_layer=first_layer, second_layer=second_layer)
 
     inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
     outer_cv = RepeatedStratifiedKFold(n_splits=n_outer, random_state=seed)
