@@ -291,7 +291,7 @@ def simpleGrid(consider_coverage=True, n_inner=10):
 
     # the suffix for saving the files
     coverage_suffix = 'dynamic' if consider_coverage else 'static'
-    algorithm  = 'my_data' if my_data else ''
+    algorithm  = ''#'my_data' if my_data else ''
 
     # Import the data
     print('Importing data')
