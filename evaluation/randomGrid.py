@@ -143,6 +143,10 @@ def load_all_data(frame):
                'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
                'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
 
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
 def load_all_data_dynamic(frame):
     columns = ['line_coverage', 'isAssertionRoulette',
        'isEagerTest', 'isLazyTest', 'isMysteryGuest',
@@ -174,6 +178,28 @@ def load_all_data_dynamic(frame):
     return data_x, data_y, len(columns)
 
 
+def load_all_their_data(frame):
+    columns = ['isAssertionRoulette',
+       'isEagerTest', 'isLazyTest', 'isMysteryGuest',
+       'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
+       'isIndirectTesting', 'LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+       'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+       'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+       'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+       'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+       'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod', 'LOC_test',
+       'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
+       'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
+       'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
+       'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
+       'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test',
+       'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+       'csm_LM', 'csm_FE', 'prod_readability', 'test_readability']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
 def get_scoring():
     """Returns the scores to evaluate the model"""
     return dict(accuracy=make_scorer(accuracy_score),
@@ -187,10 +213,10 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    if consider_coverage:
-        return load_all_data(frame)
-    else:
-        return load_all_data_dynamic(frame)
+    return load_all_their_data(frame)
+    #if consider_coverage:
+    #    return load_all_data_dynamic(frame)
+    #return load_all_data(frame)
 
 
 # Function to create model, required for KerasClassifier
@@ -214,7 +240,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 
 def create_model2( nl1=1, nl2=1,  nl3=1,
 nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
-act = 'relu', dropout=0, optimizer='Adam', input_shape=84, output_shape=2):
+act = 'relu', dropout=0, optimizer='Adam', input_shape=66, output_shape=2):
 
     #opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
     reg = keras.regularizers.l1_l2(l1=l1, l2=l2)
@@ -261,7 +287,7 @@ act = 'relu', dropout=0, optimizer='Adam', input_shape=84, output_shape=2):
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 , dropout_rate=0.1, first_layer=40, second_layer=20):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(84,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(66,)))
     model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
@@ -272,7 +298,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def simpleGrid(consider_coverage=True, n_inner=10):
+def simpleGrid(consider_coverage, n_inner=10):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -283,12 +309,12 @@ def simpleGrid(consider_coverage=True, n_inner=10):
     """
     global data_x, data_y, coverage_suffix
 
-    seed = 7
-    np.random.seed(seed)
+    #seed = 7
+    #np.random.seed(seed)
 
     # the suffix for saving the files
     coverage_suffix = 'dynamic' if consider_coverage else 'static'
-    algorithm  = ''#'my_data' if my_data else ''
+    algorithm  = '' #'my_data' if my_data else ''
 
     # Import the data
     print('Importing data')
@@ -338,16 +364,16 @@ def simpleGrid(consider_coverage=True, n_inner=10):
         # define the grid search parameters
 
     batch_size = [100,50] #[10, 20, 40, 60, 80, 100]
-    activation = ['relu','sigmoid'] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
+    activation = ['relu',] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
     optimizer = ['Adam','Adamax'] #['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
-    dropout_rate = [0.1,0.2,0.3] #[0.0 ,0.1 ,0.2, 0.25, 0.3]
-    first_layer = [1000, 100] #, 80, 70, 60, 50, 40] #, 30, 20, 10]
-    second_layer = [20,10] #[50, 40, 30, 20, 10]
+    dropout_rate = [0.1,0.2] #[0.0 ,0.1 ,0.2, 0.25, 0.3]
+    first_layer = [1000, 100,500] #, 80, 70, 60, 50, 40] #, 30, 20, 10]
+    second_layer = [20,10,5] #[50, 40, 30, 20, 10]
     param_grid = dict(batch_size=batch_size, optimizer=optimizer,
      activation=activation, dropout_rate=dropout_rate,
      first_layer=first_layer, second_layer=second_layer)
 
-    inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True, random_state=seed)
+    inner_cv = StratifiedKFold(n_splits=n_inner, shuffle=True)
 
     model = KerasClassifier(build_fn=create_model,
      verbose=0, epochs=2000, batch_size=50)
