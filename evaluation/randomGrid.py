@@ -43,9 +43,6 @@ CSV_PATH = "../complete-frame.csv"
 CSV_MINER_PATH = "../testminereffectiveness.csv"
 DATA_DIR = "results"
 
-def label_rename (row):
-    return row['path_test'].split('/')[len(row['path_test'].split('/')) - 1].split('.')[0]
-
 
 def label_rename1 (row):
     return row['path_test'].split('/')[len(row['path_test'].split('/')) - 1].split('.')[0]
