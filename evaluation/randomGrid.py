@@ -46,27 +46,67 @@ DATA_DIR = "results"
 def label_rename (row):
     return row['path_test'].split('/')[len(row['path_test'].split('/')) - 1].split('.')[0]
 
+
+def label_rename1 (row):
+    return row['path_test'].split('/')[len(row['path_test'].split('/')) - 1].split('.')[0]
+
+def label_rename2 (row):
+    return row['path_src'].split('/')[len(row['path_src'].split('/')) - 1].split('.')[0]
+
+def load_quartile(frame):
+    low, high = frame.mutation.quantile([0.25,0.75])
+    frame_low = frame.query('mutation<{low}'.format(low=low))
+    frame_high = frame.query('mutation>{high}'.format(high=high))
+    frame_low['mutation'] = 0
+    frame_high['mutation'] = 1
+    frame = pd.concat([frame_low, frame_high], ignore_index=True)
+    frame = frame.sample(frac=1).reset_index(drop=True)
+    return frame;
+
 def load_frame():
+    
+    d = {'TestClassName' : 'ClassName',
+         'Vocabulary' : 'Vocabulary_prod',
+         'Word' : 'Word_prod', 
+         'Non Whithe Characters' : 'Non Whithe Characters_prod',
+         'No. Methods' : 'No. Methods_prod',
+         'Special' : 'Special_prod',
+     'No. Method Invoctions' : 'No. Method Invoctions_prod',
+    'AST size' : 'AST size_prod', 'Max Depth' : 'Max Depth_prod',
+         'Deg2' : 'Deg2_prod',
+         'DegPerm' : 'DegPerm_prod',
+         'No. Break' : 'No. Break_prod',
+         'No. Continue' : 'No. Continue_prod',
+     'Avg Depth' : 'Avg Depth_prod', 'Dexterity' : 'Dexterity_prod',
+    'No. Expressions' : 'No. Expressions_prod', 'No. Try' : 'No. Try_prod', 'No. Catch' : 'No. Catch_prod',
+     'No. Loop' : 'No. Loop_prod', 'No. Conditions' : 'No. Conditions_prod', 'No. Else' : 'No. Else_prod'}
+    
+    
     frame1 = pd.read_csv(CSV_PATH, sep=",")
     frame1 = frame1.sample(frac=1).reset_index(drop=True)
-    frame1['TestClassName'] = frame1.apply(lambda row: label_rename(row), axis=1)
+    frame1['TestClassName'] = frame1.apply(lambda row: label_rename1(row), axis=1)
+    frame1['ClassName'] = frame1.apply(lambda row: label_rename2(row), axis=1)
+        
+    
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
+    
+    frame3 = pd.read_csv(CSV_MINER_PATH, sep=',')
+    frame3 = frame3.rename(columns = d, errors = 'raise')
+    frame3 = frame3.drop(['Bad API', 'Junit', 'Hamcrest', 'Mockito', 'Nº','Project'], axis=1)
+    
+    
     frame = pd.merge(frame1, frame2, on='TestClassName')
-    frame = frame.drop(['module', 'path_test','test_name','path_src','class_name','TestClassName','commit','Nº','Project'], axis=1)
+    
+    frame = pd.merge(frame, frame3, on='ClassName')
+    
+
+    frame = frame.drop(['project', 'module', 'path_test','test_name','path_src',
+                        'commit', 'class_name'], axis=1)
     frame = frame.sample(frac=1).reset_index(drop=True)
     frame = frame.dropna()
 
-    projects = ['commons-lang', 'javapoet', 'commons-io', 'jfreechart',
-       'commons-math', 'opengrok', 'checkstyle', 'closure-compiler',
-       'RxJava', 'fastjson', 'cat', 'joda-beans', 'commons-collections',
-       'junit4', 'gson', 'jsoup', 'guice']
-
-    counter = 0
-    for project in projects:
-        frame = frame.replace(project,counter)
-        counter+=1
-
     return frame
+
 
 def load_quartile(frame):
     low, high = frame.mutation.quantile([0.25,0.75])
@@ -79,78 +119,63 @@ def load_quartile(frame):
     return frame;
 
 
+
 def load_all_data(frame):
-    columns = [frame.project, frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
-frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
-frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
-frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
-frame.LCC_prod, frame.ICH_prod, frame.WMC_prod, frame.NOA_prod, frame.NOPA_prod, frame.NOP_prod,
-frame.McCABE_prod, frame.BUSWEIMER_prod, frame.LOC_test, frame.HALSTEAD_test, frame.RFC_test, frame.CBO_test,
-frame.MPC_test, frame.IFC_test, frame.DAC_test, frame.DAC2_test, frame.LCOM1_test, frame.LCOM2_test,
-frame.LCOM3_test, frame.LCOM4_test, frame.CONNECTIVITY_test, frame.LCOM5_test, frame.COH_test, frame.TCC_test,
-frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test, frame.NOP_test, frame.McCABE_test,
-frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
-frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
-    data_x = pd.concat(columns, axis = 1).round(2)
+    columns = ['isAssertionRoulette',
+       'isEagerTest', 'isLazyTest', 'isMysteryGuest',
+       'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
+       'isIndirectTesting', 'LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+       'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+       'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+       'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+       'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+       'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod', 'LOC_test',
+       'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
+       'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
+       'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
+       'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
+       'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test',
+       'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+       'csm_LM', 'csm_FE', 'prod_readability', 'test_readability', 'No. Methods', 'Vocabulary', 'Word',
+               'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
+               'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+               'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
+               'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+
+def load_all_data_dynamic(frame):
+    columns = ['line_coverage', 'isAssertionRoulette',
+       'isEagerTest', 'isLazyTest', 'isMysteryGuest',
+       'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
+       'isIndirectTesting', 'LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+       'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+       'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+       'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+       'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+       'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod', 'LOC_test',
+       'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
+       'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
+       'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
+       'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
+       'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test',
+       'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+       'csm_LM', 'csm_FE', 'prod_readability', 'test_readability', 'No. Methods', 'Vocabulary', 'Word',
+               'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
+               'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+               'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
+               'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+
+    data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
     return data_x, data_y, len(columns)
 
-
-def load_all_data_with_mine(frame):
-    columns = [frame.project, frame.no_mutations, frame.line_coverage, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
-frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
-frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
-frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
-frame.LCC_prod, frame.ICH_prod, frame.WMC_prod, frame.NOA_prod, frame.NOPA_prod, frame.NOP_prod,
-frame.McCABE_prod, frame.BUSWEIMER_prod, frame.LOC_test, frame.HALSTEAD_test, frame.RFC_test, frame.CBO_test,
-frame.MPC_test, frame.IFC_test, frame.DAC_test, frame.DAC2_test, frame.LCOM1_test, frame.LCOM2_test,
-frame.LCOM3_test, frame.LCOM4_test, frame.CONNECTIVITY_test, frame.LCOM5_test, frame.COH_test, frame.TCC_test,
-frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test, frame.NOP_test, frame.McCABE_test,
-frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
-frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame.Assrtions, frame.Conditions,frame.TryCatch, frame.Loop,frame.Hamcrest,frame.Mockito,
-           frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
-           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
-
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
-
-
-def load_all_data_static(frame):
-    columns = [frame.project, frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
-frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
-frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
-frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
-frame.LCC_prod, frame.ICH_prod, frame.WMC_prod, frame.NOA_prod, frame.NOPA_prod, frame.NOP_prod,
-frame.McCABE_prod, frame.BUSWEIMER_prod, frame.LOC_test, frame.HALSTEAD_test, frame.RFC_test, frame.CBO_test,
-frame.MPC_test, frame.IFC_test, frame.DAC_test, frame.DAC2_test, frame.LCOM1_test, frame.LCOM2_test,
-frame.LCOM3_test, frame.LCOM4_test, frame.CONNECTIVITY_test, frame.LCOM5_test, frame.COH_test, frame.TCC_test,
-frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test, frame.NOP_test, frame.McCABE_test,
-frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
-frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability]
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
-
-
-def load_all_data_with_mine_static(frame):
-    columns = [frame.project, frame.no_mutations, frame.isAssertionRoulette, frame.isEagerTest, frame.isLazyTest,
-frame.isMysteryGuest, frame.isSensitiveEquality, frame.isResourceOptimism, frame.isForTestersOnly,
-frame.isIndirectTesting, frame.LOC_prod, frame.HALSTEAD_prod, frame.RFC_prod, frame.CBO_prod, frame.MPC_prod, frame.IFC_prod, frame.DAC_prod,frame.DAC2_prod, frame.LCOM1_prod, frame.LCOM2_prod,
-frame.LCOM3_prod, frame.LCOM4_prod, frame.CONNECTIVITY_prod, frame.LCOM5_prod, frame.COH_prod, frame.TCC_prod,
-frame.LCC_prod, frame.ICH_prod, frame.WMC_prod, frame.NOA_prod, frame.NOPA_prod, frame.NOP_prod,
-frame.McCABE_prod, frame.BUSWEIMER_prod, frame.LOC_test, frame.HALSTEAD_test, frame.RFC_test, frame.CBO_test,
-frame.MPC_test, frame.IFC_test, frame.DAC_test, frame.DAC2_test, frame.LCOM1_test, frame.LCOM2_test,
-frame.LCOM3_test, frame.LCOM4_test, frame.CONNECTIVITY_test, frame.LCOM5_test, frame.COH_test, frame.TCC_test,
-frame.LCC_test, frame.ICH_test, frame.WMC_test, frame.NOA_test, frame.NOPA_test, frame.NOP_test, frame.McCABE_test,
-frame.BUSWEIMER_test, frame.csm_CDSBP, frame.csm_CC, frame.csm_FD, frame.csm_Blob, frame.csm_SC, frame.csm_MC,
-frame.csm_LM, frame.csm_FE, frame.prod_readability, frame.test_readability,frame.Assrtions, frame.Conditions,frame.TryCatch, frame.Loop,frame.Hamcrest,frame.Mockito,
-           frame.BadApi,frame.LOC,frame.Expressions, frame.Depth, frame.Vocabulary,
-           frame.Understandability,frame.BodySize, frame.Dexterity, frame.NonWhiteCharacters, frame.AllTestMethods]
-
-    data_x = pd.concat(columns, axis = 1).round(2)
-    data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
 
 def get_scoring():
     """Returns the scores to evaluate the model"""
@@ -162,17 +187,13 @@ def get_scoring():
                 mean_absolute_error=make_scorer(mean_absolute_error),
                 brier_score=make_scorer(brier_score_loss))
 
-def import_frame(consider_coverage, my_data):
+def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    if consider_coverage and my_data:
-        return load_all_data_with_mine(frame)
-    if not consider_coverage and my_data:
-        return load_all_data_with_mine_static(frame)
-    if consider_coverage and not my_data:
+    if consider_coverage:
         return load_all_data(frame)
     else:
-        return load_all_data_static(frame)
+        return load_all_data_dynamic(frame)
 
 
 # Function to create model, required for KerasClassifier
@@ -254,7 +275,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
+def simpleGrid(consider_coverage=True, n_inner=10):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -275,7 +296,7 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     # Import the data
     print('Importing data')
 
-    data_x, data_y, number_of_features = import_frame(consider_coverage, my_data)
+    data_x, data_y, number_of_features = import_frame(consider_coverage)
 
     data_x = data_x.values
     data_y = data_y.values
@@ -410,4 +431,4 @@ def simpleGrid(consider_coverage=True, my_data=True, n_inner=10):
     """
 
 
-simpleGrid(consider_coverage=False, my_data=True)
+simpleGrid(consider_coverage=False)
