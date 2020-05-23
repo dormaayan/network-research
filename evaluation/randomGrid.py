@@ -340,10 +340,10 @@ def simpleGrid(consider_coverage=True, n_inner=10):
 
         # define the grid search parameters
 
-    batch_size = [100] #[10, 20, 40, 60, 80, 100]
-    activation = ['relu'] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
-    optimizer = ['Adam'] #['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
-    dropout_rate = [0.1] #[0.0 ,0.1 ,0.2, 0.25, 0.3]
+    batch_size = [100,50] #[10, 20, 40, 60, 80, 100]
+    activation = ['relu','sigmoid'] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
+    optimizer = ['Adam','Adamax'] #['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
+    dropout_rate = [0.1,0.2,0.3] #[0.0 ,0.1 ,0.2, 0.25, 0.3]
     first_layer = [1000, 100] #, 80, 70, 60, 50, 40] #, 30, 20, 10]
     second_layer = [20,10] #[50, 40, 30, 20, 10]
     param_grid = dict(batch_size=batch_size, optimizer=optimizer,
