@@ -88,7 +88,7 @@ def load_frame():
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
     
     frame3 = pd.read_csv(CSV_MINER_PATH, sep=',')
-    frame3 = frame3.rename(columns = d, errors = 'raise')
+    frame3 = frame3.rename(columns = d)
     frame3 = frame3.drop(['Bad API', 'Junit', 'Hamcrest', 'Mockito', 'Nº','Project'], axis=1)
     
     
