@@ -335,4 +335,9 @@ def simpleGrid(consider_coverage, n_inner=10):
     params = results.cv_results_.get('params')
     for mean, param in zip(means, params):
         print("%f with: %r" % (mean, param))
-    return('{:.3f},{:.3f},{:.3f},{:.3f},{:.3f},{:.3f}'.format(accuracy, precision, recall, f1_score, roc_auc, mae))
+    return ['{:.3f}'.format(accuracy),
+      '{:.3f}'.format(precision),
+      '{:.3f}'.format(recall),
+      '{:.3f}'.format(f1_score),
+      '{:.3f}'.format(roc_auc),
+      '{:.3f}'.format(mae)]
