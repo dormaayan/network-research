@@ -341,7 +341,7 @@ def main():
   y_pred = model.predict(x_test)
   y_pred = np.concatenate(y_pred).tolist()
   y_testi = np.concatenate(y_test).tolist()
-  tau, p_value = scipy.stats.pearsonr(x, y) #stats.kendalltau(y_pred, y_testi)
+  tau, p_value = stats.pearsonr(x, y) #stats.kendalltau(y_pred, y_testi)
   return '{:.3f},{:.3f},{:.3f},{:.3f}'.format(test_mae,math.sqrt(test_mse),tau,p_value)
 
 if __name__ == '__main__':
