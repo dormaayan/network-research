@@ -200,6 +200,21 @@ def load_all_their_data(frame):
     data_y = pd.concat([frame.mutation], axis = 1)
     return data_x, data_y, len(columns)
 
+def load_all_their_test_data(frame):
+    columns = ['isAssertionRoulette',
+       'isEagerTest', 'isLazyTest', 'isMysteryGuest',
+       'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
+       'isIndirectTesting','LOC_test',
+       'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
+       'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
+       'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
+       'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
+       'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test', 'test_readability']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
 def get_scoring():
     """Returns the scores to evaluate the model"""
     return dict(accuracy=make_scorer(accuracy_score),
@@ -213,62 +228,16 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_their_data(frame)
+    return load_all_their_test_data(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
-
-
-def create_model2( nl1=1, nl2=1,  nl3=1,
-nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
-act = 'relu', dropout=0, optimizer='Adam', input_shape=66, output_shape=2):
-
-    #opt = keras.optimizers.Adam(lr=lr, beta_1=0.9, beta_2=0.999,  decay=decay)
-    reg = keras.regularizers.l1_l2(l1=l1, l2=l2)
-
-    model = keras.Sequential()
-
-    # for the firt layer we need to specify the input dimensions
-    first=True
-
-    for i in range(nl1):
-        if first:
-            model.add(keras.layers.Dense(nn1, input_dim=input_shape, activation=act, kernel_regularizer=reg))
-            first=False
-        else:
-            model.add(keras.layers.Dense(nn1, activation=act, kernel_regularizer=reg))
-        if dropout!=0:
-            model.add(keras.layers.Dropout(dropout))
-
-    for i in range(nl2):
-        if first:
-            model.add(keras.layers.Dense(nn2, input_dim=input_shape, activation=act, kernel_regularizer=reg))
-            first=False
-        else:
-            model.add(keras.layers.Dense(nn2, activation=act, kernel_regularizer=reg))
-        if dropout!=0:
-            model.add(keras.layers.Dropout(dropout))
-
-    for i in range(nl3):
-        if first:
-            model.add(keras.layers.Dense(nn3, input_dim=input_shape, activation=act, kernel_regularizer=reg))
-            first=False
-        else:
-            model.add(keras.layers.Dense(nn3, activation=act, kernel_regularizer=reg))
-        if dropout!=0:
-            model.add(keras.layers.Dropout(dropout))
-
-    model.add(keras.layers.Dense(output_shape, activation='softmax'))
-    model.compile(loss='sparse_categorical_crossentropy', optimizer = optimizer,
-     metrics=['accuracy'])
-     #optimizer=opt, metrics=['accuracy'])
-    return model
 
 # Function to create model, required for KerasClassifier
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 , dropout_rate=0.1, first_layer=40, second_layer=20):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(66,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(33,)))
     model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
@@ -328,7 +297,7 @@ def simpleGrid(consider_coverage, n_inner=10):
 
 
     # inner cross validation
-    
+
     results = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
     verbose=20, n_iter=10, n_jobs=-1)
