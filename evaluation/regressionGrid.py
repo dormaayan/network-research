@@ -186,7 +186,7 @@ def load_all_data_dynamic(frame):
 
 
 def load_all_their_data(frame):
-    columns = ['isAssertionRoulette',
+    columns = ['line_coverage', 'isAssertionRoulette',
        'isEagerTest', 'isLazyTest', 'isMysteryGuest',
        'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
        'isIndirectTesting', 'LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
