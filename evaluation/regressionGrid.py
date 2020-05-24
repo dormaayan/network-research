@@ -334,7 +334,7 @@ def main():
                 loss='mean_squared_error',
                 metrics=['mae','mse'])
 
-  history = model.fit(x_train, y_train, epochs=300, verbose=1) #, callbacks=[early_stopping_monitor])
+  history = model.fit(x_train, y_train, epochs=400, verbose=1) #, callbacks=[early_stopping_monitor])
 
 
   test_loss, test_mae, test_mse = model.evaluate(x_test, y_test)
@@ -345,7 +345,11 @@ def main():
   y_pred = np.concatenate(y_pred).tolist()
   y_testi = np.concatenate(y_test).tolist()
   tau, p_value = stats.kendalltau(y_pred, y_testi)
-  print('{:.3f},{:.3f},{:.3f},{:.3f}'.format(test_mae,math.sqrt(test_mse),tau,p_value))
+  return '{:.3f},{:.3f},{:.3f},{:.3f}'.format(test_mae,math.sqrt(test_mse),tau,p_value)
 
 if __name__ == '__main__':
-  main()
+  str = ''
+  for i in range(0,10):
+    s = main()
+    str = str + s + '\n'
+  print(str)
