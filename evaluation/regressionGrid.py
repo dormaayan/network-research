@@ -300,9 +300,9 @@ def main():
   frame = load_frame()
   data_x, data_y, number_of_features = load_all_data_dynamic(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2)
-#  scaler = StandardScaler()
- # scaler.fit(data_x)
- # data_x = scaler.transform(data_x)
+  scaler = StandardScaler()
+  scaler.fit(data_x)
+  data_x = scaler.transform(data_x)
 
   model = KerasClassifier(build_fn=create_model, verbose=1, epochs=1000)
 
