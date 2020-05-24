@@ -303,7 +303,7 @@ def main():
   scaler.fit(data_x)
   data_x = scaler.transform(data_x)
 
-  model = KerasClassifier(build_fn=create_model, verbose=0, epochs=10)
+  model = KerasClassifier(build_fn=create_model, verbose=1, epochs=1000)
 
   results = cross_validate(estimator=model,
     cv=10,
