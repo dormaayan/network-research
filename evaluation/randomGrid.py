@@ -211,6 +211,22 @@ def load_all_their_test_data(frame):
        'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
        'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test', 'test_readability']
 
+def load_all_test_data(frame):
+    columns = ['isAssertionRoulette',
+       'isEagerTest', 'isLazyTest', 'isMysteryGuest',
+       'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
+       'isIndirectTesting', 'LOC_test',
+       'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
+       'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
+       'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
+       'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
+       'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test',
+       'test_readability', 'No. Methods', 'Vocabulary', 'Word',
+               'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
+               'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+               'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
+               'Junit', 'Hamcrest', 'Mockito']
+
 
 def load_all_their_production_data(frame):
     columns = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
@@ -242,7 +258,7 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_their_production_data(frame)
+    return load_all_test_data(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
