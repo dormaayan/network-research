@@ -295,8 +295,72 @@ def create_model():
   return model
 
 
+def silent_evaluation(model, x_test, y_test):
+    f = open('/dev/null', 'w')
+    regular_stdout = sys.stdout
+    sys.stdout = f
+    test_loss, test_acc = model.evaluate(x_test, y_test)
+    sys.stdout = regular_stdout
+    print('Model Accuracy: {}'.format(test_acc))
+
+def split_data(train_x, train_y, training=0.70, validation=0.5):
+    train_size = training
+
+    train_cnt = math.floor(train_x.shape[0] * train_size)
+    x_train = train_x[0:train_cnt]
+    y_train = train_y[0:train_cnt]
+    x_test = train_x[train_cnt:]
+    y_test = train_y[train_cnt:]
+
+    division = validation
+
+    train_cnt = math.floor(x_test.shape[0] * division)
+    x_validate = x_test[0:train_cnt]
+    y_validate = y_test[0:train_cnt]
+    x_test = x_test[train_cnt:]
+    y_test = y_test[train_cnt:]
+
+    return x_train, y_train, x_test, y_test, x_validate, y_validate   
+
 
 def main():
+  frame = load_frame()
+  data_x, data_y, number_of_features = load_all_data(frame) #load_meaningful_subset(frame)
+  data_y = pd.concat([frame.mutation], axis = 1).round(2).values
+  scaler = StandardScaler()
+  scaler.fit(data_x)
+  data_x = scaler.transform(data_x)
+  #sns.distplot(data_y);
+
+  x_train, y_train, x_test, y_test, x_validate, y_validate = split_data(data_x, data_y)
+  print(x_train.shape)
+
+  model = keras.Sequential()
+  model.add(keras.layers.Dense(number_of_features, activation='relu', input_dim=number_of_features))
+  model.add(keras.layers.Dense(100, activation='relu'))
+  model.add(keras.layers.Dense(20, activation='relu'))
+  model.add(keras.layers.Dense(1))
+
+  model.compile(optimizer='adam',
+                loss='mean_squared_error',
+                metrics=['mae','mse'])
+
+  early_stopping_monitor = keras.callbacks.EarlyStopping(patience=50,restore_best_weights=True)
+
+
+  history = model.fit(x_train, y_train, epochs=1000, verbose=1, validation_data=(x_validate, y_validate),
+                      callbacks=[early_stopping_monitor])
+
+
+
+
+  silent_evaluation(model, x_test, y_test)
+
+
+  print("Overfit checks:")
+  silent_evaluation(model, x_train, y_train)
+
+"""
   frame = load_frame()
   data_x, data_y, number_of_features = load_all_data_dynamic(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2)
@@ -316,6 +380,7 @@ def main():
     n_jobs=-1)
 
   print(results)
+  """
 
 if __name__ == '__main__':
   main()
