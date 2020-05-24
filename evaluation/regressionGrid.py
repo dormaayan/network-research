@@ -333,12 +333,12 @@ def main():
   #early_stopping_monitor = keras.callbacks.EarlyStopping(patience=50,restore_best_weights=True)
 
 
-  history = model.fit(x_train, y_train, epochs=100, verbose=1) #, callbacks=[early_stopping_monitor])
+  history = model.fit(x_train, y_train, epochs=200, verbose=1) #, callbacks=[early_stopping_monitor])
 
 
   test_loss, test_mae, test_mse = model.evaluate(x_test, y_test)
   #sys.stdout = regular_stdout
-  print('Model Accuracy: {}'.format(test_acc))
+  print('Model Accuracy: {}'.format(test_mae))
 
   #silent_evaluation(model, x_test, y_test)
 
