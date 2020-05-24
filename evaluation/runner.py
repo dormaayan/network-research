@@ -3,7 +3,7 @@ import csv
 
 
 def main():
-	randomGrid.simpleGrid(consider_coverage=False)
+	s = randomGrid.simpleGrid(consider_coverage=False)
 	with open(r'res.csv', 'a') as f:
 	    writer = csv.writer(f, delimiter = ',')
 	    writer.writerow(s)
