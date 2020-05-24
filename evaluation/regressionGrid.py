@@ -303,14 +303,14 @@ def main():
   scaler.fit(data_x)
   data_x = scaler.transform(data_x)
 
-  model = KerasClassifier(build_fn=create_model, verbose=0, epochs=1000)
+  model = KerasClassifier(build_fn=create_model, verbose=0, epochs=10)
 
   results = cross_validate(estimator=model,
     cv=10,
     X=data_x,
     y=data_y,
-    scoring=('neg_mean_absolute_error', 'neg_mean_squared_error'),
-    return_train_score=True,
+    scoring=('mean_absolute_error', 'mean_squared_error'),
+    return_train_score=False,
     verbose=1,
     n_jobs=-1)
 
