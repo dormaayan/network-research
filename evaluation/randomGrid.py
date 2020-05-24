@@ -211,6 +211,10 @@ def load_all_their_test_data(frame):
        'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
        'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test', 'test_readability']
 
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
 def load_all_test_data(frame):
     columns = ['isAssertionRoulette',
        'isEagerTest', 'isLazyTest', 'isMysteryGuest',
@@ -226,6 +230,10 @@ def load_all_test_data(frame):
                'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
                'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
                'Junit', 'Hamcrest', 'Mockito']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
 
 
 def load_all_their_production_data(frame):
