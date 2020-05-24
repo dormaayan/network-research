@@ -236,6 +236,25 @@ def load_all_test_data(frame):
     return data_x, data_y, len(columns)
 
 
+def load_all_production_data(frame):
+    columns = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+       'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+       'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+       'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+       'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+       'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod',
+       'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+       'csm_LM', 'csm_FE', 'prod_readability', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
+
 def load_all_their_production_data(frame):
     columns = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
        'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
@@ -266,7 +285,7 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_test_data(frame)
+    return load_all_production_data(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
@@ -275,7 +294,7 @@ def import_frame(consider_coverage):
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 , dropout_rate=0.1, first_layer=40, second_layer=20):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(57,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(53,)))
     model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
