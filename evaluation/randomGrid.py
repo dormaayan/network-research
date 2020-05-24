@@ -211,6 +211,20 @@ def load_all_their_test_data(frame):
        'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
        'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test', 'test_readability']
 
+
+def load_all_their_production_data(frame):
+    columns = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+       'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+       'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+       'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+       'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+       'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod', 'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+       'csm_LM', 'csm_FE', 'prod_readability']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
     return data_x, data_y, len(columns)
@@ -228,7 +242,7 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_their_test_data(frame)
+    return load_all_their_production_data(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
