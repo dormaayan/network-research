@@ -309,31 +309,9 @@ def get_scoring():
                 brier_score=make_scorer(brier_score_loss))
 
 
-def create_model():
-  model = keras.Sequential()
-  model.add(keras.layers.Dense(111, activation='relu', input_dim=111))
-  model.add(keras.layers.Dense(40, activation='relu', kernel_regularizer= keras.regularizers.l2(0.01)))
-  model.add(keras.layers.Dense(20, activation='relu', kernel_regularizer= keras.regularizers.l2(0.01)))
-  model.add(keras.layers.Dense(1))
-
-  model.compile(optimizer='adam',
-              loss='mean_squared_error',
-              metrics=['mae','mse'])
-  return model
-
-
-def silent_evaluation(model, x_test, y_test):
-    f = open('/dev/null', 'w')
-    regular_stdout = sys.stdout
-    sys.stdout = f
-    test_loss, test_acc = model.evaluate(x_test, y_test)
-    sys.stdout = regular_stdout
-    print('Model Accuracy: {}'.format(test_acc))
-
-
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_production_data_line_coverage(frame)
+  data_x, data_y, number_of_features = load_all_data_dynamic(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
@@ -363,12 +341,12 @@ def main():
   y_pred = model.predict(x_test)
   y_pred = np.concatenate(y_pred).tolist()
   y_testi = np.concatenate(y_test).tolist()
-  tau, p_value = stats.kendalltau(y_pred, y_testi)
+  tau, p_value = scipy.stats.pearsonr(x, y) #stats.kendalltau(y_pred, y_testi)
   return '{:.3f},{:.3f},{:.3f},{:.3f}'.format(test_mae,math.sqrt(test_mse),tau,p_value)
 
 if __name__ == '__main__':
   str = ''
-  for i in range(0,10):
+  for i in range(0,1):
     s = main()
     str = str + s + '\n'
   print(str)
