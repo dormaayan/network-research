@@ -346,7 +346,7 @@ def main():
 
 if __name__ == '__main__':
   str = ''
-  for i in range(0,1):
+  for i in range(0,10):
     s = main()
     str = str + s + '\n'
   print(str)
