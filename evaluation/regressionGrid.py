@@ -336,7 +336,9 @@ def main():
   data_x = scaler.transform(data_x)
   #sns.distplot(data_y);
 
-  x_train, y_train, x_test, y_test, x_validate, y_validate = split_data(data_x, data_y)
+  #x_train, y_train, x_test, y_test, x_validate, y_validate = split_data(data_x, data_y)
+  x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.10)
+  
   print(x_train.shape)
 
   model = keras.Sequential()
