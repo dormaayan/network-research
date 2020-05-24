@@ -185,8 +185,8 @@ def load_all_data_dynamic(frame):
     return data_x, data_y, len(columns)
 
 
-def load_all_their_data(frame): #Now dynamic
-    columns = ['line_coverage', 'isAssertionRoulette',
+def load_all_their_data(frame):
+    columns = ['isAssertionRoulette',
        'isEagerTest', 'isLazyTest', 'isMysteryGuest',
        'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
        'isIndirectTesting', 'LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
@@ -262,6 +262,25 @@ def load_all_production_data(frame):
     return data_x, data_y, len(columns)
 
 
+def load_all_production_data_line_coverage(frame):
+    columns = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+       'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+       'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+       'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+       'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+       'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod',
+       'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+       'csm_LM', 'csm_FE', 'prod_readability', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.line_coverage], axis = 1)
+    return data_x, data_y, len(columns)
+
+
 def load_all_their_production_data(frame):
     columns = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
        'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
@@ -314,7 +333,7 @@ def silent_evaluation(model, x_test, y_test):
 
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_their_data(frame)
+  data_x, data_y, number_of_features = load_all_production_data_line_coverage(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
