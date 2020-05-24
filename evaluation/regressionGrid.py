@@ -310,13 +310,13 @@ def silent_evaluation(model, x_test, y_test):
 
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_data(frame) #load_meaningful_subset(frame)
+  data_x, data_y, number_of_features = load_all_data_dynamic(frame) #load_meaningful_subset(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
   data_x = scaler.transform(data_x)
 
-  x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.30)
+  x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.10)
 
   print(x_train.shape)
 
