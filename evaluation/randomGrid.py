@@ -332,14 +332,18 @@ def simpleGrid(consider_coverage, n_inner=10):
     print("---------------------------------")
 
     means = results.cv_results_.get('mean_test_accuracy')
-    #stds = results.cv_results_.get('std_mean_test_accuracy')
     params = results.cv_results_.get('params')
     for mean, param in zip(means, params):
         print("%f with: %r" % (mean, param))
     return('{:.3f},{:.3f},{:.3f},{:.3f},{:.3f},{:.3f}'.format(accuracy, precision, recall, f1_score, roc_auc, mae))
 
-str = ''
-for i in range(0,2):
-	s = simpleGrid(consider_coverage=False)
-	str = str + '\n'
-print(str)
+def main():
+	str = ''
+	for i in range(0,2):
+		s = simpleGrid(consider_coverage=False)
+		str = str + '\n'
+	print(str)
+
+
+if __name__ == '__main__':
+    main()
