@@ -345,11 +345,7 @@ def main():
   y_pred = np.concatenate(y_pred).tolist()
   y_testi = np.concatenate(y_test).tolist()
   tau, p_value = stats.kendalltau(y_pred, y_testi)
-  print(tau)
-  print(p_value)
-
-
-
+  print('{:.3f},{:.3f},{:.3f},{:.3f}'.format(test_mae,math.sqrt(test_mse),tau,p_value))
 
 if __name__ == '__main__':
   main()
