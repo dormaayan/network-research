@@ -322,7 +322,7 @@ def main():
 
   model = keras.Sequential()
   model.add(keras.layers.Dense(number_of_features, activation='relu', input_dim=number_of_features))
-  model.add(keras.layers.Dense(100, activation='relu'))
+  model.add(keras.layers.Dense(40, activation='relu'))
   model.add(keras.layers.Dense(20, activation='relu'))
   model.add(keras.layers.Dense(1))
 
