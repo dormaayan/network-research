@@ -29,6 +29,10 @@ from tensorflow import keras
 import math
 import sys
 
+import statsmodels.api as sm
+import scipy.stats as stats
+
+
 
 import warnings
 warnings.filterwarnings('ignore')  # "error", "ignore", "always", "default", "module" or "once"s
@@ -330,44 +334,22 @@ def main():
                 loss='mean_squared_error',
                 metrics=['mae','mse'])
 
-  #early_stopping_monitor = keras.callbacks.EarlyStopping(patience=50,restore_best_weights=True)
-
-
   history = model.fit(x_train, y_train, epochs=300, verbose=1) #, callbacks=[early_stopping_monitor])
 
 
   test_loss, test_mae, test_mse = model.evaluate(x_test, y_test)
-  #sys.stdout = regular_stdout
+  
   print('MAE: {}'.format(test_mae))
 
+  y_pred = model.predict(x_test)
+  y_pred = np.concatenate(y_pred).tolist()
+  y_testi = np.concatenate(y_test).tolist()
+  tau, p_value = stats.kendalltau(y_pred, y_testi)
+  print(tau)
+  print(p_value)
 
-  #silent_evaluation(model, x_test, y_test)
 
 
-  #print("Overfit checks:")
-  #silent_evaluation(model, x_train, y_train)
-
-"""
-  frame = load_frame()
-  data_x, data_y, number_of_features = load_all_data_dynamic(frame)
-  data_y = pd.concat([frame.mutation], axis = 1).round(2)
-  scaler = StandardScaler()
-  scaler.fit(data_x)
-  data_x = scaler.transform(data_x)
-
-  model = KerasClassifier(build_fn=create_model, verbose=1, epochs=1000)
-
-  results = cross_validate(estimator=model,
-    cv=2,
-    X=data_x,
-    y=data_y,
-    scoring=('mean_absolute_error', 'mean_squared_error'),
-    return_train_score=False,
-    verbose=1,
-    n_jobs=-1)
-
-  print(results)
-  """
 
 if __name__ == '__main__':
   main()
