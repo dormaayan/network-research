@@ -307,7 +307,7 @@ def main():
   model = KerasClassifier(build_fn=create_model, verbose=1, epochs=1000)
 
   results = cross_validate(estimator=model,
-    cv=10,
+    cv=3,
     X=data_x,
     y=data_y,
     scoring=('mean_absolute_error', 'mean_squared_error'),
