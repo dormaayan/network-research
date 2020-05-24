@@ -307,25 +307,6 @@ def silent_evaluation(model, x_test, y_test):
     sys.stdout = regular_stdout
     print('Model Accuracy: {}'.format(test_acc))
 
-def split_data(train_x, train_y, training=0.70, validation=0.5):
-    train_size = training
-
-    train_cnt = math.floor(train_x.shape[0] * train_size)
-    x_train = train_x[0:train_cnt]
-    y_train = train_y[0:train_cnt]
-    x_test = train_x[train_cnt:]
-    y_test = train_y[train_cnt:]
-
-    division = validation
-
-    train_cnt = math.floor(x_test.shape[0] * division)
-    x_validate = x_test[0:train_cnt]
-    y_validate = y_test[0:train_cnt]
-    x_test = x_test[train_cnt:]
-    y_test = y_test[train_cnt:]
-
-    return x_train, y_train, x_test, y_test, x_validate, y_validate   
-
 
 def main():
   frame = load_frame()
@@ -334,11 +315,9 @@ def main():
   scaler = StandardScaler()
   scaler.fit(data_x)
   data_x = scaler.transform(data_x)
-  #sns.distplot(data_y);
 
-  #x_train, y_train, x_test, y_test, x_validate, y_validate = split_data(data_x, data_y)
   x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.10)
-  
+
   print(x_train.shape)
 
   model = keras.Sequential()
@@ -357,13 +336,15 @@ def main():
   history = model.fit(x_train, y_train, epochs=1000, verbose=1, callbacks=[early_stopping_monitor])
 
 
+  test_loss, test_mae, test_mse = model.evaluate(x_test, y_test)
+  sys.stdout = regular_stdout
+  print('Model Accuracy: {}'.format(test_acc))
+
+  #silent_evaluation(model, x_test, y_test)
 
 
-  silent_evaluation(model, x_test, y_test)
-
-
-  print("Overfit checks:")
-  silent_evaluation(model, x_train, y_train)
+  #print("Overfit checks:")
+  #silent_evaluation(model, x_train, y_train)
 
 """
   frame = load_frame()
