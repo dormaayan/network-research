@@ -6,7 +6,6 @@ import pandas as pd
 
 import matplotlib
 from matplotlib import pyplot as plt
-from sklearn.externals import joblib
 from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
 
@@ -307,13 +306,15 @@ def main():
   model = KerasClassifier(build_fn=create_model, verbose=0, epochs=10)
 
   results = cross_validate(estimator=model,
-    cv=outer_cv,
+    cv=10,
     X=data_x,
     y=data_y,
-    scoring=('mae', 'mse'),
-    return_train_score=False,
+    scoring=('neg_mean_absolute_error', 'neg_mean_squared_error'),
+    return_train_score=True,
     verbose=1,
-    n_jobs=1)
+    n_jobs=-1)
 
   print(results)
 
+if __name__ == '__main__':
+    main()
