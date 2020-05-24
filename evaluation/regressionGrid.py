@@ -352,8 +352,7 @@ def main():
   early_stopping_monitor = keras.callbacks.EarlyStopping(patience=50,restore_best_weights=True)
 
 
-  history = model.fit(x_train, y_train, epochs=1000, verbose=1, validation_data=(x_validate, y_validate),
-                      callbacks=[early_stopping_monitor])
+  history = model.fit(x_train, y_train, epochs=1000, verbose=1, callbacks=[early_stopping_monitor])
 
 
 
