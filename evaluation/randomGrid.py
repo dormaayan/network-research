@@ -219,25 +219,6 @@ def import_frame(consider_coverage):
     #return load_all_data(frame)
 
 
-# Function to create model, required for KerasClassifier
-"""
-def create_model(optimizer='adam', activation='linear', init_mode='uniform'
-, dropout_rate=0.1, first_layer=40, second_layer=20):
-    model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(84,)))
-    model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
-    model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
-    model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
-    model.add(keras.layers.Dense(2, kernel_initializer=init_mode, activation='softmax'))
-
-    model.compile(optimizer=optimizer,
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
-    return model
-"""
-
-
-
 def create_model2( nl1=1, nl2=1,  nl3=1,
 nn1=1000, nn2=500, nn3 = 200, lr=0.01, decay=0., l1=0.01, l2=0.01,
 act = 'relu', dropout=0, optimizer='Adam', input_shape=66, output_shape=2):
@@ -309,9 +290,6 @@ def simpleGrid(consider_coverage, n_inner=10):
     """
     global data_x, data_y, coverage_suffix
 
-    #seed = 7
-    #np.random.seed(seed)
-
     # the suffix for saving the files
     coverage_suffix = 'dynamic' if consider_coverage else 'static'
     algorithm  = '' #'my_data' if my_data else ''
@@ -329,39 +307,6 @@ def simpleGrid(consider_coverage, n_inner=10):
     data_x = scaler.transform(data_x)
 
     print('Import: DONE')
-
-    # learning algorithm parameters
-    #lr=[1e-2, 1e-3, 1e-4]
-    #decay=[1e-6,1e-9,0]
-
-    # activation
-    #activation= ['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear'] #['relu'] #, 'sigmoid']
-
-    #optimizer = ['SGD', 'RMSprop', 'Adagrad', 'Adadelta', 'Adam', 'Adamax', 'Nadam']
-
-    # numbers of layers
-    #nl1 = [0,1,2,3]
-    #nl2 = [0,1,2,3]
-    #nl3 = [0,1,2,3]
-
-    # neurons in each layer
-    #nn1=[300,700,1400, 2100]
-    #nn2=[100,400,800]
-    #nn3=[50,150,300]
-
-    # dropout and regularisation
-    #dropout = [0, 0.1, 0.2, 0.3]
-    #l1 = [0, 0.01, 0.003, 0.001,0.0001]
-    #l2 = [0, 0.01, 0.003, 0.001,0.0001]
-
-
-    # dictionary summary
-    #param_grid = dict(
-    #                    nl1=nl1, nl2=nl2, nl3=nl3, nn1=nn1, nn2=nn2, nn3=nn3,
-    #                    act=activation, l1=l1, l2=l2, dropout=dropout, optimizer=optimizer)
-    #                    # lr=lr, decay=decay, dropout=dropout)
-
-        # define the grid search parameters
 
     batch_size = [100,50] #[10, 20, 40, 60, 80, 100]
     activation = ['relu',] #['softmax', 'softplus', 'softsign', 'relu', 'tanh', 'sigmoid', 'hard_sigmoid', 'linear']
@@ -383,7 +328,7 @@ def simpleGrid(consider_coverage, n_inner=10):
 
 
     # inner cross validation
-
+    
     results = RandomizedSearchCV(estimator=model, cv=inner_cv,
     param_distributions=param_grid, scoring=get_scoring(), refit='roc_auc_scorer',
     verbose=20, n_iter=10, n_jobs=-1)
@@ -406,9 +351,6 @@ def simpleGrid(consider_coverage, n_inner=10):
     mae = results.cv_results_.get('mean_test_mean_absolute_error')[config_index] #.mean()
     brier = results.cv_results_.get('mean_test_brier_score')[config_index] #.mean()
 
-
-    #print("Best: %f using %s" % (grid_result.best_score_, grid_result.best_params_))
-
     print("---------------------------------")
     print('Performances:\n'
           'Accuracy\t {:.3f}\n'
@@ -425,33 +367,10 @@ def simpleGrid(consider_coverage, n_inner=10):
     params = results.cv_results_.get('params')
     for mean, param in zip(means, params):
         print("%f with: %r" % (mean, param))
+    return('{:.3f},{:.3f},{:.3f},{:.3f},{:.3f},{:.3f}'.format(accuracy, precision, recall, f1_score, roc_auc, mae))
 
-    # save performance metrics
-
-    """
-
-    metrics_res = pd.DataFrame({'accuracy': [accuracy],
-                                'precision': [precision],
-                                'recall': [recall],
-                                'f1_score': [f1_score],
-                                'ROC-AUC': [roc_auc],
-                                'MAE': [mae],
-                                'Brier': [brier]})
-
-    metrics_res.to_csv('{}/evaluation_{}_{}.csv'.format(DATA_DIR, coverage_suffix, algorithm), index=False)
-
-    grid_result = grid.fit(data_x, data_y, callbacks=[early_stopping_monitor])
-    print("Best: %f using %s" % (grid_result.best_score_, grid_result.best_params_))
-    print('Best model is:\n{}'.format(grid.best_params_))
-    model_string = open('{}/_model_{}_{}.txt'.format(DATA_DIR, coverage_suffix, algorithm), 'w')
-    model_string.write(str(model))
-    model_string.close()
-
-    print('Saving the model on the entire set')
-    #grid.fit(data_x, data_y, callbacks=[early_stopping_monitor])
-    #joblib.dump(grid.best_estimator_, '{}/model_{}_{}.pkl'.format(DATA_DIR, coverage_suffix, algorithm), compress=1)
-
-    """
-
-
-simpleGrid(consider_coverage=False)
+str = ''
+for i in range(0,2):
+	s = simpleGrid(consider_coverage=False)
+	str = str + '\n'
+print(str)
