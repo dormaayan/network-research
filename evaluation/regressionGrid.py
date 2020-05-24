@@ -285,8 +285,8 @@ def get_scoring():
 def create_model():
   model = keras.Sequential()
   model.add(keras.layers.Dense(111, activation='relu', input_dim=111))
-  model.add(keras.layers.Dense(100, activation='relu'))
-  model.add(keras.layers.Dense(20, activation='relu'))
+  model.add(keras.layers.Dense(40, activation='relu', kernel_regularizer= keras.regularizers.l2(0.01)))
+  model.add(keras.layers.Dense(20, activation='relu', kernel_regularizer= keras.regularizers.l2(0.01)))
   model.add(keras.layers.Dense(1))
 
   model.compile(optimizer='adam',
