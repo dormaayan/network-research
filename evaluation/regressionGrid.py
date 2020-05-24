@@ -313,7 +313,7 @@ def main():
     scoring=('mae', 'mse'),
     return_train_score=False,
     verbose=1,
-    n_jobs=-1)
+    n_jobs=1)
 
   print(results)
 
