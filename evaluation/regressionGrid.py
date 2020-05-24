@@ -185,8 +185,8 @@ def load_all_data_dynamic(frame):
     return data_x, data_y, len(columns)
 
 
-def load_all_their_data(frame):
-    columns = ['isAssertionRoulette',
+def load_all_their_data(frame): #Now dynamic
+    columns = ['line_coverage', 'isAssertionRoulette',
        'isEagerTest', 'isLazyTest', 'isMysteryGuest',
        'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
        'isIndirectTesting', 'LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
@@ -314,7 +314,7 @@ def silent_evaluation(model, x_test, y_test):
 
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_data(frame) #load_meaningful_subset(frame)
+  data_x, data_y, number_of_features = load_all_their_data(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
