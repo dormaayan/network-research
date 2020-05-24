@@ -316,7 +316,7 @@ def main():
   scaler.fit(data_x)
   data_x = scaler.transform(data_x)
 
-  x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.10)
+  x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.30)
 
   print(x_train.shape)
 
@@ -333,7 +333,7 @@ def main():
   #early_stopping_monitor = keras.callbacks.EarlyStopping(patience=50,restore_best_weights=True)
 
 
-  history = model.fit(x_train, y_train, epochs=2000, verbose=1) #, callbacks=[early_stopping_monitor])
+  history = model.fit(x_train, y_train, epochs=300, verbose=1) #, callbacks=[early_stopping_monitor])
 
 
   test_loss, test_mae, test_mse = model.evaluate(x_test, y_test)
