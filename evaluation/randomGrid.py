@@ -244,7 +244,7 @@ def load_all_my_data(frame):
                'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
                'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
                'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
-               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod','LOC_prod', 'LOC_test']
 
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
