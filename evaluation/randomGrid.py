@@ -252,8 +252,8 @@ def load_all_my_data(frame):
                'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod',
                'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
                'No. Primitives' , 'No. Primitives_prod', 'Avg Depth Squared' , 'Avg Depth Squared_prod',
-                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod'
-               ]
+                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod',
+               'NOA_prod', 'NOPA_prod','NOA_test', 'NOPA_test']
 
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
