@@ -154,6 +154,22 @@ def load_all_data(frame):
     data_y = pd.concat([frame.mutation], axis = 1)
     return data_x, data_y, len(columns)
 
+
+def load_all_my_data(frame):
+    columns = ['No. Methods', 'Vocabulary', 'Word',
+               'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
+               'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+               'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
+               'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+
+    data_x = frame[columns].round(2)
+    data_y = pd.concat([frame.mutation], axis = 1)
+    return data_x, data_y, len(columns)
+
 def load_all_data_dynamic(frame):
     columns = ['line_coverage', 'isAssertionRoulette',
        'isEagerTest', 'isLazyTest', 'isMysteryGuest',
@@ -311,7 +327,7 @@ def get_scoring():
 
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_production_data_line_coverage(frame)
+  data_x, data_y, number_of_features = load_all_my_data(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
