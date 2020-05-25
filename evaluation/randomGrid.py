@@ -76,9 +76,13 @@ def load_frame():
          'No. Continue' : 'No. Continue_prod',
      'Avg Depth' : 'Avg Depth_prod', 'Dexterity' : 'Dexterity_prod',
     'No. Expressions' : 'No. Expressions_prod', 'No. Try' : 'No. Try_prod', 'No. Catch' : 'No. Catch_prod',
-     'No. Loop' : 'No. Loop_prod', 'No. Conditions' : 'No. Conditions_prod', 'No. Else' : 'No. Else_prod'}
-    
-    
+     'No. Loop' : 'No. Loop_prod', 'No. Conditions' : 'No. Conditions_prod', 'No. Else' : 'No. Else_prod',
+     'Strings' : 'Strings_prod', 'Numeric Literals':'Numeric Literals_prod',
+     'Comments' : 'Comments_prod', 'No. Field Access' : 'No. Field Access_prod',
+     'No. Primitives' : 'No. Primitives_prod', 'Avg Depth Squared' : 'Avg Depth Squared_prod',
+     'No. &&' : 'No. &&_prod',  'No. ||' : 'No. ||_prod', 'No. Ternary': 'No. Ternary_prod'}
+
+
     frame1 = pd.read_csv(CSV_PATH, sep=",")
     frame1 = frame1.sample(frac=1).reset_index(drop=True)
     frame1['TestClassName'] = frame1.apply(lambda row: label_rename1(row), axis=1)
@@ -244,7 +248,12 @@ def load_all_my_data(frame):
                'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
                'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
                'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
-               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod','LOC_prod', 'LOC_test']
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod','LOC_prod', 'LOC_test',
+               'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod',
+               'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
+               'No. Primitives' , 'No. Primitives_prod', 'Avg Depth Squared' , 'Avg Depth Squared_prod',
+                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod'
+               ]
 
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
