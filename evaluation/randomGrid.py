@@ -249,7 +249,7 @@ def load_all_my_data(frame):
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
     return data_x, data_y, len(columns)
-    
+
 
 
 def load_all_production_data(frame):
@@ -310,7 +310,7 @@ def import_frame(consider_coverage):
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 , dropout_rate=0.1, first_layer=40, second_layer=20):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(53,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(44,)))
     model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
