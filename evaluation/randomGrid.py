@@ -323,7 +323,7 @@ def import_frame(consider_coverage):
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 , dropout_rate=0.1, first_layer=40, second_layer=20):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(68,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(128,)))
     model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
