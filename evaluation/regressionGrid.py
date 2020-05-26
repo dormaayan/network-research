@@ -331,7 +331,7 @@ def get_scoring():
 
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_test_data(frame)
+  data_x, data_y, number_of_features = load_all_production_data(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
