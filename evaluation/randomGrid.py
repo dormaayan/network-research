@@ -426,4 +426,5 @@ def simpleGrid(consider_coverage, n_inner=10):
       '{:.3f}'.format(recall),
       '{:.3f}'.format(f1_score),
       '{:.3f}'.format(roc_auc),
-      '{:.3f}'.format(mae)]
+      '{:.3f}'.format(mae),
+      '{:.3f}'.format(brier)]
