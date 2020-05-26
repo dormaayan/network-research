@@ -83,7 +83,11 @@ def load_frame():
          'No. Continue' : 'No. Continue_prod',
      'Avg Depth' : 'Avg Depth_prod', 'Dexterity' : 'Dexterity_prod',
     'No. Expressions' : 'No. Expressions_prod', 'No. Try' : 'No. Try_prod', 'No. Catch' : 'No. Catch_prod',
-     'No. Loop' : 'No. Loop_prod', 'No. Conditions' : 'No. Conditions_prod', 'No. Else' : 'No. Else_prod'}
+     'No. Loop' : 'No. Loop_prod', 'No. Conditions' : 'No. Conditions_prod', 'No. Else' : 'No. Else_prod',
+     'Strings' : 'Strings_prod', 'Numeric Literals':'Numeric Literals_prod',
+     'Comments' : 'Comments_prod', 'No. Field Access' : 'No. Field Access_prod',
+     'No. Primitives' : 'No. Primitives_prod', 'Avg Depth Squared' : 'Avg Depth Squared_prod',
+     'No. &&' : 'No. &&_prod',  'No. ||' : 'No. ||_prod', 'No. Ternary': 'No. Ternary_prod'}
     
     
     frame1 = pd.read_csv(CSV_PATH, sep=",")
@@ -327,7 +331,7 @@ def get_scoring():
 
 def main():
   frame = load_frame()
-  data_x, data_y, number_of_features = load_all_my_data(frame)
+  data_x, data_y, number_of_features = load_all_test_data(frame)
   data_y = pd.concat([frame.mutation], axis = 1).round(2).values
   scaler = StandardScaler()
   scaler.fit(data_x)
