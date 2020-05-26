@@ -137,7 +137,7 @@ def load_all_data(frame):
        'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
        'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test',
        'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
-       'csm_LM', 'csm_FE', 'prod_readability', 'test_readability', 'No. Methods', 'Vocabulary', 'Word',
+       'csm_LM', 'csm_FE', 'prod_readability', 'test_readability','No. Methods', 'Vocabulary', 'Word',
                'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
                'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
                'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
@@ -145,7 +145,11 @@ def load_all_data(frame):
                'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
                'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
                'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
-               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod']
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod',
+               'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod',
+               'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
+               'No. Primitives' , 'No. Primitives_prod', 'Avg Depth Squared' , 'Avg Depth Squared_prod',
+                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod']
 
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
@@ -310,7 +314,7 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_my_data(frame)
+    return load_all_data(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
