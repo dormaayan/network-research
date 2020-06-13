@@ -61,10 +61,10 @@ def load_quartile(frame):
     return frame;
 
 def load_frame():
-    
+
     d = {'TestClassName' : 'ClassName',
          'Vocabulary' : 'Vocabulary_prod',
-         'Word' : 'Word_prod', 
+         'Word' : 'Word_prod',
          'Non Whithe Characters' : 'Non Whithe Characters_prod',
          'No. Methods' : 'No. Methods_prod',
          'Special' : 'Special_prod',
@@ -87,19 +87,19 @@ def load_frame():
     frame1 = frame1.sample(frac=1).reset_index(drop=True)
     frame1['TestClassName'] = frame1.apply(lambda row: label_rename1(row), axis=1)
     frame1['ClassName'] = frame1.apply(lambda row: label_rename2(row), axis=1)
-        
-    
+
+
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
-    
+
     frame3 = pd.read_csv(CSV_MINER_PATH, sep=',')
     frame3 = frame3.rename(columns = d)
     frame3 = frame3.drop(['Bad API', 'Junit', 'Hamcrest', 'Mockito', 'Nº','Project'], axis=1)
-    
-    
+
+
     frame = pd.merge(frame1, frame2, on='TestClassName')
-    
+
     frame = pd.merge(frame, frame3, on='ClassName')
-    
+
 
     frame = frame.drop(['project', 'module', 'path_test','test_name','path_src',
                         'commit', 'class_name'], axis=1)
@@ -318,7 +318,7 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_data_dynamic(frame)
+    return load_all_their_test_data(frame) #load_all_data_dynamic(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
