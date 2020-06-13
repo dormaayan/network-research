@@ -318,7 +318,7 @@ def get_scoring():
 def import_frame(consider_coverage):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_their_test_data(frame) #load_all_data_dynamic(frame)
+    return load_all_their_production_data(frame) #load_all_data_dynamic(frame)
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
