@@ -320,13 +320,13 @@ def get_scoring():
 def import_frame(consider_coverage, using_PCA):
     frame = load_frame()
     frame = load_quartile(frame)
-    data_x, data_y, columns, number_of_features = load_all_data(frame)
+    data_x, data_y, c, number_of_features = load_all_data(frame)
     print(data_x)
     print('%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%')
     if using_PCA:
         pca = PCA() #(n_components=number_of_features)
         principalComponents = pca.fit_transform(data_x)
-        data_x = pd.DataFrame(data = principalComponents, columns=columns)
+        data_x = pd.DataFrame(data = principalComponents, columns=c)
         print(data_x)
     return data_x, data_y, number_of_features
 
