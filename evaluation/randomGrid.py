@@ -18,6 +18,8 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
     mean_absolute_error, make_scorer, brier_score_loss, roc_curve
 
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.decomposition import PCA
+
 
 from sklearn.utils import shuffle
 from sklearn.svm import SVC
@@ -315,10 +317,21 @@ def get_scoring():
                 mean_absolute_error=make_scorer(mean_absolute_error),
                 brier_score=make_scorer(brier_score_loss))
 
-def import_frame(consider_coverage):
+def import_frame(consider_coverage, PCA):
     frame = load_frame()
     frame = load_quartile(frame)
-    return load_all_their_production_data(frame) #load_all_data_dynamic(frame)
+    data_x, data_y, number_of_features = load_all_data(frame)
+    print(data_x)
+    print('%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%')
+    if PCA:
+        pca = PCA(n_components=number_of_features)
+        data_x = pca.fit_transform(data_x)
+        print(data_x)
+        #principalDf = pd.DataFrame(data = principalComponents)
+    return data_x, data_y, number_of_features
+
+
+
     #if consider_coverage:
     #    return load_all_data_dynamic(frame)
     #return load_all_data(frame)
@@ -338,7 +351,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def simpleGrid(consider_coverage, n_inner=10):
+def simpleGrid(consider_coverage, n_inner=10, PCA=True):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -356,7 +369,7 @@ def simpleGrid(consider_coverage, n_inner=10):
     # Import the data
     print('Importing data')
 
-    data_x, data_y, number_of_features = import_frame(consider_coverage)
+    data_x, data_y, number_of_features = import_frame(consider_coverage, PCA)
 
     data_x = data_x.values
     data_y = data_y.values

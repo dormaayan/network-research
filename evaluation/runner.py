@@ -1,5 +1,5 @@
 import randomGrid
-import csv   
+import csv
 
 
 def main():
