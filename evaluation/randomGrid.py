@@ -155,7 +155,7 @@ def load_all_data(frame):
 
     data_x = frame[columns].round(2)
     data_y = pd.concat([frame.mutation], axis = 1)
-    return data_x, data_y, len(columns)
+    return data_x, data_y, columns, len(columns)
 
 
 def load_all_data_dynamic(frame):
@@ -320,14 +320,14 @@ def get_scoring():
 def import_frame(consider_coverage, using_PCA):
     frame = load_frame()
     frame = load_quartile(frame)
-    data_x, data_y, number_of_features = load_all_data(frame)
+    data_x, data_y, number_of_features, columns = load_all_data(frame)
     print(data_x)
     print('%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%')
     if using_PCA:
         pca = PCA(n_components=number_of_features)
-        data_x = pca.fit_transform(data_x)
+        principalComponents = pca.fit_transform(data_x)
+        data_x = pd.DataFrame(data = principalComponents, columns=columns)
         print(data_x)
-        #principalDf = pd.DataFrame(data = principalComponents)
     return data_x, data_y, number_of_features
 
 
