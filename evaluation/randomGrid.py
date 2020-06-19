@@ -317,13 +317,13 @@ def get_scoring():
                 mean_absolute_error=make_scorer(mean_absolute_error),
                 brier_score=make_scorer(brier_score_loss))
 
-def import_frame(consider_coverage, PCA):
+def import_frame(consider_coverage, using_PCA):
     frame = load_frame()
     frame = load_quartile(frame)
     data_x, data_y, number_of_features = load_all_data(frame)
     print(data_x)
     print('%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%')
-    if PCA:
+    if using_PCA:
         pca = PCA(n_components=number_of_features)
         data_x = pca.fit_transform(data_x)
         print(data_x)
@@ -351,7 +351,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def simpleGrid(consider_coverage, n_inner=10, PCA=True):
+def simpleGrid(consider_coverage, n_inner=10, using_PCA=True):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -369,7 +369,7 @@ def simpleGrid(consider_coverage, n_inner=10, PCA=True):
     # Import the data
     print('Importing data')
 
-    data_x, data_y, number_of_features = import_frame(consider_coverage, PCA)
+    data_x, data_y, number_of_features = import_frame(consider_coverage, using_PCA)
 
     data_x = data_x.values
     data_y = data_y.values
