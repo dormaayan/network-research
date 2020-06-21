@@ -371,7 +371,18 @@ def simplePCA(consider_coverage, n_inner=10, using_PCA=True):
     pca.fit(data_x)
     #data_x = pd.DataFrame(data = principalComponents, columns=c)
     df = pd.DataFrame(pca.components_, columns = c)
-    print(df)
+    #print(df)
+
+    df = df.round(3)
+
+    for i, j in df.iterrows():
+        if i<10:
+            print("Component {}".format(i))
+            print(j[abs(j) > 0.1])
+        #print(i, j)
+        #print()
+
+    print(pca.explained_variance_ratio_.round(2))
 
     df.to_csv(r'PCA.csv')
 
@@ -380,6 +391,7 @@ def simplePCA(consider_coverage, n_inner=10, using_PCA=True):
 
 def main():
 	s = simplePCA(consider_coverage=False)
+
 
 
 if __name__ == '__main__':
