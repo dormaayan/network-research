@@ -168,7 +168,9 @@ def load_all_data(frame):
                          'Avg Depth^2', 'Avg Depth^2_prod',
                         'Avg Depth^3', 'Avg Depth^3_prod',
 
-                'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+                'DegPerm',
+
+                 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
                'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
                'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
                'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
@@ -180,7 +182,7 @@ def load_all_data(frame):
                'No. Primitives' , 'No. Primitives_prod',
                 'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod']
 
-    data_x = frame[columns].round(2)
+    data_x = frame[columns]
     data_y = pd.concat([frame.mutation], axis = 1)
     return data_x, data_y, columns, len(columns)
 
@@ -393,6 +395,10 @@ def simplePCA(consider_coverage, n_inner=10, using_PCA=True):
     frame = load_quartile(frame)
     data_x, data_y, c, number_of_features = load_all_data(frame)
 
+    scaler = StandardScaler()
+    scaler.fit(data_x)
+    data_x = scaler.transform(data_x)
+    
     pca = PCA(n_components = 10) #(n_components=number_of_features)
     #principalComponents = pca.fit_transform(data_x)
     pca.fit(data_x)

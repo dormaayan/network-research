@@ -321,6 +321,11 @@ def import_frame(consider_coverage, using_PCA):
     frame = load_frame()
     frame = load_quartile(frame)
     data_x, data_y, c, number_of_features = load_all_data(frame)
+
+    scaler = StandardScaler()
+    scaler.fit(data_x)
+    data_x = scaler.transform(data_x)
+
     print(data_x)
     print('%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%$%')
     if using_PCA:
@@ -351,7 +356,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def simpleGrid(consider_coverage, n_inner=10, using_PCA=False):
+def simpleGrid(consider_coverage, n_inner=10, using_PCA=True):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
@@ -374,9 +379,6 @@ def simpleGrid(consider_coverage, n_inner=10, using_PCA=False):
     data_x = data_x.values
     data_y = data_y.values
 
-    scaler = StandardScaler()
-    scaler.fit(data_x)
-    data_x = scaler.transform(data_x)
 
     print('Import: DONE')
 
