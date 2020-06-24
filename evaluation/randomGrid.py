@@ -407,6 +407,9 @@ def simpleGrid(consider_coverage, n_inner=10, using_PCA=True):
 
     results.fit(data_x, data_y, callbacks=[early_stopping_monitor])
 
+    n_epochs = len(results.history['loss'])
+    print('^^^^^^^^^^^^ n_epochs: {} ^^^^^^^^^^'.format{results})
+
     print("-----------------------------")
     print(results.cv_results_.get('mean_test_accuracy'))
     print(max(results.cv_results_.get('mean_test_accuracy')))

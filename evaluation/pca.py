@@ -42,7 +42,7 @@ __license__ = "MIT"
 
 
 CSV_PATH = "../complete-frame.csv"
-CSV_MINER_PATH = "../testminereffectiveness.csv"
+CSV_MINER_PATH = "../testminereffectiveness-extended.csv"
 DATA_DIR = "results"
 
 
@@ -64,6 +64,8 @@ def load_quartile(frame):
 
 def load_frame():
 
+
+
     d = {'TestClassName' : 'ClassName',
          'Vocabulary' : 'Vocabulary_prod',
          'Word' : 'Word_prod',
@@ -72,10 +74,23 @@ def load_frame():
          'Special' : 'Special_prod',
      'No. Method Invoctions' : 'No. Method Invoctions_prod',
     'AST size' : 'AST size_prod', 'Max Depth' : 'Max Depth_prod',
-         'Deg2' : 'Deg2_prod',
+
+
+         'Deg' : 'Deg_prod',
+        'Deg^2' : 'Deg^2_prod',
+         'Deg^3' : 'Deg^3_prod',
+         'Deg^-1' : 'Deg^-1_prod',
+         'Deg^-2' : 'Deg^-2_prod',
+
+         'Decendent': 'Decendent_prod',
+
          'DegPerm' : 'DegPerm_prod',
          'No. Break' : 'No. Break_prod',
          'No. Continue' : 'No. Continue_prod',
+         'Avg Depth^(-2)' : 'Avg Depth^(-2)_prod',
+         'Avg Depth^(-1)' : 'Avg Depth^(-1)_prod',
+         'Avg Depth^2' : 'Avg Depth^2_prod',
+        'Avg Depth^3' : 'Avg Depth^3_prod',
      'Avg Depth' : 'Avg Depth_prod', 'Dexterity' : 'Dexterity_prod',
     'No. Expressions' : 'No. Expressions_prod', 'No. Try' : 'No. Try_prod', 'No. Catch' : 'No. Catch_prod',
      'No. Loop' : 'No. Loop_prod', 'No. Conditions' : 'No. Conditions_prod', 'No. Else' : 'No. Else_prod',
@@ -141,16 +156,28 @@ def load_all_data(frame):
        'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
        'csm_LM', 'csm_FE', 'prod_readability', 'test_readability','No. Methods', 'Vocabulary', 'Word',
                'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
-               'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+               'Avg Depth', 'Deg^2','Deg^3',
+               'Deg','Deg^-1','Deg^-2',
+
+                'Deg^2_prod','Deg^3_prod',
+                'Deg_prod','Deg^-1_prod','Deg^-2_prod',
+                'Decendent', 'Decendent_prod',
+
+                         'Avg Depth^(-2)', 'Avg Depth^(-2)_prod',
+                         'Avg Depth^(-1)', 'Avg Depth^(-1)_prod',
+                         'Avg Depth^2', 'Avg Depth^2_prod',
+                        'Avg Depth^3', 'Avg Depth^3_prod',
+
+                'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
                'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
                'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
                'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
-               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'DegPerm_prod', 'Dexterity_prod',
                'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
                'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod',
                'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod',
                'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
-               'No. Primitives' , 'No. Primitives_prod', 'Avg Depth Squared' , 'Avg Depth Squared_prod',
+               'No. Primitives' , 'No. Primitives_prod',
                 'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod']
 
     data_x = frame[columns].round(2)
@@ -366,7 +393,7 @@ def simplePCA(consider_coverage, n_inner=10, using_PCA=True):
     frame = load_quartile(frame)
     data_x, data_y, c, number_of_features = load_all_data(frame)
 
-    pca = PCA() #(n_components=number_of_features)
+    pca = PCA(n_components = 10) #(n_components=number_of_features)
     #principalComponents = pca.fit_transform(data_x)
     pca.fit(data_x)
     #data_x = pd.DataFrame(data = principalComponents, columns=c)
@@ -375,14 +402,12 @@ def simplePCA(consider_coverage, n_inner=10, using_PCA=True):
 
     df = df.round(3)
 
+    exp = pca.explained_variance_ratio_
     for i, j in df.iterrows():
-        if i<10:
-            print("Component {}".format(i))
-            print(j[abs(j) > 0.1])
-        #print(i, j)
-        #print()
+        print("Component {}, Explains {} of the variance".format(i,exp[i]))
+        print(j[abs(j) > 0.1])
+        print("--------------------------------")
 
-    print(pca.explained_variance_ratio_.round(2))
 
     df.to_csv(r'PCA.csv')
 
