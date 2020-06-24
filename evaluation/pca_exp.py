@@ -351,7 +351,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
                   metrics=['accuracy'])
     return model
 
-def simpleGrid(consider_coverage, n_inner=10, using_PCA=False):
+def simpleGrid(consider_coverage, n_inner=10, using_PCA=True):
     """
     Runs the entire process of classification and evaluation
     :param consider_coverage: to include or not the line coverage as a feature
