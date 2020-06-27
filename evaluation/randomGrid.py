@@ -36,14 +36,47 @@ matplotlib.use('Agg')
 
 
 
-__author__ = "Dor Ma'ayan"
-__email__ = "grano@ifi.uzh.ch"
-__license__ = "MIT"
-
-
 CSV_PATH = "../complete-frame.csv"
 CSV_MINER_PATH = "../testminereffectiveness.csv"
 DATA_DIR = "results"
+
+
+line_coverage = ['line_coverage']
+grano_test_data = ['isAssertionRoulette',
+   'isEagerTest', 'isLazyTest', 'isMysteryGuest',
+   'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
+   'isIndirectTesting','LOC_test',
+      'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
+      'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
+      'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
+      'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
+      'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test','test_readability']
+grano_production_data = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
+   'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
+   'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
+   'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
+   'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
+   'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod',
+   'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
+          'csm_LM', 'csm_FE', 'prod_readability']
+my_test_data = ['No. Methods', 'Vocabulary', 'Word',
+              'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
+              'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+              'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
+              'Junit', 'Hamcrest', 'Mockito']
+my_production_data = [ 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
+               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod',
+               'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod']
+
+
+
+               'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
+               'No. Primitives' , 'No. Primitives_prod', 'Avg Depth Squared' , 'Avg Depth Squared_prod',
+                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod'
+
 
 
 def label_rename1 (row):
