@@ -1,0 +1,1443 @@
+Apache Maven 3.3.9
+Maven home: /usr/share/maven
+Java version: 1.8.0_252, vendor: Private Build
+Java home: /usr/lib/jvm/java-8-openjdk-amd64/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "4.4.0-98-generic", arch: "amd64", family: "unix"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Reading global settings from /usr/share/maven/conf/settings.xml
+[DEBUG] Reading user settings from /home/dorma10/.m2/settings.xml
+[DEBUG] Reading global toolchains from /usr/share/maven/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /home/dorma10/.m2/toolchains.xml
+[DEBUG] Using local repository at /home/dorma10/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /home/dorma10/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-parent:pom:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache:apache:pom:18: (none)
+[DEBUG] Looking up lifecyle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-struts2:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-jsf2:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-codegen:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-maven-plugin:maven-plugin:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging maven-plugin from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-spring:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-examples:pom:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging pom from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-basic:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-advanced:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-cxf:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-spring:jar:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-struts2:war:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging war from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-struts2-cxf:war:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging war from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-jsf2:war:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging war from ClassRealm[plexus.core, parent: null]
+[DEBUG] Extension realms for project org.apache.empire-db:empire-db-example-vue:war:2.5.0: (none)
+[DEBUG] Looking up lifecyle mappings for packaging war from ClassRealm[plexus.core, parent: null]
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-struts2:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-jsf2:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-codegen:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-maven-plugin:maven-plugin:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-spring:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-basic:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-advanced:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-cxf:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-spring:jar:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-struts2:war:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-struts2-cxf:war:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-jsf2:war:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-example-vue:war:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-examples:pom:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ org.apache.empire-db:empire-db-parent:2.5.0, /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml, line 99, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.empire-db:empire-db-parent:pom:2.5.0
+[WARNING] 'profiles.profile[CI].plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.pitest:pitest-maven @ line 99, column 13
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apache Empire-db
+[INFO] Apache Empire-db Core
+[INFO] Apache Empire-db Struts2 Extension
+[INFO] Apache Empire-db Java Server Faces 2.x extensions
+[INFO] Apache Empire-db Code Generator
+[INFO] Apache Empire-db Maven Plugin
+[INFO] Apache Empire-db Spring JDBC Template
+[INFO] Apache Empire-db Examples
+[INFO] Apache Empire-db Basic Example
+[INFO] Apache Empire-db Advanced Example
+[INFO] Apache Empire-db CXF Example
+[INFO] Apache Empire-db Spring Example
+[INFO] Apache Empire-db Struts2 Example
+[INFO] Apache Empire-db Struts2/CXF Example
+[INFO] Apache Empire-db JSF2 Example
+[INFO] Apache Empire-db Vue.js Example
+[DEBUG] Resolving plugin version for org.pitest:pitest-maven
+[DEBUG] Could not find metadata org.pitest:pitest-maven/maven-metadata.xml in local (/home/dorma10/.m2/repository)
+[DEBUG] Skipped remote request for org.pitest:pitest-maven/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.pitest:pitest-maven to 1.5.2 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: org.apache.empire-db:empire-db-parent:pom:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-struts2:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-jsf2:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-codegen:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-maven-plugin:maven-plugin:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-spring:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-examples:pom:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-basic:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-advanced:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-cxf:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-spring:jar:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-struts2:war:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-struts2-cxf:war:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-jsf2:war:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Project: org.apache.empire-db:empire-db-example-vue:war:2.5.0
+[DEBUG] Tasks:   [org.pitest:pitest-maven:mutationCoverage]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Empire-db 2.5.0
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin version for org.pitest:pitest-maven
+[DEBUG] Could not find metadata org.pitest:pitest-maven/maven-metadata.xml in local (/home/dorma10/.m2/repository)
+[DEBUG] Skipped remote request for org.pitest:pitest-maven/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.pitest:pitest-maven to 1.5.2 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.apache.empire-db:empire-db-parent:2.5.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${additionalClasspathElements}</additionalClasspathElements>
+  <avoidCallsTo>${avoidCallsTo}</avoidCallsTo>
+  <classpathDependencyExcludes>${classpathDependencyExcludes}</classpathDependencyExcludes>
+  <coverageThreshold default-value="0">${coverageThreshold}</coverageThreshold>
+  <detectInlinedCode default-value="true">${detectInlinedCode}</detectInlinedCode>
+  <excludedClasses>${excludedClasses}</excludedClasses>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludedMethods>${excludedMethods}</excludedMethods>
+  <excludedRunners>${excludedRunners}</excludedRunners>
+  <excludedTestClasses>${excludedTestClasses}</excludedTestClasses>
+  <exportLineCoverage default-value="false">${exportLineCoverage}</exportLineCoverage>
+  <failWhenNoMutations default-value="true">${failWhenNoMutations}</failWhenNoMutations>
+  <features>${features}</features>
+  <fullMutationMatrix default-value="false">${fullMutationMatrix}</fullMutationMatrix>
+  <historyInputFile>${historyInputFile}</historyInputFile>
+  <historyOutputFile>${historyOutputFile}</historyOutputFile>
+  <includedGroups>${includedGroups}</includedGroups>
+  <includedTestMethods>${includedTestMethods}</includedTestMethods>
+  <maxDependencyDistance default-value="-1">${maxDependencyDistance}</maxDependencyDistance>
+  <maxMutationsPerClass default-value="-1">${maxMutationsPerClass}</maxMutationsPerClass>
+  <maxSurviving default-value="-1">${maxSurviving}</maxSurviving>
+  <mutateStaticInitializers default-value="false">${mutateStaticInitializers}</mutateStaticInitializers>
+  <mutationEngine default-value="gregor">${mutationEngine}</mutationEngine>
+  <mutationThreshold default-value="0">${mutationThreshold}</mutationThreshold>
+  <mutationUnitSize>${mutationUnitSize}</mutationUnitSize>
+  <mutators>${mutators}</mutators>
+  <outputFormats>${outputFormats}</outputFormats>
+  <parseSurefireConfig default-value="true"/>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <project>${project}</project>
+  <reportsDirectory default-value="${project.build.directory}/pit-reports">${reportsDirectory}</reportsDirectory>
+  <skip default-value="false">${skipPitest}</skip>
+  <skipFailingTests default-value="false"/>
+  <skipTests default-value="false"/>
+  <targetClasses>${targetClasses}</targetClasses>
+  <targetTests>${targetTests}</targetTests>
+  <testPlugin default-value="">${testPlugin}</testPlugin>
+  <threads default-value="1">${threads}</threads>
+  <timeoutConstant default-value="3000">${timeoutConstant}</timeoutConstant>
+  <timeoutFactor default-value="1.25">${timeoutFactor}</timeoutFactor>
+  <timestampedReports default-value="true">${timestampedReports}</timestampedReports>
+  <useClasspathJar default-value="false">${useClasspathJar}</useClasspathJar>
+  <useSlf4j default-value="false">${useSlf4j}</useSlf4j>
+  <verbose default-value="false">${verbose}</verbose>
+  <withHistory default-value="false">${withHistory}</withHistory>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=1, ConflictMarker.nodeCount=5, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=4, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=3, ConflictResolver.conflictItemCount=4, DefaultDependencyCollector.collectTime=9, DefaultDependencyCollector.transformTime=6}
+[DEBUG] org.apache.empire-db:empire-db-parent:pom:2.5.0
+[DEBUG]    junit:junit:jar:4.7:test
+[DEBUG]    org.mockito:mockito-core:jar:1.8.2:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]       org.objenesis:objenesis:jar:1.0:test
+[INFO] 
+[INFO] --- pitest-maven:1.5.2:mutationCoverage (default-cli) @ empire-db-parent ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=6, ConflictMarker.markTime=1, ConflictMarker.nodeCount=410, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=90, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=13, ConflictResolver.conflictItemCount=229, DefaultDependencyCollector.collectTime=356, DefaultDependencyCollector.transformTime=20}
+[DEBUG] org.pitest:pitest-maven:jar:1.5.2:
+[DEBUG]    org.pitest:pitest-entry:jar:1.5.2:compile
+[DEBUG]       org.pitest:pitest:jar:1.5.2:compile
+[DEBUG]    org.pitest:pitest-html-report:jar:1.5.2:compile
+[DEBUG]    org.pitest:pitest-aggregator:jar:1.5.2:compile
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.2.1:compile
+[DEBUG]    org.apache.maven.reporting:maven-reporting-api:jar:2.2.1:compile
+[DEBUG]       org.apache.maven.doxia:doxia-sink-api:jar:1.1:compile
+[DEBUG]       org.apache.maven.doxia:doxia-logging-api:jar:1.1:compile
+[DEBUG]    commons-collections:commons-collections:jar:3.2.2:compile
+[DEBUG]    commons-beanutils:commons-beanutils:jar:1.9.4:compile
+[DEBUG]       commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.3.0:compile
+[DEBUG]    org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3:compile
+[DEBUG]       org.apache.maven.doxia:doxia-core:jar:1.0:compile
+[DEBUG]       org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile
+[DEBUG]          org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile
+[DEBUG]          org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile
+[DEBUG]          org.apache.velocity:velocity:jar:1.5:compile
+[DEBUG]          org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile
+[DEBUG]          org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile
+[DEBUG]          org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile
+[DEBUG]          org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile
+[DEBUG]          org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile
+[DEBUG]       commons-validator:commons-validator:jar:1.2.0:compile
+[DEBUG]          commons-digester:commons-digester:jar:1.6:compile
+[DEBUG]          oro:oro:jar:2.0.8:compile
+[DEBUG]          xml-apis:xml-apis:jar:1.0.b2:compile
+[DEBUG]       org.apache.maven.shared:maven-doxia-tools:jar:1.0.2:compile
+[DEBUG]          commons-io:commons-io:jar:1.4:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.2.1:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.2.1:compile
+[DEBUG]          org.apache.maven:maven-repository-metadata:jar:2.2.1:compile
+[DEBUG]          backport-util-concurrent:backport-util-concurrent:jar:3.1:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.2.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-interpolation:jar:1.11:compile
+[DEBUG]       org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]          junit:junit:jar:3.8.1:compile
+[DEBUG]          classworlds:classworlds:jar:1.1-alpha-2:compile
+[DEBUG]    org.apache.maven.scm:maven-scm-api:jar:1.9.4:compile
+[DEBUG]    org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4:compile
+[DEBUG]    org.codehaus.groovy:groovy-all:jar:2.4.18:runtime
+[DEBUG]    org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4:compile
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4:runtime
+[DEBUG]          org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4:runtime
+[DEBUG]          org.netbeans.lib:cvsclient:jar:20060125:runtime
+[DEBUG]          ch.ethz.ganymed:ganymed-ssh2:jar:build210:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4:runtime
+[DEBUG]          commons-lang:commons-lang:jar:2.6:compile
+[DEBUG]          org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4:runtime
+[DEBUG]          org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4:runtime
+[DEBUG]          com.mks.api:mksapi-jar:jar:4.10.9049:runtime
+[DEBUG]       org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4:runtime
+[DEBUG]    org.apache.maven.surefire:surefire-booter:jar:2.17:compile
+[DEBUG]       org.apache.maven.surefire:surefire-api:jar:2.17:compile
+[DEBUG]    org.apache.maven.surefire:maven-surefire-common:jar:2.17:compile
+[DEBUG]       org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-core:jar:2.0.9:compile
+[DEBUG]          org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile
+[DEBUG]          org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile
+[DEBUG]          org.apache.maven:maven-monitor:jar:2.0.9:compile
+[DEBUG]       org.apache.commons:commons-lang3:jar:3.1:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.2.1:compile
+[DEBUG]    org.apache.maven:maven-toolchain:jar:2.2.1:compile
+[DEBUG]    org.slf4j:jul-to-slf4j:jar:1.7.12:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.12:compile
+[DEBUG]    uk.org.lidalia:sysout-over-slf4j:jar:1.0.2:compile
+[DEBUG] Created new class realm plugin>org.pitest:pitest-maven:1.5.2
+[DEBUG] Importing foreign packages into class realm plugin>org.pitest:pitest-maven:1.5.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.pitest:pitest-maven:1.5.2
+[DEBUG]   Included: org.pitest:pitest-maven:jar:1.5.2
+[DEBUG]   Included: org.pitest:pitest-entry:jar:1.5.2
+[DEBUG]   Included: org.pitest:pitest:jar:1.5.2
+[DEBUG]   Included: org.pitest:pitest-html-report:jar:1.5.2
+[DEBUG]   Included: org.pitest:pitest-aggregator:jar:1.5.2
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.2.1
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.1
+[DEBUG]   Included: org.apache.maven.doxia:doxia-logging-api:jar:1.1
+[DEBUG]   Included: commons-collections:commons-collections:jar:3.2.2
+[DEBUG]   Included: commons-beanutils:commons-beanutils:jar:1.9.4
+[DEBUG]   Included: commons-logging:commons-logging:jar:1.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.3.0
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3
+[DEBUG]   Included: org.apache.maven.doxia:doxia-core:jar:1.0
+[DEBUG]   Included: org.apache.maven.doxia:doxia-site-renderer:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7
+[DEBUG]   Included: org.codehaus.plexus:plexus-velocity:jar:1.1.7
+[DEBUG]   Included: org.apache.velocity:velocity:jar:1.5
+[DEBUG]   Included: org.apache.maven.doxia:doxia-decoration-model:jar:1.0
+[DEBUG]   Included: org.apache.maven.doxia:doxia-module-apt:jar:1.0
+[DEBUG]   Included: org.apache.maven.doxia:doxia-module-fml:jar:1.0
+[DEBUG]   Included: org.apache.maven.doxia:doxia-module-xdoc:jar:1.0
+[DEBUG]   Included: org.apache.maven.doxia:doxia-module-xhtml:jar:1.0
+[DEBUG]   Included: commons-validator:commons-validator:jar:1.2.0
+[DEBUG]   Included: commons-digester:commons-digester:jar:1.6
+[DEBUG]   Included: oro:oro:jar:2.0.8
+[DEBUG]   Included: xml-apis:xml-apis:jar:1.0.b2
+[DEBUG]   Included: org.apache.maven.shared:maven-doxia-tools:jar:1.0.2
+[DEBUG]   Included: commons-io:commons-io:jar:1.4
+[DEBUG]   Included: backport-util-concurrent:backport-util-concurrent:jar:3.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.11
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-api:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4
+[DEBUG]   Included: org.codehaus.groovy:groovy-all:jar:2.4.18
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4
+[DEBUG]   Included: org.netbeans.lib:cvsclient:jar:20060125
+[DEBUG]   Included: ch.ethz.ganymed:ganymed-ssh2:jar:build210
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4
+[DEBUG]   Included: commons-lang:commons-lang:jar:2.6
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4
+[DEBUG]   Included: com.mks.api:mksapi-jar:jar:4.10.9049
+[DEBUG]   Included: org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4
+[DEBUG]   Included: org.apache.maven.surefire:surefire-booter:jar:2.17
+[DEBUG]   Included: org.apache.maven.surefire:surefire-api:jar:2.17
+[DEBUG]   Included: org.apache.maven.surefire:maven-surefire-common:jar:2.17
+[DEBUG]   Included: org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.1
+[DEBUG]   Included: org.slf4j:jul-to-slf4j:jar:1.7.12
+[DEBUG]   Included: uk.org.lidalia:sysout-over-slf4j:jar:1.0.2
+[DEBUG] Configuring mojo org.pitest:pitest-maven:1.5.2:mutationCoverage from plugin realm ClassRealm[plugin>org.pitest:pitest-maven:1.5.2, parent: sun.misc.Launcher$AppClassLoader@7d4991ad]
+[DEBUG] Configuring mojo 'org.pitest:pitest-maven:1.5.2:mutationCoverage' with basic configurator -->
+[DEBUG]   (f) additionalClasspathElements = []
+[DEBUG]   (f) avoidCallsTo = []
+[DEBUG]   (f) classpathDependencyExcludes = []
+[DEBUG]   (f) coverageThreshold = 0
+[DEBUG]   (f) detectInlinedCode = true
+[DEBUG]   (f) excludedClasses = []
+[DEBUG]   (f) excludedGroups = []
+[DEBUG]   (f) excludedMethods = []
+[DEBUG]   (f) excludedRunners = []
+[DEBUG]   (f) excludedTestClasses = []
+[DEBUG]   (f) exportLineCoverage = false
+[DEBUG]   (f) failWhenNoMutations = true
+[DEBUG]   (f) features = []
+[DEBUG]   (s) fullMutationMatrix = false
+[DEBUG]   (f) includedGroups = []
+[DEBUG]   (f) includedTestMethods = []
+[DEBUG]   (f) maxDependencyDistance = -1
+[DEBUG]   (f) maxMutationsPerClass = -1
+[DEBUG]   (f) maxSurviving = -1
+[DEBUG]   (f) mutateStaticInitializers = false
+[DEBUG]   (f) mutationEngine = gregor
+[DEBUG]   (f) mutationThreshold = 0
+[DEBUG]   (f) mutators = []
+[DEBUG]   (f) outputFormats = [HTML]
+[DEBUG]   (f) parseSurefireConfig = true
+[DEBUG]   (f) pluginArtifactMap = {org.pitest:pitest-maven=org.pitest:pitest-maven:maven-plugin:1.5.2:, org.pitest:pitest-entry=org.pitest:pitest-entry:jar:1.5.2:compile, org.pitest:pitest=org.pitest:pitest:jar:1.5.2:compile, org.pitest:pitest-html-report=org.pitest:pitest-html-report:jar:1.5.2:compile, org.pitest:pitest-aggregator=org.pitest:pitest-aggregator:jar:1.5.2:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.2.1:compile, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:2.2.1:compile, org.apache.maven.doxia:doxia-sink-api=org.apache.maven.doxia:doxia-sink-api:jar:1.1:compile, org.apache.maven.doxia:doxia-logging-api=org.apache.maven.doxia:doxia-logging-api:jar:1.1:compile, commons-collections:commons-collections=commons-collections:commons-collections:jar:3.2.2:compile, commons-beanutils:commons-beanutils=commons-beanutils:commons-beanutils:jar:1.9.4:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.2:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:3.3.0:compile, org.apache.maven.reporting:maven-reporting-impl=org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3:compile, org.apache.maven.doxia:doxia-core=org.apache.maven.doxia:doxia-core:jar:1.0:compile, org.apache.maven.doxia:doxia-site-renderer=org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile, org.codehaus.plexus:plexus-i18n=org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile, org.codehaus.plexus:plexus-velocity=org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile, org.apache.velocity:velocity=org.apache.velocity:velocity:jar:1.5:compile, org.apache.maven.doxia:doxia-decoration-model=org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile, org.apache.maven.doxia:doxia-module-apt=org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile, org.apache.maven.doxia:doxia-module-fml=org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xdoc=org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xhtml=org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile, commons-validator:commons-validator=commons-validator:commons-validator:jar:1.2.0:compile, commons-digester:commons-digester=commons-digester:commons-digester:jar:1.6:compile, oro:oro=oro:oro:jar:2.0.8:compile, xml-apis:xml-apis=xml-apis:xml-apis:jar:1.0.b2:compile, org.apache.maven.shared:maven-doxia-tools=org.apache.maven.shared:maven-doxia-tools:jar:1.0.2:compile, commons-io:commons-io=commons-io:commons-io:jar:1.4:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.2.1:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.2.1:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.2.1:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.2.1:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.2.1:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.2.1:compile, backport-util-concurrent:backport-util-concurrent=backport-util-concurrent:backport-util-concurrent:jar:3.1:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.2.1:compile, org.codehaus.plexus:plexus-interpolation=org.codehaus.plexus:plexus-interpolation:jar:1.11:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, junit:junit=junit:junit:jar:3.8.1:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1-alpha-2:compile, org.apache.maven.scm:maven-scm-api=org.apache.maven.scm:maven-scm-api:jar:1.9.4:compile, org.apache.maven.scm:maven-scm-manager-plexus=org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4:compile, org.codehaus.groovy:groovy-all=org.codehaus.groovy:groovy-all:jar:2.4.18:runtime, org.apache.maven.scm:maven-scm-providers-standard=org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4:compile, org.apache.maven.scm:maven-scm-provider-accurev=org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-bazaar=org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-clearcase=org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsexe=org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvs-commons=org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsjava=org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4:runtime, org.netbeans.lib:cvsclient=org.netbeans.lib:cvsclient:jar:20060125:runtime, ch.ethz.ganymed:ganymed-ssh2=ch.ethz.ganymed:ganymed-ssh2:jar:build210:runtime, org.apache.maven.scm:maven-scm-provider-gitexe=org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4:runtime, commons-lang:commons-lang=commons-lang:commons-lang:jar:2.6:compile, org.apache.maven.scm:maven-scm-provider-git-commons=org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-hg=org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-perforce=org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-starteam=org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svnexe=org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svn-commons=org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-synergy=org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-vss=org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-tfs=org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-integrity=org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4:runtime, com.mks.api:mksapi-jar=com.mks.api:mksapi-jar:jar:4.10.9049:runtime, org.apache.maven.scm:maven-scm-provider-jazz=org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4:runtime, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.17:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.17:compile, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.17:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.0.9:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.0.9:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.1:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.2.1:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.2.1:compile, org.slf4j:jul-to-slf4j=org.slf4j:jul-to-slf4j:jar:1.7.12:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.12:compile, uk.org.lidalia:sysout-over-slf4j=uk.org.lidalia:sysout-over-slf4j:jar:1.0.2:compile}
+[DEBUG]   (f) project = MavenProject: org.apache.empire-db:empire-db-parent:2.5.0 @ /home/dorma10/lightweight-effectiveness/projects/empire-db/pom.xml
+[DEBUG]   (f) reportsDirectory = /home/dorma10/lightweight-effectiveness/projects/empire-db/target/pit-reports
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) skipFailingTests = false
+[DEBUG]   (f) skipTests = false
+[DEBUG]   (s) targetClasses = []
+[DEBUG]   (s) targetTests = []
+[DEBUG]   (f) threads = 1
+[DEBUG]   (f) timeoutConstant = 3000
+[DEBUG]   (f) timeoutFactor = 1.25
+[DEBUG]   (s) timestampedReports = true
+[DEBUG]   (f) useClasspathJar = false
+[DEBUG]   (f) useSlf4j = false
+[DEBUG]   (f) verbose = false
+[DEBUG]   (f) withHistory = false
+[DEBUG] -- end configuration --
+[INFO] Skipping project because:
+[INFO]   - Packaging is POM.
+[INFO]   - Project has no tests, it is empty.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Empire-db Core 2.5.0
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin version for org.pitest:pitest-maven
+[DEBUG] Could not find metadata org.pitest:pitest-maven/maven-metadata.xml in local (/home/dorma10/.m2/repository)
+[DEBUG] Skipped remote request for org.pitest:pitest-maven/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.pitest:pitest-maven to 1.5.2 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.apache.empire-db:empire-db:2.5.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${additionalClasspathElements}</additionalClasspathElements>
+  <avoidCallsTo>${avoidCallsTo}</avoidCallsTo>
+  <classpathDependencyExcludes>${classpathDependencyExcludes}</classpathDependencyExcludes>
+  <coverageThreshold default-value="0">${coverageThreshold}</coverageThreshold>
+  <detectInlinedCode default-value="true">${detectInlinedCode}</detectInlinedCode>
+  <excludedClasses>${excludedClasses}</excludedClasses>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludedMethods>${excludedMethods}</excludedMethods>
+  <excludedRunners>${excludedRunners}</excludedRunners>
+  <excludedTestClasses>${excludedTestClasses}</excludedTestClasses>
+  <exportLineCoverage default-value="false">${exportLineCoverage}</exportLineCoverage>
+  <failWhenNoMutations default-value="true">${failWhenNoMutations}</failWhenNoMutations>
+  <features>${features}</features>
+  <fullMutationMatrix default-value="false">${fullMutationMatrix}</fullMutationMatrix>
+  <historyInputFile>${historyInputFile}</historyInputFile>
+  <historyOutputFile>${historyOutputFile}</historyOutputFile>
+  <includedGroups>${includedGroups}</includedGroups>
+  <includedTestMethods>${includedTestMethods}</includedTestMethods>
+  <maxDependencyDistance default-value="-1">${maxDependencyDistance}</maxDependencyDistance>
+  <maxMutationsPerClass default-value="-1">${maxMutationsPerClass}</maxMutationsPerClass>
+  <maxSurviving default-value="-1">${maxSurviving}</maxSurviving>
+  <mutateStaticInitializers default-value="false">${mutateStaticInitializers}</mutateStaticInitializers>
+  <mutationEngine default-value="gregor">${mutationEngine}</mutationEngine>
+  <mutationThreshold default-value="0">${mutationThreshold}</mutationThreshold>
+  <mutationUnitSize>${mutationUnitSize}</mutationUnitSize>
+  <mutators>${mutators}</mutators>
+  <outputFormats>${outputFormats}</outputFormats>
+  <parseSurefireConfig default-value="true"/>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <project>${project}</project>
+  <reportsDirectory default-value="${project.build.directory}/pit-reports">${reportsDirectory}</reportsDirectory>
+  <skip default-value="false">${skipPitest}</skip>
+  <skipFailingTests default-value="false"/>
+  <skipTests default-value="false"/>
+  <targetClasses>${targetClasses}</targetClasses>
+  <targetTests>${targetTests}</targetTests>
+  <testPlugin default-value="">${testPlugin}</testPlugin>
+  <threads default-value="1">${threads}</threads>
+  <timeoutConstant default-value="3000">${timeoutConstant}</timeoutConstant>
+  <timeoutFactor default-value="1.25">${timeoutFactor}</timeoutFactor>
+  <timestampedReports default-value="true">${timestampedReports}</timestampedReports>
+  <useClasspathJar default-value="false">${useClasspathJar}</useClasspathJar>
+  <useSlf4j default-value="false">${useSlf4j}</useSlf4j>
+  <verbose default-value="false">${verbose}</verbose>
+  <withHistory default-value="false">${withHistory}</withHistory>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=18, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=15, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1, ConflictResolver.conflictItemCount=17, DefaultDependencyCollector.collectTime=28, DefaultDependencyCollector.transformTime=1}
+[DEBUG] org.apache.empire-db:empire-db:jar:2.5.0
+[DEBUG]    commons-beanutils:commons-beanutils:jar:1.9.3:compile
+[DEBUG]       commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       commons-collections:commons-collections:jar:3.2.2:compile
+[DEBUG]    org.slf4j:slf4j-api:jar:1.7.26:compile
+[DEBUG]    org.slf4j:slf4j-log4j12:jar:1.7.26:test
+[DEBUG]    log4j:log4j:jar:1.2.17:test
+[DEBUG]    org.xerial:sqlite-jdbc:jar:3.7.2:test
+[DEBUG]    hsqldb:hsqldb:jar:1.8.0.10:test
+[DEBUG]    com.h2database:h2:jar:1.3.148:test
+[DEBUG]    org.apache.derby:derby:jar:10.7.1.1:test
+[DEBUG]    commons-io:commons-io:jar:1.4:test
+[DEBUG]    junit:junit:jar:4.7:test
+[DEBUG]    org.mockito:mockito-core:jar:1.8.2:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]       org.objenesis:objenesis:jar:1.0:test
+[INFO] 
+[INFO] --- pitest-maven:1.5.2:mutationCoverage (default-cli) @ empire-db ---
+[DEBUG] Configuring mojo org.pitest:pitest-maven:1.5.2:mutationCoverage from plugin realm ClassRealm[plugin>org.pitest:pitest-maven:1.5.2, parent: sun.misc.Launcher$AppClassLoader@7d4991ad]
+[DEBUG] Configuring mojo 'org.pitest:pitest-maven:1.5.2:mutationCoverage' with basic configurator -->
+[DEBUG]   (f) additionalClasspathElements = []
+[DEBUG]   (f) avoidCallsTo = []
+[DEBUG]   (f) classpathDependencyExcludes = []
+[DEBUG]   (f) coverageThreshold = 0
+[DEBUG]   (f) detectInlinedCode = true
+[DEBUG]   (f) excludedClasses = []
+[DEBUG]   (f) excludedGroups = []
+[DEBUG]   (f) excludedMethods = []
+[DEBUG]   (f) excludedRunners = []
+[DEBUG]   (f) excludedTestClasses = []
+[DEBUG]   (f) exportLineCoverage = false
+[DEBUG]   (f) failWhenNoMutations = true
+[DEBUG]   (f) features = []
+[DEBUG]   (s) fullMutationMatrix = false
+[DEBUG]   (f) includedGroups = []
+[DEBUG]   (f) includedTestMethods = []
+[DEBUG]   (f) maxDependencyDistance = -1
+[DEBUG]   (f) maxMutationsPerClass = -1
+[DEBUG]   (f) maxSurviving = -1
+[DEBUG]   (f) mutateStaticInitializers = false
+[DEBUG]   (f) mutationEngine = gregor
+[DEBUG]   (f) mutationThreshold = 0
+[DEBUG]   (f) mutators = []
+[DEBUG]   (f) outputFormats = [HTML]
+[DEBUG]   (f) parseSurefireConfig = true
+[DEBUG]   (f) pluginArtifactMap = {org.pitest:pitest-maven=org.pitest:pitest-maven:maven-plugin:1.5.2:, org.pitest:pitest-entry=org.pitest:pitest-entry:jar:1.5.2:compile, org.pitest:pitest=org.pitest:pitest:jar:1.5.2:compile, org.pitest:pitest-html-report=org.pitest:pitest-html-report:jar:1.5.2:compile, org.pitest:pitest-aggregator=org.pitest:pitest-aggregator:jar:1.5.2:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.2.1:compile, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:2.2.1:compile, org.apache.maven.doxia:doxia-sink-api=org.apache.maven.doxia:doxia-sink-api:jar:1.1:compile, org.apache.maven.doxia:doxia-logging-api=org.apache.maven.doxia:doxia-logging-api:jar:1.1:compile, commons-collections:commons-collections=commons-collections:commons-collections:jar:3.2.2:compile, commons-beanutils:commons-beanutils=commons-beanutils:commons-beanutils:jar:1.9.4:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.2:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:3.3.0:compile, org.apache.maven.reporting:maven-reporting-impl=org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3:compile, org.apache.maven.doxia:doxia-core=org.apache.maven.doxia:doxia-core:jar:1.0:compile, org.apache.maven.doxia:doxia-site-renderer=org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile, org.codehaus.plexus:plexus-i18n=org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile, org.codehaus.plexus:plexus-velocity=org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile, org.apache.velocity:velocity=org.apache.velocity:velocity:jar:1.5:compile, org.apache.maven.doxia:doxia-decoration-model=org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile, org.apache.maven.doxia:doxia-module-apt=org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile, org.apache.maven.doxia:doxia-module-fml=org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xdoc=org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xhtml=org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile, commons-validator:commons-validator=commons-validator:commons-validator:jar:1.2.0:compile, commons-digester:commons-digester=commons-digester:commons-digester:jar:1.6:compile, oro:oro=oro:oro:jar:2.0.8:compile, xml-apis:xml-apis=xml-apis:xml-apis:jar:1.0.b2:compile, org.apache.maven.shared:maven-doxia-tools=org.apache.maven.shared:maven-doxia-tools:jar:1.0.2:compile, commons-io:commons-io=commons-io:commons-io:jar:1.4:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.2.1:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.2.1:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.2.1:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.2.1:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.2.1:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.2.1:compile, backport-util-concurrent:backport-util-concurrent=backport-util-concurrent:backport-util-concurrent:jar:3.1:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.2.1:compile, org.codehaus.plexus:plexus-interpolation=org.codehaus.plexus:plexus-interpolation:jar:1.11:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, junit:junit=junit:junit:jar:3.8.1:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1-alpha-2:compile, org.apache.maven.scm:maven-scm-api=org.apache.maven.scm:maven-scm-api:jar:1.9.4:compile, org.apache.maven.scm:maven-scm-manager-plexus=org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4:compile, org.codehaus.groovy:groovy-all=org.codehaus.groovy:groovy-all:jar:2.4.18:runtime, org.apache.maven.scm:maven-scm-providers-standard=org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4:compile, org.apache.maven.scm:maven-scm-provider-accurev=org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-bazaar=org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-clearcase=org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsexe=org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvs-commons=org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsjava=org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4:runtime, org.netbeans.lib:cvsclient=org.netbeans.lib:cvsclient:jar:20060125:runtime, ch.ethz.ganymed:ganymed-ssh2=ch.ethz.ganymed:ganymed-ssh2:jar:build210:runtime, org.apache.maven.scm:maven-scm-provider-gitexe=org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4:runtime, commons-lang:commons-lang=commons-lang:commons-lang:jar:2.6:compile, org.apache.maven.scm:maven-scm-provider-git-commons=org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-hg=org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-perforce=org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-starteam=org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svnexe=org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svn-commons=org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-synergy=org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-vss=org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-tfs=org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-integrity=org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4:runtime, com.mks.api:mksapi-jar=com.mks.api:mksapi-jar:jar:4.10.9049:runtime, org.apache.maven.scm:maven-scm-provider-jazz=org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4:runtime, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.17:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.17:compile, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.17:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.0.9:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.0.9:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.1:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.2.1:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.2.1:compile, org.slf4j:jul-to-slf4j=org.slf4j:jul-to-slf4j:jar:1.7.12:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.12:compile, uk.org.lidalia:sysout-over-slf4j=uk.org.lidalia:sysout-over-slf4j:jar:1.0.2:compile}
+[DEBUG]   (f) project = MavenProject: org.apache.empire-db:empire-db:2.5.0 @ /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db/pom.xml
+[DEBUG]   (f) reportsDirectory = /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db/target/pit-reports
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) skipFailingTests = false
+[DEBUG]   (f) skipTests = false
+[DEBUG]   (s) targetClasses = []
+[DEBUG]   (s) targetTests = []
+[DEBUG]   (f) threads = 1
+[DEBUG]   (f) timeoutConstant = 3000
+[DEBUG]   (f) timeoutFactor = 1.25
+[DEBUG]   (s) timestampedReports = true
+[DEBUG]   (f) useClasspathJar = false
+[DEBUG]   (f) useSlf4j = false
+[DEBUG]   (f) verbose = false
+[DEBUG]   (f) withHistory = false
+[DEBUG] -- end configuration --
+[INFO] Found plugin : Default csv report plugin
+[INFO] Found plugin : Default xml report plugin
+[INFO] Found plugin : Default html report plugin
+[INFO] Found plugin : Static initializer code detector plugin
+[INFO] Found plugin : Static initializer filter plugin
+[INFO] Found plugin : Excluded annotations plugin
+[INFO] Found plugin : Try with resources filter
+[INFO] Found plugin : Inlined finally block filter plugin
+[INFO] Found plugin : Implicit null check filter
+[INFO] Found plugin : Method reference null check filter
+[INFO] Found plugin : For each loop filter
+[INFO] Found plugin : Enum constructor filter
+[INFO] Found plugin : Logging calls filter
+[INFO] Found plugin : Infinite for loop filter
+[INFO] Found plugin : Long running iterator loop filter
+[INFO] Found plugin : For loop counter filter
+[INFO] Found plugin : Kotlin junk mutations filter
+[INFO] Found plugin : Max mutations per class limit
+[INFO] Found plugin : Equals shortcut equivalent mutant filter
+[INFO] Found plugin : Trivial return vals equivalence filter
+[INFO] Found plugin : Mutant export plugin
+[INFO] Found shared classpath plugin : Default mutation engine
+[INFO] Found shared classpath plugin : JUnit plugin
+[INFO] Found shared classpath plugin : TestNG plugin
+[INFO] Adding org.pitest:pitest to SUT classpath
+[INFO] Mutating from /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db/target/classes
+[INFO] Defaulting target classes to match packages in build directory
+[INFO] Defaulting target tests to match packages in test build directory
+12:44:31 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+12:44:31 PM PIT >> INFO : Sending 231 test classes to minion
+12:44:31 PM PIT >> INFO : Sent tests to minion
+12:44:31 PM PIT >> INFO : MINION : 12:44:31 PM PIT >> INFO : Checking environment
+
+12:44:32 PM PIT >> INFO : MINION : 12:44:32 PM PIT >> INFO : Found  103 tests
+
+12:44:32 PM PIT >> INFO : MINION : 12:44:32 PM PIT >> INFO : Dependency analysis reduced number of potential tests by 0
+
+12:44:32 PM PIT >> INFO : MINION : 12:44:32 PM PIT >> INFO : 103 tests received
+
+/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/12:44:33 PM PIT >> INFO : MINION : 12:44:33 PM PIT >> WARNING : More threads at end of test (6) testDerby(org.apache.empire.db.IntegerTest) than start. (4)
+
+-\|/-\|/-\|/-\|/-\|/-\|/-\12:44:33 PM PIT >> INFO : Calculated coverage in 2 seconds.
+12:44:37 PM PIT >> WARNING : Found more than one mutation similar on same line in a finally block. Can't correct for inlining.
+12:44:37 PM PIT >> WARNING : Found more than one mutation similar on same line in a finally block. Can't correct for inlining.
+12:44:37 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+12:44:37 PM PIT >> INFO : Created  133 mutation test units
+/-12:45:39 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:45:45 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:45:52 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:45:58 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:04 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:10 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:17 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:23 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:30 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+\|12:46:41 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:47 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:46:53 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:47:16 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:47:22 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:47:29 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:47:35 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+/12:47:45 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:47:56 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-\12:48:08 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:48:14 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:48:21 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+|/-12:48:33 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:48:40 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:48:46 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+\|/-\12:48:56 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+|/12:49:10 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:49:17 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:49:23 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-\|/-\|12:49:43 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+/-\|12:49:54 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:50:00 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+/12:50:09 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:50:15 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:50:22 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-12:50:28 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:50:34 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:50:40 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+\|/-\|/-\|/-\|/-12:50:52 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+\|/-\|/-\|/-\|/-\|/-\|/-\|/12:51:04 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:51:10 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+12:51:15 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-\|/-\|/-\|/-\|/12:51:25 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/12:51:35 PM PIT >> INFO : Completed in 424 seconds
+================================================================================
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.BooleanTrueReturnValsMutator
+>> Generated 276 Killed 36 (13%)
+> KILLED 33 SURVIVED 13 TIMED_OUT 3 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 227 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsMutator
+>> Generated 696 Killed 92 (13%)
+> KILLED 90 SURVIVED 8 TIMED_OUT 2 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 596 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 404 Killed 68 (17%)
+> KILLED 63 SURVIVED 39 TIMED_OUT 5 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 297 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+>> Generated 77 Killed 14 (18%)
+> KILLED 14 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 61 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
+>> Generated 1675 Killed 156 (9%)
+> KILLED 148 SURVIVED 820 TIMED_OUT 8 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 699 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NullReturnValsMutator
+>> Generated 576 Killed 103 (18%)
+> KILLED 102 SURVIVED 15 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 458 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutator
+>> Generated 2 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 2 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+>> Generated 104 Killed 15 (14%)
+> KILLED 12 SURVIVED 12 TIMED_OUT 3 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 77 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.BooleanFalseReturnValsMutator
+>> Generated 203 Killed 32 (16%)
+> KILLED 30 SURVIVED 15 TIMED_OUT 2 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 156 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+>> Generated 2187 Killed 530 (24%)
+> KILLED 513 SURVIVED 131 TIMED_OUT 17 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1526 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnsMutator
+>> Generated 117 Killed 36 (31%)
+> KILLED 35 SURVIVED 8 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 73 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> scan classpath : < 1 second
+> coverage and dependency analysis : 2 seconds
+> build mutation tests : 4 seconds
+> run mutation analysis : 6 minutes and 57 seconds
+--------------------------------------------------------------------------------
+> Total  : 7 minutes and 3 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Generated 6317 mutations Killed 1082 (17%)
+>> Ran 4843 tests (0.77 tests per mutation)
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Empire-db Struts2 Extension 2.5.0
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin version for org.pitest:pitest-maven
+[DEBUG] Could not find metadata org.pitest:pitest-maven/maven-metadata.xml in local (/home/dorma10/.m2/repository)
+[DEBUG] Skipped remote request for org.pitest:pitest-maven/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.pitest:pitest-maven to 1.5.2 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.apache.empire-db:empire-db-struts2:2.5.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${additionalClasspathElements}</additionalClasspathElements>
+  <avoidCallsTo>${avoidCallsTo}</avoidCallsTo>
+  <classpathDependencyExcludes>${classpathDependencyExcludes}</classpathDependencyExcludes>
+  <coverageThreshold default-value="0">${coverageThreshold}</coverageThreshold>
+  <detectInlinedCode default-value="true">${detectInlinedCode}</detectInlinedCode>
+  <excludedClasses>${excludedClasses}</excludedClasses>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludedMethods>${excludedMethods}</excludedMethods>
+  <excludedRunners>${excludedRunners}</excludedRunners>
+  <excludedTestClasses>${excludedTestClasses}</excludedTestClasses>
+  <exportLineCoverage default-value="false">${exportLineCoverage}</exportLineCoverage>
+  <failWhenNoMutations default-value="true">${failWhenNoMutations}</failWhenNoMutations>
+  <features>${features}</features>
+  <fullMutationMatrix default-value="false">${fullMutationMatrix}</fullMutationMatrix>
+  <historyInputFile>${historyInputFile}</historyInputFile>
+  <historyOutputFile>${historyOutputFile}</historyOutputFile>
+  <includedGroups>${includedGroups}</includedGroups>
+  <includedTestMethods>${includedTestMethods}</includedTestMethods>
+  <maxDependencyDistance default-value="-1">${maxDependencyDistance}</maxDependencyDistance>
+  <maxMutationsPerClass default-value="-1">${maxMutationsPerClass}</maxMutationsPerClass>
+  <maxSurviving default-value="-1">${maxSurviving}</maxSurviving>
+  <mutateStaticInitializers default-value="false">${mutateStaticInitializers}</mutateStaticInitializers>
+  <mutationEngine default-value="gregor">${mutationEngine}</mutationEngine>
+  <mutationThreshold default-value="0">${mutationThreshold}</mutationThreshold>
+  <mutationUnitSize>${mutationUnitSize}</mutationUnitSize>
+  <mutators>${mutators}</mutators>
+  <outputFormats>${outputFormats}</outputFormats>
+  <parseSurefireConfig default-value="true"/>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <project>${project}</project>
+  <reportsDirectory default-value="${project.build.directory}/pit-reports">${reportsDirectory}</reportsDirectory>
+  <skip default-value="false">${skipPitest}</skip>
+  <skipFailingTests default-value="false"/>
+  <skipTests default-value="false"/>
+  <targetClasses>${targetClasses}</targetClasses>
+  <targetTests>${targetTests}</targetTests>
+  <testPlugin default-value="">${testPlugin}</testPlugin>
+  <threads default-value="1">${threads}</threads>
+  <timeoutConstant default-value="3000">${timeoutConstant}</timeoutConstant>
+  <timeoutFactor default-value="1.25">${timeoutFactor}</timeoutFactor>
+  <timestampedReports default-value="true">${timestampedReports}</timestampedReports>
+  <useClasspathJar default-value="false">${useClasspathJar}</useClasspathJar>
+  <useSlf4j default-value="false">${useSlf4j}</useSlf4j>
+  <verbose default-value="false">${verbose}</verbose>
+  <withHistory default-value="false">${withHistory}</withHistory>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=25, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=20, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1, ConflictResolver.conflictItemCount=24, DefaultDependencyCollector.collectTime=26, DefaultDependencyCollector.transformTime=1}
+[DEBUG] org.apache.empire-db:empire-db-struts2:jar:2.5.0
+[DEBUG]    org.apache.empire-db:empire-db:jar:2.5.0:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.26:compile
+[DEBUG]    org.apache.struts:struts2-core:jar:2.2.1:compile
+[DEBUG]       org.freemarker:freemarker:jar:2.3.16:compile
+[DEBUG]       ognl:ognl:jar:3.0:compile
+[DEBUG]       commons-fileupload:commons-fileupload:jar:1.2.1:compile
+[DEBUG]       commons-io:commons-io:jar:1.3.2:compile
+[DEBUG]    org.apache.struts:struts2-portlet-plugin:jar:2.2.1:compile
+[DEBUG]    org.apache.struts.xwork:xwork-core:jar:2.2.1:compile
+[DEBUG]    javassist:javassist:jar:3.8.0.GA:compile
+[DEBUG]    javax.servlet:servlet-api:jar:2.5:provided
+[DEBUG]    javax.servlet.jsp:jsp-api:jar:2.0:provided
+[DEBUG]    javax.portlet:portlet-api:jar:1.0:provided
+[DEBUG]    commons-beanutils:commons-beanutils:jar:1.9.3:compile
+[DEBUG]       commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       commons-collections:commons-collections:jar:3.2.2:compile
+[DEBUG]    junit:junit:jar:4.7:test
+[DEBUG]    org.mockito:mockito-core:jar:1.8.2:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]       org.objenesis:objenesis:jar:1.0:test
+[INFO] 
+[INFO] --- pitest-maven:1.5.2:mutationCoverage (default-cli) @ empire-db-struts2 ---
+[DEBUG] Configuring mojo org.pitest:pitest-maven:1.5.2:mutationCoverage from plugin realm ClassRealm[plugin>org.pitest:pitest-maven:1.5.2, parent: sun.misc.Launcher$AppClassLoader@7d4991ad]
+[DEBUG] Configuring mojo 'org.pitest:pitest-maven:1.5.2:mutationCoverage' with basic configurator -->
+[DEBUG]   (f) additionalClasspathElements = []
+[DEBUG]   (f) avoidCallsTo = []
+[DEBUG]   (f) classpathDependencyExcludes = []
+[DEBUG]   (f) coverageThreshold = 0
+[DEBUG]   (f) detectInlinedCode = true
+[DEBUG]   (f) excludedClasses = []
+[DEBUG]   (f) excludedGroups = []
+[DEBUG]   (f) excludedMethods = []
+[DEBUG]   (f) excludedRunners = []
+[DEBUG]   (f) excludedTestClasses = []
+[DEBUG]   (f) exportLineCoverage = false
+[DEBUG]   (f) failWhenNoMutations = true
+[DEBUG]   (f) features = []
+[DEBUG]   (s) fullMutationMatrix = false
+[DEBUG]   (f) includedGroups = []
+[DEBUG]   (f) includedTestMethods = []
+[DEBUG]   (f) maxDependencyDistance = -1
+[DEBUG]   (f) maxMutationsPerClass = -1
+[DEBUG]   (f) maxSurviving = -1
+[DEBUG]   (f) mutateStaticInitializers = false
+[DEBUG]   (f) mutationEngine = gregor
+[DEBUG]   (f) mutationThreshold = 0
+[DEBUG]   (f) mutators = []
+[DEBUG]   (f) outputFormats = [HTML]
+[DEBUG]   (f) parseSurefireConfig = true
+[DEBUG]   (f) pluginArtifactMap = {org.pitest:pitest-maven=org.pitest:pitest-maven:maven-plugin:1.5.2:, org.pitest:pitest-entry=org.pitest:pitest-entry:jar:1.5.2:compile, org.pitest:pitest=org.pitest:pitest:jar:1.5.2:compile, org.pitest:pitest-html-report=org.pitest:pitest-html-report:jar:1.5.2:compile, org.pitest:pitest-aggregator=org.pitest:pitest-aggregator:jar:1.5.2:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.2.1:compile, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:2.2.1:compile, org.apache.maven.doxia:doxia-sink-api=org.apache.maven.doxia:doxia-sink-api:jar:1.1:compile, org.apache.maven.doxia:doxia-logging-api=org.apache.maven.doxia:doxia-logging-api:jar:1.1:compile, commons-collections:commons-collections=commons-collections:commons-collections:jar:3.2.2:compile, commons-beanutils:commons-beanutils=commons-beanutils:commons-beanutils:jar:1.9.4:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.2:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:3.3.0:compile, org.apache.maven.reporting:maven-reporting-impl=org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3:compile, org.apache.maven.doxia:doxia-core=org.apache.maven.doxia:doxia-core:jar:1.0:compile, org.apache.maven.doxia:doxia-site-renderer=org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile, org.codehaus.plexus:plexus-i18n=org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile, org.codehaus.plexus:plexus-velocity=org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile, org.apache.velocity:velocity=org.apache.velocity:velocity:jar:1.5:compile, org.apache.maven.doxia:doxia-decoration-model=org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile, org.apache.maven.doxia:doxia-module-apt=org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile, org.apache.maven.doxia:doxia-module-fml=org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xdoc=org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xhtml=org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile, commons-validator:commons-validator=commons-validator:commons-validator:jar:1.2.0:compile, commons-digester:commons-digester=commons-digester:commons-digester:jar:1.6:compile, oro:oro=oro:oro:jar:2.0.8:compile, xml-apis:xml-apis=xml-apis:xml-apis:jar:1.0.b2:compile, org.apache.maven.shared:maven-doxia-tools=org.apache.maven.shared:maven-doxia-tools:jar:1.0.2:compile, commons-io:commons-io=commons-io:commons-io:jar:1.4:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.2.1:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.2.1:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.2.1:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.2.1:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.2.1:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.2.1:compile, backport-util-concurrent:backport-util-concurrent=backport-util-concurrent:backport-util-concurrent:jar:3.1:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.2.1:compile, org.codehaus.plexus:plexus-interpolation=org.codehaus.plexus:plexus-interpolation:jar:1.11:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, junit:junit=junit:junit:jar:3.8.1:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1-alpha-2:compile, org.apache.maven.scm:maven-scm-api=org.apache.maven.scm:maven-scm-api:jar:1.9.4:compile, org.apache.maven.scm:maven-scm-manager-plexus=org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4:compile, org.codehaus.groovy:groovy-all=org.codehaus.groovy:groovy-all:jar:2.4.18:runtime, org.apache.maven.scm:maven-scm-providers-standard=org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4:compile, org.apache.maven.scm:maven-scm-provider-accurev=org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-bazaar=org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-clearcase=org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsexe=org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvs-commons=org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsjava=org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4:runtime, org.netbeans.lib:cvsclient=org.netbeans.lib:cvsclient:jar:20060125:runtime, ch.ethz.ganymed:ganymed-ssh2=ch.ethz.ganymed:ganymed-ssh2:jar:build210:runtime, org.apache.maven.scm:maven-scm-provider-gitexe=org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4:runtime, commons-lang:commons-lang=commons-lang:commons-lang:jar:2.6:compile, org.apache.maven.scm:maven-scm-provider-git-commons=org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-hg=org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-perforce=org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-starteam=org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svnexe=org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svn-commons=org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-synergy=org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-vss=org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-tfs=org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-integrity=org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4:runtime, com.mks.api:mksapi-jar=com.mks.api:mksapi-jar:jar:4.10.9049:runtime, org.apache.maven.scm:maven-scm-provider-jazz=org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4:runtime, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.17:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.17:compile, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.17:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.0.9:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.0.9:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.1:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.2.1:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.2.1:compile, org.slf4j:jul-to-slf4j=org.slf4j:jul-to-slf4j:jar:1.7.12:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.12:compile, uk.org.lidalia:sysout-over-slf4j=uk.org.lidalia:sysout-over-slf4j:jar:1.0.2:compile}
+[DEBUG]   (f) project = MavenProject: org.apache.empire-db:empire-db-struts2:2.5.0 @ /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-struts2/pom.xml
+[DEBUG]   (f) reportsDirectory = /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-struts2/target/pit-reports
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) skipFailingTests = false
+[DEBUG]   (f) skipTests = false
+[DEBUG]   (s) targetClasses = []
+[DEBUG]   (s) targetTests = []
+[DEBUG]   (f) threads = 1
+[DEBUG]   (f) timeoutConstant = 3000
+[DEBUG]   (f) timeoutFactor = 1.25
+[DEBUG]   (s) timestampedReports = true
+[DEBUG]   (f) useClasspathJar = false
+[DEBUG]   (f) useSlf4j = false
+[DEBUG]   (f) verbose = false
+[DEBUG]   (f) withHistory = false
+[DEBUG] -- end configuration --
+[INFO] Skipping project because:
+[INFO]   - Project has no tests, it is empty.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Empire-db Java Server Faces 2.x extensions 2.5.0
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin version for org.pitest:pitest-maven
+[DEBUG] Could not find metadata org.pitest:pitest-maven/maven-metadata.xml in local (/home/dorma10/.m2/repository)
+[DEBUG] Skipped remote request for org.pitest:pitest-maven/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.pitest:pitest-maven to 1.5.2 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.apache.empire-db:empire-db-jsf2:2.5.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${additionalClasspathElements}</additionalClasspathElements>
+  <avoidCallsTo>${avoidCallsTo}</avoidCallsTo>
+  <classpathDependencyExcludes>${classpathDependencyExcludes}</classpathDependencyExcludes>
+  <coverageThreshold default-value="0">${coverageThreshold}</coverageThreshold>
+  <detectInlinedCode default-value="true">${detectInlinedCode}</detectInlinedCode>
+  <excludedClasses>${excludedClasses}</excludedClasses>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludedMethods>${excludedMethods}</excludedMethods>
+  <excludedRunners>${excludedRunners}</excludedRunners>
+  <excludedTestClasses>${excludedTestClasses}</excludedTestClasses>
+  <exportLineCoverage default-value="false">${exportLineCoverage}</exportLineCoverage>
+  <failWhenNoMutations default-value="true">${failWhenNoMutations}</failWhenNoMutations>
+  <features>${features}</features>
+  <fullMutationMatrix default-value="false">${fullMutationMatrix}</fullMutationMatrix>
+  <historyInputFile>${historyInputFile}</historyInputFile>
+  <historyOutputFile>${historyOutputFile}</historyOutputFile>
+  <includedGroups>${includedGroups}</includedGroups>
+  <includedTestMethods>${includedTestMethods}</includedTestMethods>
+  <maxDependencyDistance default-value="-1">${maxDependencyDistance}</maxDependencyDistance>
+  <maxMutationsPerClass default-value="-1">${maxMutationsPerClass}</maxMutationsPerClass>
+  <maxSurviving default-value="-1">${maxSurviving}</maxSurviving>
+  <mutateStaticInitializers default-value="false">${mutateStaticInitializers}</mutateStaticInitializers>
+  <mutationEngine default-value="gregor">${mutationEngine}</mutationEngine>
+  <mutationThreshold default-value="0">${mutationThreshold}</mutationThreshold>
+  <mutationUnitSize>${mutationUnitSize}</mutationUnitSize>
+  <mutators>${mutators}</mutators>
+  <outputFormats>${outputFormats}</outputFormats>
+  <parseSurefireConfig default-value="true"/>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <project>${project}</project>
+  <reportsDirectory default-value="${project.build.directory}/pit-reports">${reportsDirectory}</reportsDirectory>
+  <skip default-value="false">${skipPitest}</skip>
+  <skipFailingTests default-value="false"/>
+  <skipTests default-value="false"/>
+  <targetClasses>${targetClasses}</targetClasses>
+  <targetTests>${targetTests}</targetTests>
+  <testPlugin default-value="">${testPlugin}</testPlugin>
+  <threads default-value="1">${threads}</threads>
+  <timeoutConstant default-value="3000">${timeoutConstant}</timeoutConstant>
+  <timeoutFactor default-value="1.25">${timeoutFactor}</timeoutFactor>
+  <timestampedReports default-value="true">${timestampedReports}</timestampedReports>
+  <useClasspathJar default-value="false">${useClasspathJar}</useClasspathJar>
+  <useSlf4j default-value="false">${useSlf4j}</useSlf4j>
+  <verbose default-value="false">${verbose}</verbose>
+  <withHistory default-value="false">${withHistory}</withHistory>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=28, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=20, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=0, ConflictResolver.conflictItemCount=21, DefaultDependencyCollector.collectTime=19, DefaultDependencyCollector.transformTime=0}
+[DEBUG] org.apache.empire-db:empire-db-jsf2:jar:2.5.0
+[DEBUG]    org.apache.empire-db:empire-db:jar:2.5.0:compile
+[DEBUG]       commons-beanutils:commons-beanutils:jar:1.9.3:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.26:compile
+[DEBUG]    javax.servlet:servlet-api:jar:2.5:provided
+[DEBUG]    com.sun.faces:jsf-api:jar:2.2.20:provided
+[DEBUG]    com.sun.faces:jsf-impl:jar:2.2.20:provided
+[DEBUG]    org.apache.myfaces.core:myfaces-impl:jar:2.2.12:provided
+[DEBUG]       org.apache.myfaces.core:myfaces-api:jar:2.2.12:provided
+[DEBUG]          org.apache.geronimo.specs:geronimo-atinject_1.0_spec:jar:1.0:provided
+[DEBUG]       commons-collections:commons-collections:jar:3.2.2:compile
+[DEBUG]       commons-digester:commons-digester:jar:1.8:provided
+[DEBUG]    javax.el:javax.el-api:jar:3.0.0:provided
+[DEBUG]    junit:junit:jar:4.7:test
+[DEBUG]    org.mockito:mockito-core:jar:1.8.2:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]       org.objenesis:objenesis:jar:1.0:test
+[INFO] 
+[INFO] --- pitest-maven:1.5.2:mutationCoverage (default-cli) @ empire-db-jsf2 ---
+[DEBUG] Configuring mojo org.pitest:pitest-maven:1.5.2:mutationCoverage from plugin realm ClassRealm[plugin>org.pitest:pitest-maven:1.5.2, parent: sun.misc.Launcher$AppClassLoader@7d4991ad]
+[DEBUG] Configuring mojo 'org.pitest:pitest-maven:1.5.2:mutationCoverage' with basic configurator -->
+[DEBUG]   (f) additionalClasspathElements = []
+[DEBUG]   (f) avoidCallsTo = []
+[DEBUG]   (f) classpathDependencyExcludes = []
+[DEBUG]   (f) coverageThreshold = 0
+[DEBUG]   (f) detectInlinedCode = true
+[DEBUG]   (f) excludedClasses = []
+[DEBUG]   (f) excludedGroups = []
+[DEBUG]   (f) excludedMethods = []
+[DEBUG]   (f) excludedRunners = []
+[DEBUG]   (f) excludedTestClasses = []
+[DEBUG]   (f) exportLineCoverage = false
+[DEBUG]   (f) failWhenNoMutations = true
+[DEBUG]   (f) features = []
+[DEBUG]   (s) fullMutationMatrix = false
+[DEBUG]   (f) includedGroups = []
+[DEBUG]   (f) includedTestMethods = []
+[DEBUG]   (f) maxDependencyDistance = -1
+[DEBUG]   (f) maxMutationsPerClass = -1
+[DEBUG]   (f) maxSurviving = -1
+[DEBUG]   (f) mutateStaticInitializers = false
+[DEBUG]   (f) mutationEngine = gregor
+[DEBUG]   (f) mutationThreshold = 0
+[DEBUG]   (f) mutators = []
+[DEBUG]   (f) outputFormats = [HTML]
+[DEBUG]   (f) parseSurefireConfig = true
+[DEBUG]   (f) pluginArtifactMap = {org.pitest:pitest-maven=org.pitest:pitest-maven:maven-plugin:1.5.2:, org.pitest:pitest-entry=org.pitest:pitest-entry:jar:1.5.2:compile, org.pitest:pitest=org.pitest:pitest:jar:1.5.2:compile, org.pitest:pitest-html-report=org.pitest:pitest-html-report:jar:1.5.2:compile, org.pitest:pitest-aggregator=org.pitest:pitest-aggregator:jar:1.5.2:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.2.1:compile, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:2.2.1:compile, org.apache.maven.doxia:doxia-sink-api=org.apache.maven.doxia:doxia-sink-api:jar:1.1:compile, org.apache.maven.doxia:doxia-logging-api=org.apache.maven.doxia:doxia-logging-api:jar:1.1:compile, commons-collections:commons-collections=commons-collections:commons-collections:jar:3.2.2:compile, commons-beanutils:commons-beanutils=commons-beanutils:commons-beanutils:jar:1.9.4:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.2:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:3.3.0:compile, org.apache.maven.reporting:maven-reporting-impl=org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3:compile, org.apache.maven.doxia:doxia-core=org.apache.maven.doxia:doxia-core:jar:1.0:compile, org.apache.maven.doxia:doxia-site-renderer=org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile, org.codehaus.plexus:plexus-i18n=org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile, org.codehaus.plexus:plexus-velocity=org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile, org.apache.velocity:velocity=org.apache.velocity:velocity:jar:1.5:compile, org.apache.maven.doxia:doxia-decoration-model=org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile, org.apache.maven.doxia:doxia-module-apt=org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile, org.apache.maven.doxia:doxia-module-fml=org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xdoc=org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xhtml=org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile, commons-validator:commons-validator=commons-validator:commons-validator:jar:1.2.0:compile, commons-digester:commons-digester=commons-digester:commons-digester:jar:1.6:compile, oro:oro=oro:oro:jar:2.0.8:compile, xml-apis:xml-apis=xml-apis:xml-apis:jar:1.0.b2:compile, org.apache.maven.shared:maven-doxia-tools=org.apache.maven.shared:maven-doxia-tools:jar:1.0.2:compile, commons-io:commons-io=commons-io:commons-io:jar:1.4:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.2.1:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.2.1:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.2.1:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.2.1:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.2.1:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.2.1:compile, backport-util-concurrent:backport-util-concurrent=backport-util-concurrent:backport-util-concurrent:jar:3.1:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.2.1:compile, org.codehaus.plexus:plexus-interpolation=org.codehaus.plexus:plexus-interpolation:jar:1.11:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, junit:junit=junit:junit:jar:3.8.1:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1-alpha-2:compile, org.apache.maven.scm:maven-scm-api=org.apache.maven.scm:maven-scm-api:jar:1.9.4:compile, org.apache.maven.scm:maven-scm-manager-plexus=org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4:compile, org.codehaus.groovy:groovy-all=org.codehaus.groovy:groovy-all:jar:2.4.18:runtime, org.apache.maven.scm:maven-scm-providers-standard=org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4:compile, org.apache.maven.scm:maven-scm-provider-accurev=org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-bazaar=org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-clearcase=org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsexe=org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvs-commons=org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsjava=org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4:runtime, org.netbeans.lib:cvsclient=org.netbeans.lib:cvsclient:jar:20060125:runtime, ch.ethz.ganymed:ganymed-ssh2=ch.ethz.ganymed:ganymed-ssh2:jar:build210:runtime, org.apache.maven.scm:maven-scm-provider-gitexe=org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4:runtime, commons-lang:commons-lang=commons-lang:commons-lang:jar:2.6:compile, org.apache.maven.scm:maven-scm-provider-git-commons=org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-hg=org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-perforce=org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-starteam=org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svnexe=org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svn-commons=org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-synergy=org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-vss=org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-tfs=org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-integrity=org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4:runtime, com.mks.api:mksapi-jar=com.mks.api:mksapi-jar:jar:4.10.9049:runtime, org.apache.maven.scm:maven-scm-provider-jazz=org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4:runtime, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.17:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.17:compile, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.17:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.0.9:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.0.9:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.1:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.2.1:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.2.1:compile, org.slf4j:jul-to-slf4j=org.slf4j:jul-to-slf4j:jar:1.7.12:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.12:compile, uk.org.lidalia:sysout-over-slf4j=uk.org.lidalia:sysout-over-slf4j:jar:1.0.2:compile}
+[DEBUG]   (f) project = MavenProject: org.apache.empire-db:empire-db-jsf2:2.5.0 @ /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-jsf2/pom.xml
+[DEBUG]   (f) reportsDirectory = /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-jsf2/target/pit-reports
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) skipFailingTests = false
+[DEBUG]   (f) skipTests = false
+[DEBUG]   (s) targetClasses = []
+[DEBUG]   (s) targetTests = []
+[DEBUG]   (f) threads = 1
+[DEBUG]   (f) timeoutConstant = 3000
+[DEBUG]   (f) timeoutFactor = 1.25
+[DEBUG]   (s) timestampedReports = true
+[DEBUG]   (f) useClasspathJar = false
+[DEBUG]   (f) useSlf4j = false
+[DEBUG]   (f) verbose = false
+[DEBUG]   (f) withHistory = false
+[DEBUG] -- end configuration --
+[INFO] Skipping project because:
+[INFO]   - Project has no tests, it is empty.
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Apache Empire-db Code Generator 2.5.0
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Resolving plugin version for org.pitest:pitest-maven
+[DEBUG] Could not find metadata org.pitest:pitest-maven/maven-metadata.xml in local (/home/dorma10/.m2/repository)
+[DEBUG] Skipped remote request for org.pitest:pitest-maven/maven-metadata.xml, locally cached metadata up-to-date.
+[DEBUG] Resolved plugin version for org.pitest:pitest-maven to 1.5.2 from repository central (https://repo.maven.apache.org/maven2, default, releases)
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.apache.empire-db:empire-db-codegen:2.5.0
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [test]
+[DEBUG] Repositories (dependencies): [apache.snapshots (https://repository.apache.org/snapshots, default, snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${additionalClasspathElements}</additionalClasspathElements>
+  <avoidCallsTo>${avoidCallsTo}</avoidCallsTo>
+  <classpathDependencyExcludes>${classpathDependencyExcludes}</classpathDependencyExcludes>
+  <coverageThreshold default-value="0">${coverageThreshold}</coverageThreshold>
+  <detectInlinedCode default-value="true">${detectInlinedCode}</detectInlinedCode>
+  <excludedClasses>${excludedClasses}</excludedClasses>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludedMethods>${excludedMethods}</excludedMethods>
+  <excludedRunners>${excludedRunners}</excludedRunners>
+  <excludedTestClasses>${excludedTestClasses}</excludedTestClasses>
+  <exportLineCoverage default-value="false">${exportLineCoverage}</exportLineCoverage>
+  <failWhenNoMutations default-value="true">${failWhenNoMutations}</failWhenNoMutations>
+  <features>${features}</features>
+  <fullMutationMatrix default-value="false">${fullMutationMatrix}</fullMutationMatrix>
+  <historyInputFile>${historyInputFile}</historyInputFile>
+  <historyOutputFile>${historyOutputFile}</historyOutputFile>
+  <includedGroups>${includedGroups}</includedGroups>
+  <includedTestMethods>${includedTestMethods}</includedTestMethods>
+  <maxDependencyDistance default-value="-1">${maxDependencyDistance}</maxDependencyDistance>
+  <maxMutationsPerClass default-value="-1">${maxMutationsPerClass}</maxMutationsPerClass>
+  <maxSurviving default-value="-1">${maxSurviving}</maxSurviving>
+  <mutateStaticInitializers default-value="false">${mutateStaticInitializers}</mutateStaticInitializers>
+  <mutationEngine default-value="gregor">${mutationEngine}</mutationEngine>
+  <mutationThreshold default-value="0">${mutationThreshold}</mutationThreshold>
+  <mutationUnitSize>${mutationUnitSize}</mutationUnitSize>
+  <mutators>${mutators}</mutators>
+  <outputFormats>${outputFormats}</outputFormats>
+  <parseSurefireConfig default-value="true"/>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <project>${project}</project>
+  <reportsDirectory default-value="${project.build.directory}/pit-reports">${reportsDirectory}</reportsDirectory>
+  <skip default-value="false">${skipPitest}</skip>
+  <skipFailingTests default-value="false"/>
+  <skipTests default-value="false"/>
+  <targetClasses>${targetClasses}</targetClasses>
+  <targetTests>${targetTests}</targetTests>
+  <testPlugin default-value="">${testPlugin}</testPlugin>
+  <threads default-value="1">${threads}</threads>
+  <timeoutConstant default-value="3000">${timeoutConstant}</timeoutConstant>
+  <timeoutFactor default-value="1.25">${timeoutFactor}</timeoutFactor>
+  <timestampedReports default-value="true">${timestampedReports}</timestampedReports>
+  <useClasspathJar default-value="false">${useClasspathJar}</useClasspathJar>
+  <useSlf4j default-value="false">${useSlf4j}</useSlf4j>
+  <verbose default-value="false">${verbose}</verbose>
+  <withHistory default-value="false">${withHistory}</withHistory>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=17, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=14, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=0, ConflictResolver.conflictItemCount=16, DefaultDependencyCollector.collectTime=5, DefaultDependencyCollector.transformTime=0}
+[DEBUG] org.apache.empire-db:empire-db-codegen:jar:2.5.0
+[DEBUG]    org.apache.empire-db:empire-db:jar:2.5.0:compile
+[DEBUG]       commons-beanutils:commons-beanutils:jar:1.9.3:compile
+[DEBUG]          commons-logging:commons-logging:jar:1.2:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.26:compile
+[DEBUG]    org.apache.velocity:velocity:jar:1.7:compile
+[DEBUG]       commons-collections:commons-collections:jar:3.2.1:compile
+[DEBUG]       commons-lang:commons-lang:jar:2.4:compile
+[DEBUG]    org.slf4j:slf4j-log4j12:jar:1.7.26:compile
+[DEBUG]       log4j:log4j:jar:1.2.17:compile
+[DEBUG]    hsqldb:hsqldb:jar:1.8.0.10:test
+[DEBUG]    junit:junit:jar:4.7:test
+[DEBUG]    org.mockito:mockito-core:jar:1.8.2:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.1:test
+[DEBUG]       org.objenesis:objenesis:jar:1.0:test
+[INFO] 
+[INFO] --- pitest-maven:1.5.2:mutationCoverage (default-cli) @ empire-db-codegen ---
+[DEBUG] Configuring mojo org.pitest:pitest-maven:1.5.2:mutationCoverage from plugin realm ClassRealm[plugin>org.pitest:pitest-maven:1.5.2, parent: sun.misc.Launcher$AppClassLoader@7d4991ad]
+[DEBUG] Configuring mojo 'org.pitest:pitest-maven:1.5.2:mutationCoverage' with basic configurator -->
+[DEBUG]   (f) additionalClasspathElements = []
+[DEBUG]   (f) avoidCallsTo = []
+[DEBUG]   (f) classpathDependencyExcludes = []
+[DEBUG]   (f) coverageThreshold = 0
+[DEBUG]   (f) detectInlinedCode = true
+[DEBUG]   (f) excludedClasses = []
+[DEBUG]   (f) excludedGroups = []
+[DEBUG]   (f) excludedMethods = []
+[DEBUG]   (f) excludedRunners = []
+[DEBUG]   (f) excludedTestClasses = []
+[DEBUG]   (f) exportLineCoverage = false
+[DEBUG]   (f) failWhenNoMutations = true
+[DEBUG]   (f) features = []
+[DEBUG]   (s) fullMutationMatrix = false
+[DEBUG]   (f) includedGroups = []
+[DEBUG]   (f) includedTestMethods = []
+[DEBUG]   (f) maxDependencyDistance = -1
+[DEBUG]   (f) maxMutationsPerClass = -1
+[DEBUG]   (f) maxSurviving = -1
+[DEBUG]   (f) mutateStaticInitializers = false
+[DEBUG]   (f) mutationEngine = gregor
+[DEBUG]   (f) mutationThreshold = 0
+[DEBUG]   (f) mutators = []
+[DEBUG]   (f) outputFormats = [HTML]
+[DEBUG]   (f) parseSurefireConfig = true
+[DEBUG]   (f) pluginArtifactMap = {org.pitest:pitest-maven=org.pitest:pitest-maven:maven-plugin:1.5.2:, org.pitest:pitest-entry=org.pitest:pitest-entry:jar:1.5.2:compile, org.pitest:pitest=org.pitest:pitest:jar:1.5.2:compile, org.pitest:pitest-html-report=org.pitest:pitest-html-report:jar:1.5.2:compile, org.pitest:pitest-aggregator=org.pitest:pitest-aggregator:jar:1.5.2:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.2.1:compile, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:2.2.1:compile, org.apache.maven.doxia:doxia-sink-api=org.apache.maven.doxia:doxia-sink-api:jar:1.1:compile, org.apache.maven.doxia:doxia-logging-api=org.apache.maven.doxia:doxia-logging-api:jar:1.1:compile, commons-collections:commons-collections=commons-collections:commons-collections:jar:3.2.2:compile, commons-beanutils:commons-beanutils=commons-beanutils:commons-beanutils:jar:1.9.4:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.2:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:3.3.0:compile, org.apache.maven.reporting:maven-reporting-impl=org.apache.maven.reporting:maven-reporting-impl:jar:2.0.4.3:compile, org.apache.maven.doxia:doxia-core=org.apache.maven.doxia:doxia-core:jar:1.0:compile, org.apache.maven.doxia:doxia-site-renderer=org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile, org.codehaus.plexus:plexus-i18n=org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile, org.codehaus.plexus:plexus-velocity=org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile, org.apache.velocity:velocity=org.apache.velocity:velocity:jar:1.5:compile, org.apache.maven.doxia:doxia-decoration-model=org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile, org.apache.maven.doxia:doxia-module-apt=org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile, org.apache.maven.doxia:doxia-module-fml=org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xdoc=org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile, org.apache.maven.doxia:doxia-module-xhtml=org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile, commons-validator:commons-validator=commons-validator:commons-validator:jar:1.2.0:compile, commons-digester:commons-digester=commons-digester:commons-digester:jar:1.6:compile, oro:oro=oro:oro:jar:2.0.8:compile, xml-apis:xml-apis=xml-apis:xml-apis:jar:1.0.b2:compile, org.apache.maven.shared:maven-doxia-tools=org.apache.maven.shared:maven-doxia-tools:jar:1.0.2:compile, commons-io:commons-io=commons-io:commons-io:jar:1.4:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.2.1:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.2.1:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.2.1:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.2.1:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.2.1:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.2.1:compile, backport-util-concurrent:backport-util-concurrent=backport-util-concurrent:backport-util-concurrent:jar:3.1:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.2.1:compile, org.codehaus.plexus:plexus-interpolation=org.codehaus.plexus:plexus-interpolation:jar:1.11:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, junit:junit=junit:junit:jar:3.8.1:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1-alpha-2:compile, org.apache.maven.scm:maven-scm-api=org.apache.maven.scm:maven-scm-api:jar:1.9.4:compile, org.apache.maven.scm:maven-scm-manager-plexus=org.apache.maven.scm:maven-scm-manager-plexus:jar:1.9.4:compile, org.codehaus.groovy:groovy-all=org.codehaus.groovy:groovy-all:jar:2.4.18:runtime, org.apache.maven.scm:maven-scm-providers-standard=org.apache.maven.scm:maven-scm-providers-standard:pom:1.9.4:compile, org.apache.maven.scm:maven-scm-provider-accurev=org.apache.maven.scm:maven-scm-provider-accurev:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-bazaar=org.apache.maven.scm:maven-scm-provider-bazaar:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-clearcase=org.apache.maven.scm:maven-scm-provider-clearcase:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsexe=org.apache.maven.scm:maven-scm-provider-cvsexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvs-commons=org.apache.maven.scm:maven-scm-provider-cvs-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-cvsjava=org.apache.maven.scm:maven-scm-provider-cvsjava:jar:1.9.4:runtime, org.netbeans.lib:cvsclient=org.netbeans.lib:cvsclient:jar:20060125:runtime, ch.ethz.ganymed:ganymed-ssh2=ch.ethz.ganymed:ganymed-ssh2:jar:build210:runtime, org.apache.maven.scm:maven-scm-provider-gitexe=org.apache.maven.scm:maven-scm-provider-gitexe:jar:1.9.4:runtime, commons-lang:commons-lang=commons-lang:commons-lang:jar:2.6:compile, org.apache.maven.scm:maven-scm-provider-git-commons=org.apache.maven.scm:maven-scm-provider-git-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-hg=org.apache.maven.scm:maven-scm-provider-hg:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-perforce=org.apache.maven.scm:maven-scm-provider-perforce:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-starteam=org.apache.maven.scm:maven-scm-provider-starteam:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svnexe=org.apache.maven.scm:maven-scm-provider-svnexe:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-svn-commons=org.apache.maven.scm:maven-scm-provider-svn-commons:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-synergy=org.apache.maven.scm:maven-scm-provider-synergy:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-vss=org.apache.maven.scm:maven-scm-provider-vss:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-tfs=org.apache.maven.scm:maven-scm-provider-tfs:jar:1.9.4:runtime, org.apache.maven.scm:maven-scm-provider-integrity=org.apache.maven.scm:maven-scm-provider-integrity:jar:1.9.4:runtime, com.mks.api:mksapi-jar=com.mks.api:mksapi-jar:jar:4.10.9049:runtime, org.apache.maven.scm:maven-scm-provider-jazz=org.apache.maven.scm:maven-scm-provider-jazz:jar:1.9.4:runtime, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.17:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.17:compile, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.17:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.2:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.0.9:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.0.9:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.1:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.2.1:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.2.1:compile, org.slf4j:jul-to-slf4j=org.slf4j:jul-to-slf4j:jar:1.7.12:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.12:compile, uk.org.lidalia:sysout-over-slf4j=uk.org.lidalia:sysout-over-slf4j:jar:1.0.2:compile}
+[DEBUG]   (f) project = MavenProject: org.apache.empire-db:empire-db-codegen:2.5.0 @ /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-codegen/pom.xml
+[DEBUG]   (f) reportsDirectory = /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-codegen/target/pit-reports
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) skipFailingTests = false
+[DEBUG]   (f) skipTests = false
+[DEBUG]   (s) targetClasses = []
+[DEBUG]   (s) targetTests = []
+[DEBUG]   (f) threads = 1
+[DEBUG]   (f) timeoutConstant = 3000
+[DEBUG]   (f) timeoutFactor = 1.25
+[DEBUG]   (s) timestampedReports = true
+[DEBUG]   (f) useClasspathJar = false
+[DEBUG]   (f) useSlf4j = false
+[DEBUG]   (f) verbose = false
+[DEBUG]   (f) withHistory = false
+[DEBUG] -- end configuration --
+[INFO] Found plugin : Default csv report plugin
+[INFO] Found plugin : Default xml report plugin
+[INFO] Found plugin : Default html report plugin
+[INFO] Found plugin : Static initializer code detector plugin
+[INFO] Found plugin : Static initializer filter plugin
+[INFO] Found plugin : Excluded annotations plugin
+[INFO] Found plugin : Try with resources filter
+[INFO] Found plugin : Inlined finally block filter plugin
+[INFO] Found plugin : Implicit null check filter
+[INFO] Found plugin : Method reference null check filter
+[INFO] Found plugin : For each loop filter
+[INFO] Found plugin : Enum constructor filter
+[INFO] Found plugin : Logging calls filter
+[INFO] Found plugin : Infinite for loop filter
+[INFO] Found plugin : Long running iterator loop filter
+[INFO] Found plugin : For loop counter filter
+[INFO] Found plugin : Kotlin junk mutations filter
+[INFO] Found plugin : Max mutations per class limit
+[INFO] Found plugin : Equals shortcut equivalent mutant filter
+[INFO] Found plugin : Trivial return vals equivalence filter
+[INFO] Found plugin : Mutant export plugin
+[INFO] Found shared classpath plugin : Default mutation engine
+[INFO] Found shared classpath plugin : JUnit plugin
+[INFO] Found shared classpath plugin : TestNG plugin
+[INFO] Adding org.pitest:pitest to SUT classpath
+[INFO] Mutating from /home/dorma10/lightweight-effectiveness/projects/empire-db/empire-db-codegen/target/classes
+[INFO] Defaulting target classes to match packages in build directory
+[INFO] Defaulting target tests to match packages in test build directory
+12:51:35 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+12:51:35 PM PIT >> INFO : Sending 19 test classes to minion
+12:51:35 PM PIT >> INFO : Sent tests to minion
+12:51:35 PM PIT >> INFO : MINION : 12:51:35 PM PIT >> INFO : Checking environment
+
+12:51:35 PM PIT >> INFO : MINION : 12:51:35 PM PIT >> INFO : Found  11 tests
+
+12:51:35 PM PIT >> INFO : MINION : 12:51:35 PM PIT >> INFO : Dependency analysis reduced number of potential tests by 0
+
+12:51:35 PM PIT >> INFO : MINION : 12:51:35 PM PIT >> INFO : 11 tests received
+
+/-\|/12:51:36 PM PIT >> INFO : MINION : 12:51:36 PM PIT >> SEVERE : Description [testClass=org.apache.empire.db.codegen.util.FileUtilsTest, name=testCleanDirectory(org.apache.empire.db.codegen.util.FileUtilsTest)]
+java.lang.AssertionError: 
+	at org.junit.Assert.fail(Assert.java:91)
+	at org.junit
+12:51:36 PM PIT >> INFO : MINION : .Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at org.apache.empire.db.codegen.util.FileUtilsTest.cleanup(FileUtilsTest.java:46)
+	at org.apache.empire.db.codegen.util.FileUtilsTest.createTestFolder(FileUtilsTest.java:37
+12:51:36 PM PIT >> INFO : MINION : )
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.refl
+12:51:36 PM PIT >> INFO : MINION : ect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.
+12:51:36 PM PIT >> INFO : MINION : invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChi
+12:51:36 PM PIT >> INFO : MINION : ld(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at
+12:51:36 PM PIT >> INFO : MINION :  org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.
+12:51:36 PM PIT >> INFO : MINION : java:236)
+	at org.pitest.junit.adapter.CustomRunnerExecutor.run(CustomRunnerExecutor.java:42)
+	at org.pitest.junit.adapter.AdaptedJUnitTestUnit.execute(AdaptedJUnitTestUnit.java:69)
+	at org.pitest.coverage.execute.CoverageDecorator.execute(CoverageDecorato
+12:51:36 PM PIT >> INFO : MINION : r.java:49)
+	at org.pitest.testapi.execute.containers.UnContainer.execute(UnContainer.java:31)
+	at org.pitest.testapi.execute.Pitest.executeTests(Pitest.java:57)
+	at org.pitest.testapi.execute.Pitest.run(Pitest.java:48)
+	at org.pitest.coverage.execute.Cover
+12:51:36 PM PIT >> INFO : MINION : ageWorker.run(CoverageWorker.java:49)
+	at org.pitest.coverage.execute.CoverageMinion.main(CoverageMinion.java:90)
+12:51:36 PM PIT >> SEVERE : Description [testClass=org.apache.empire.db.codegen.util.FileUtilsTest, name=testCleanDirectory(org.apache.empire.
+12:51:36 PM PIT >> INFO : MINION : db.codegen.util.FileUtilsTest)]
+java.lang.AssertionError: 
+	at org.junit.Assert.fail(Assert.java:91)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at org.apache.empire.db.codegen.util.FileUtilsTest.cleanup
+12:51:36 PM PIT >> INFO : MINION : (FileUtilsTest.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:
+12:51:36 PM PIT >> INFO : MINION : 43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.
+12:51:36 PM PIT >> INFO : MINION : model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:37)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.Blo
+12:51:36 PM PIT >> INFO : MINION : ckJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.jav
+12:51:36 PM PIT >> INFO : MINION : a:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.pitest.junit.adapter.CustomRunnerExecutor.
+12:51:36 PM PIT >> INFO : MINION : run(CustomRunnerExecutor.java:42)
+	at org.pitest.junit.adapter.AdaptedJUnitTestUnit.execute(AdaptedJUnitTestUnit.java:69)
+	at org.pitest.coverage.execute.CoverageDecorator.execute(CoverageDecorator.java:49)
+	at org.pitest.testapi.execute.containers.UnConta
+12:51:36 PM PIT >> INFO : MINION : iner.execute(UnContainer.java:31)
+	at org.pitest.testapi.execute.Pitest.executeTests(Pitest.java:57)
+	at org.pitest.testapi.execute.Pitest.run(Pitest.java:48)
+	at org.pitest.coverage.execute.CoverageWorker.run(CoverageWorker.java:49)
+	at org.pitest.coverag
+12:51:36 PM PIT >> INFO : MINION : e.execute.CoverageMinion.main(CoverageMinion.java:90)
+
+-\|/-12:51:36 PM PIT >> SEVERE : Description [testClass=org.apache.empire.db.codegen.util.FileUtilsTest, name=testCleanDirectory(org.apache.empire.db.codegen.util.FileUtilsTest)] did not pass without mutation.
+\12:51:36 PM PIT >> INFO : Calculated coverage in 1 seconds.
+12:51:36 PM PIT >> SEVERE : Tests failing without mutation: 
+Description [testClass=org.apache.empire.db.codegen.util.FileUtilsTest, name=testCleanDirectory(org.apache.empire.db.codegen.util.FileUtilsTest)]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Apache Empire-db ................................... SUCCESS [  0.666 s]
+[INFO] Apache Empire-db Core .............................. SUCCESS [07:04 min]
+[INFO] Apache Empire-db Struts2 Extension ................. SUCCESS [  0.044 s]
+[INFO] Apache Empire-db Java Server Faces 2.x extensions .. SUCCESS [  0.031 s]
+[INFO] Apache Empire-db Code Generator .................... FAILURE [  1.436 s]
+[INFO] Apache Empire-db Maven Plugin ...................... SKIPPED
+[INFO] Apache Empire-db Spring JDBC Template .............. SKIPPED
+[INFO] Apache Empire-db Examples .......................... SKIPPED
+[INFO] Apache Empire-db Basic Example ..................... SKIPPED
+[INFO] Apache Empire-db Advanced Example .................. SKIPPED
+[INFO] Apache Empire-db CXF Example ....................... SKIPPED
+[INFO] Apache Empire-db Spring Example .................... SKIPPED
+[INFO] Apache Empire-db Struts2 Example ................... SKIPPED
+[INFO] Apache Empire-db Struts2/CXF Example ............... SKIPPED
+[INFO] Apache Empire-db JSF2 Example ...................... SKIPPED
+[INFO] Apache Empire-db Vue.js Example .................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:07 min
+[INFO] Finished at: 2020-06-27T12:51:36+03:00
+[INFO] Final Memory: 38M/2171M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli) on project empire-db-codegen: Execution default-cli of goal org.pitest:pitest-maven:1.5.2:mutationCoverage failed: 1 tests did not pass without mutation when calculating line coverage. Mutation testing requires a green suite.
+[ERROR] See http://pitest.org for more details.
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.pitest:pitest-maven:1.5.2:mutationCoverage (default-cli) on project empire-db-codegen: Execution default-cli of goal org.pitest:pitest-maven:1.5.2:mutationCoverage failed: 1 tests did not pass without mutation when calculating line coverage. Mutation testing requires a green suite.
+See http://pitest.org for more details.
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.plugin.PluginExecutionException: Execution default-cli of goal org.pitest:pitest-maven:1.5.2:mutationCoverage failed: 1 tests did not pass without mutation when calculating line coverage. Mutation testing requires a green suite.
+See http://pitest.org for more details.
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:145)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	... 20 more
+Caused by: org.pitest.help.PitHelpError: 1 tests did not pass without mutation when calculating line coverage. Mutation testing requires a green suite.
+See http://pitest.org for more details.
+	at org.pitest.coverage.execute.DefaultCoverageGenerator.verifyBuildSuitableForMutationTesting(DefaultCoverageGenerator.java:114)
+	at org.pitest.coverage.execute.DefaultCoverageGenerator.calculateCoverage(DefaultCoverageGenerator.java:96)
+	at org.pitest.coverage.execute.DefaultCoverageGenerator.calculateCoverage(DefaultCoverageGenerator.java:51)
+	at org.pitest.mutationtest.tooling.MutationCoverage.runReport(MutationCoverage.java:115)
+	at org.pitest.mutationtest.tooling.EntryPoint.execute(EntryPoint.java:121)
+	at org.pitest.mutationtest.tooling.EntryPoint.execute(EntryPoint.java:51)
+	at org.pitest.maven.RunPitStrategy.execute(RunPitStrategy.java:35)
+	at org.pitest.maven.AbstractPitMojo.analyse(AbstractPitMojo.java:463)
+	at org.pitest.maven.AbstractPitMojo.execute(AbstractPitMojo.java:404)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	... 21 more
+[ERROR] 
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :empire-db-codegen

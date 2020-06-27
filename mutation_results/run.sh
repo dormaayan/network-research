@@ -1,0 +1,9 @@
+./run_experiment_ALL.sh
+./run_experiment_CONDITIONALS_BOUNDARY.sh
+./run_experiment_NEGATE_CONDITIONALS.sh
+./run_experiment_MATH.sh
+./run_experiment_INCREMENTS.sh
+./run_experiment_INVERT_NEGS.sh
+./run_experiment_DEFAULT.sh
+./run_experiment_DEFAULT.sh
+./run_experiment_DEFAULT.sh
