@@ -9,7 +9,7 @@ from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
 
 
-from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold, GridSearchCV, StratifiedKFold, \
+from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold, GridSearchCV, StratifiedKFold,\
     cross_validate, RandomizedSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, \
@@ -39,41 +39,160 @@ CSV_MINER_PATH = "../testminereffectiveness.csv"
 DATA_DIR = "results"
 
 
+
 line_coverage = ['line_coverage']
-grano_test_data = ['isAssertionRoulette',
-   'isEagerTest', 'isLazyTest', 'isMysteryGuest',
-   'isSensitiveEquality', 'isResourceOptimism', 'isForTestersOnly',
-   'isIndirectTesting','LOC_test',
-      'HALSTEAD_test', 'RFC_test', 'CBO_test', 'MPC_test', 'IFC_test',
-      'DAC_test', 'DAC2_test', 'LCOM1_test', 'LCOM2_test', 'LCOM3_test',
-      'LCOM4_test', 'CONNECTIVITY_test', 'LCOM5_test', 'COH_test',
-      'TCC_test', 'LCC_test', 'ICH_test', 'WMC_test', 'NOA_test',
-      'NOPA_test', 'NOP_test', 'McCABE_test', 'BUSWEIMER_test','test_readability']
-grano_production_data = ['LOC_prod', 'HALSTEAD_prod', 'RFC_prod',
-   'CBO_prod', 'MPC_prod', 'IFC_prod', 'DAC_prod', 'DAC2_prod',
-   'LCOM1_prod', 'LCOM2_prod', 'LCOM3_prod', 'LCOM4_prod',
-   'CONNECTIVITY_prod', 'LCOM5_prod', 'COH_prod', 'TCC_prod',
-   'LCC_prod', 'ICH_prod', 'WMC_prod', 'NOA_prod', 'NOPA_prod',
-   'NOP_prod', 'McCABE_prod', 'BUSWEIMER_prod',
-   'csm_CDSBP', 'csm_CC', 'csm_FD', 'csm_Blob', 'csm_SC', 'csm_MC',
-          'csm_LM', 'csm_FE', 'prod_readability']
-my_test_data = ['No. Methods', 'Vocabulary', 'Word',
-              'Special', 'Non Whithe Characters', 'No. Method Invoctions', 'AST size', 'Max Depth',
-              'Avg Depth', 'Deg2', 'DegPerm', 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
-              'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
-              'Junit', 'Hamcrest', 'Mockito']
-my_production_data = [ 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
+
+
+grano_general = ['LOC',
+                 'HALSTEAD',
+                 'RFC',
+                 'CBO',
+                 'MPC',
+                 'IFC',
+                 'DAC',
+                 'DAC2',
+                 'LCOM1',
+                 'LCOM2',
+                 'LCOM3',
+                 'LCOM4',
+                 'CONNECTIVITY',
+                 'LCOM5',
+                 'COH',
+                 'TCC',
+                 'LCC',
+                 'ICH',
+                 'WMC',
+                 'NOA',
+                 'NOPA',
+                 'NOP',
+                 'McCABE',
+                 'BUSWEIMER']
+
+
+test_smells = ['isAssertionRoulette',
+                   'isEagerTest',
+                   'isLazyTest',
+                   'isMysteryGuest',
+                   'isSensitiveEquality',
+                   'isResourceOptimism',
+                   'isForTestersOnly',
+                   'isIndirectTesting']
+
+
+
+
+
+grano_test_data =
+
+
+
+
+
+
+grano_production_data = ['csm_CDSBP',
+                         'csm_CC',
+                         'csm_FD',
+                         'csm_Blob',
+                         'csm_SC',
+                         'csm_MC',
+                         'csm_LM',
+                         'csm_FE',
+                         'LOC_prod',
+                         'HALSTEAD_prod',
+                         'RFC_prod',
+                         'CBO_prod',
+                         'MPC_prod',
+                         'IFC_prod',
+                         'DAC_prod',
+                         'DAC2_prod',
+                         'LCOM1_prod',
+                         'LCOM2_prod',
+                         'LCOM3_prod',
+                         'LCOM4_prod',
+                         'CONNECTIVITY_prod',
+                         'LCOM5_prod',
+                         'COH_prod',
+                         'TCC_prod',
+                         'LCC_prod',
+                         'ICH_prod',
+                         'WMC_prod',
+                         'NOA_prod',
+                         'NOPA_prod',
+                         'NOP_prod',
+                         'McCABE_prod',
+                         'BUSWEIMER_prod',
+                         'prod_readability']
+
+
+my_test_data = ['No. Methods',
+                'Vocabulary',
+                'Word',
+                'Special',
+                'Non Whithe Characters',
+                'No. Method Invoctions',
+                'AST size',
+                'Max Depth',
+                'Avg Depth',
+                'Deg^2',
+                'Deg^3',
+                'Deg',
+                'Deg^-1',
+                'Deg^-2',
+                ]
+
+
+
+
+my_general = ['No. Methods',
+              'Vocabulary',
+              'Word',
+              'Special',
+              'Non Whithe Characters',
+              'No. Method Invoctions',
+              'AST size',
+              'Max Depth',
+              'Avg Depth',
+              'Deg^2',
+              'Deg^3',
+              'Deg',
+              'Deg^-1',
+              'Deg^-2',
+                ]
+
+]
+my_production_data = [
+
+]
+
+                'Deg^2_prod','Deg^3_prod',
+                'Deg_prod','Deg^-1_prod','Deg^-2_prod',
+                'Decendent', 'Decendent_prod',
+
+                         'Avg Depth^(-2)', 'Avg Depth^(-2)_prod',
+                         'Avg Depth^(-1)', 'Avg Depth^(-1)_prod',
+                         'Avg Depth^2', 'Avg Depth^2_prod',
+                        'Avg Depth^3', 'Avg Depth^3_prod',
+
+                'DegPerm',
+
+                 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
+               'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
+               'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
                'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
-               'Max Depth_prod', 'Avg Depth_prod', 'Deg2_prod', 'DegPerm_prod', 'Dexterity_prod',
+               'Max Depth_prod', 'Avg Depth_prod', 'DegPerm_prod', 'Dexterity_prod',
                'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
                'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod',
-               'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod']
-
-
-
+               'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod',
                'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
-               'No. Primitives' , 'No. Primitives_prod', 'Avg Depth Squared' , 'Avg Depth Squared_prod',
-                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod'
+               'No. Primitives' , 'No. Primitives_prod',
+                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod']
+
+
+
+
+
+
+
 
 
 
