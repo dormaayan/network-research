@@ -211,6 +211,7 @@ def load_data(effective_non_effective = False,
               grano_production = False,
               my_test = False,
               my_production = False,
+              scale = True,
               except = []):
                   frame = load_frame()
                   if effective_non_effective:
@@ -218,5 +219,10 @@ def load_data(effective_non_effective = False,
                   columns = pick_data(coverage, grano_test, grano_production, my_test, my_production, except)
                   data_x = frame[columns]
                   data_y = pd.concat([frame.mutation], axis = 1)
+
+                  if scale:
+                      scaler = StandardScaler()
+                      scaler.fit(data_x)
+                      data_x = scaler.transform(data_x)
 
                   return data_x, data_y, columns, len(columns)
