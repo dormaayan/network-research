@@ -79,68 +79,14 @@ test_smells = ['isAssertionRoulette',
                    'isIndirectTesting']
 
 
-
-
-
-grano_test_data =
-
-
-
-
-
-
-grano_production_data = ['csm_CDSBP',
-                         'csm_CC',
-                         'csm_FD',
-                         'csm_Blob',
-                         'csm_SC',
-                         'csm_MC',
-                         'csm_LM',
-                         'csm_FE',
-                         'LOC_prod',
-                         'HALSTEAD_prod',
-                         'RFC_prod',
-                         'CBO_prod',
-                         'MPC_prod',
-                         'IFC_prod',
-                         'DAC_prod',
-                         'DAC2_prod',
-                         'LCOM1_prod',
-                         'LCOM2_prod',
-                         'LCOM3_prod',
-                         'LCOM4_prod',
-                         'CONNECTIVITY_prod',
-                         'LCOM5_prod',
-                         'COH_prod',
-                         'TCC_prod',
-                         'LCC_prod',
-                         'ICH_prod',
-                         'WMC_prod',
-                         'NOA_prod',
-                         'NOPA_prod',
-                         'NOP_prod',
-                         'McCABE_prod',
-                         'BUSWEIMER_prod',
-                         'prod_readability']
-
-
-my_test_data = ['No. Methods',
-                'Vocabulary',
-                'Word',
-                'Special',
-                'Non Whithe Characters',
-                'No. Method Invoctions',
-                'AST size',
-                'Max Depth',
-                'Avg Depth',
-                'Deg^2',
-                'Deg^3',
-                'Deg',
-                'Deg^-1',
-                'Deg^-2',
-                ]
-
-
+code_smells = ['csm_CDSBP',
+               'csm_CC',
+               'csm_FD',
+               'csm_Blob',
+               'csm_SC',
+               'csm_MC',
+               'csm_LM',
+               'csm_FE']
 
 
 my_general = ['No. Methods',
@@ -151,49 +97,48 @@ my_general = ['No. Methods',
               'No. Method Invoctions',
               'AST size',
               'Max Depth',
-              'Avg Depth',
               'Deg^2',
               'Deg^3',
               'Deg',
               'Deg^-1',
               'Deg^-2',
-                ]
-
-]
-my_production_data = [
-
-]
-
-                'Deg^2_prod','Deg^3_prod',
-                'Deg_prod','Deg^-1_prod','Deg^-2_prod',
-                'Decendent', 'Decendent_prod',
-
-                         'Avg Depth^(-2)', 'Avg Depth^(-2)_prod',
-                         'Avg Depth^(-1)', 'Avg Depth^(-1)_prod',
-                         'Avg Depth^2', 'Avg Depth^2_prod',
-                        'Avg Depth^3', 'Avg Depth^3_prod',
-
-                'DegPerm',
-
-                 'Dexterity', 'No. Expressions', 'No. Try', 'No. Catch',
-               'No. Loop', 'No. Break', 'No. Continue', 'No. Conditions', 'No. Else', 'Bad API',
-               'Junit', 'Hamcrest', 'Mockito', 'No. Methods_prod', 'Vocabulary_prod', 'Word_prod',
-               'Special_prod', 'Non Whithe Characters_prod', 'No. Method Invoctions_prod', 'AST size_prod',
-               'Max Depth_prod', 'Avg Depth_prod', 'DegPerm_prod', 'Dexterity_prod',
-               'No. Expressions_prod', 'No. Try_prod', 'No. Catch_prod', 'No. Loop_prod', 'No. Break_prod',
-               'No. Continue_prod', 'No. Conditions_prod', 'No. Else_prod',
-               'Strings', 'Strings_prod', 'Numeric Literals', 'Numeric Literals_prod',
-               'Comments' , 'Comments_prod', 'No. Field Access' , 'No. Field Access_prod',
-               'No. Primitives' , 'No. Primitives_prod',
-                'No. &&', 'No. &&_prod',  'No. ||', 'No. ||_prod', 'No. Ternary', 'No. Ternary_prod']
+              'Decendent',
+              'Avg Depth^(-2)',
+              'Avg Depth^(-1)',
+              'Avg Depth',
+              'Avg Depth^2',
+              'Avg Depth^3',
+              'Avg Depth^3_prod',
+              'DegPerm',
+              'Dexterity',
+              'No. Expressions',
+              'No. Try',
+              'No. Catch',
+              'No. Loop',
+              'No. Break',
+              'No. Continue',
+              'No. Conditions',
+              'No. Else',
+              'Strings',
+              'Numeric Literals',
+              'Comments',
+              'No. Field Access',
+              'No. Primitives' ,
+              'No. &&',
+              'No. ||',
+              'No. Ternary']
 
 
+test_frameworks = ['Bad API',
+                'Junit',
+                'Hamcrest',
+                'Mockito']
 
 
-
-
-
-
+grano_production_data = [(factor + "_production") for factor in grano_general] + code_smells + ['prod_readability']
+grano_test_data = [(factor + "_test") for factor in grano_general] + test_smells + ['test_readability']
+my_test_data = my_general + test_frameworks
+my_production_data = [(factor + "_production") for factor in my_general]
 
 
 def label_rename1 (row):
