@@ -160,40 +160,13 @@ def load_quartile(frame):
 
 def load_frame():
 
-    d = {'TestClassName' : 'ClassName',
-         'Vocabulary' : 'Vocabulary_prod',
-         'Word' : 'Word_prod',
-         'Non Whithe Characters' : 'Non Whithe Characters_prod',
-         'No. Methods' : 'No. Methods_prod',
-         'Special' : 'Special_prod',
-         'No. Method Invoctions' : 'No. Method Invoctions_prod',
-         'AST size' : 'AST size_prod',
-         'Max Depth' : 'Max Depth_prod',
-         'Deg2' : 'Deg2_prod',
-         'DegPerm' : 'DegPerm_prod',
-         'No. Break' : 'No. Break_prod',
-         'No. Continue' : 'No. Continue_prod',
-         'Avg Depth' : 'Avg Depth_prod', 'Dexterity' : 'Dexterity_prod',
-         'No. Expressions' : 'No. Expressions_prod',
-         'No. Try' : 'No. Try_prod',
-         'No. Catch' : 'No. Catch_prod',
-         'No. Loop' : 'No. Loop_prod',
-         'No. Conditions' : 'No. Conditions_prod',
-         'No. Else' : 'No. Else_prod',
-         'Strings' : 'Strings_prod',
-         'Numeric Literals':'Numeric Literals_prod',
-         'Comments' : 'Comments_prod',
-         'No. Field Access' : 'No. Field Access_prod',
-         'No. Primitives' : 'No. Primitives_prod',
-         'Avg Depth Squared' : 'Avg Depth Squared_prod',
-     'No. &&' : 'No. &&_prod',  'No. ||' : 'No. ||_prod', 'No. Ternary': 'No. Ternary_prod'}
-
+    d = dict(zip(my_general,[(factor + "_production") for factor in my_general]))
+    d['TestClassName'] = 'ClassName'
 
     frame1 = pd.read_csv(CSV_PATH, sep=",")
     frame1 = frame1.sample(frac=1).reset_index(drop=True)
     frame1['TestClassName'] = frame1.apply(lambda row: label_rename1(row), axis=1)
     frame1['ClassName'] = frame1.apply(lambda row: label_rename2(row), axis=1)
-
 
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
 
@@ -203,15 +176,11 @@ def load_frame():
 
 
     frame = pd.merge(frame1, frame2, on='TestClassName')
-
     frame = pd.merge(frame, frame3, on='ClassName')
-
-
     frame = frame.drop(['project', 'module', 'path_test','test_name','path_src',
                         'commit', 'class_name'], axis=1)
     frame = frame.sample(frac=1).reset_index(drop=True)
     frame = frame.dropna()
-
     return frame
 
 
