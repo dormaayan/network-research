@@ -14,6 +14,10 @@ DATA_DIR = "results"
 
 line_coverage = ['line_coverage']
 
+#size, code smells, test smells, literature, complexity
+
+#textual, ast_shape, ast_types, mccabe_style, api
+
 
 grano_general = ['LOC',
                  'HALSTEAD',
@@ -158,6 +162,19 @@ def load_frame():
 def delete_by_values(lst, values):
     values_as_set = set(values)
     return [x for x in lst if x not in values_as_set]
+
+
+def get_category(feature):
+    if feature in line_coverage:
+        return 'line_coverage'
+    if feature  in grano_test_data:
+        return 'grano_test'
+    if feature in grano_production_data:
+        return 'grano_production'
+    if feature in my_test_data:
+        return 'my_test'
+    if feature in my_production_data:
+            return 'my_production'
 
 def pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude):
     res = []

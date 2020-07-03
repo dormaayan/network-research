@@ -3,7 +3,7 @@
 
 import pandas as pd
 from sklearn.decomposition import PCA
-from data_loader import load_data
+from data_loader import load_data, get_category
 
 
 CSV_PATH = "../complete-frame.csv"
@@ -43,7 +43,7 @@ def simplePCA():
     sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
 
     for i in sorted_res.keys():
-        print('Factor: {}, implication: {}'.format(i,sorted_res[i])) 
+        print('category: {}, implication: {}'.format(get_category(i),sorted_res[i]))
         #print(j[abs(j) > 0.1])
         #print("--------------------------------")
 
