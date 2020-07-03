@@ -19,7 +19,7 @@ def simplePCA():
                                                       my_test = True,
                                                       my_production = True,
                                                       scale = True)
-    pca = PCA(n_components = 10) #(n_components=number_of_features)
+    pca = PCA() #(n_components=number_of_features)
     #principalComponents = pca.fit_transform(data_x)
     pca.fit(data_x)
     #data_x = pd.DataFrame(data = principalComponents, columns=c)
@@ -33,6 +33,19 @@ def simplePCA():
         print("Component {}, Explains {} of the variance".format(i,exp[i]))
         print(j[abs(j) > 0.1])
         print("--------------------------------")
+
+    res = {}
+    for i, j in df.iteritems():
+        print("Feature: {} \n".format(i))
+        print((abs(j) * exp).sum())
+        res[i] = (abs(j) * exp).sum()
+
+    sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
+
+    for i in sorted_res.keys():
+        print('Factor: {}, implication: {}'.format(i,sorted_res[i])) 
+        #print(j[abs(j) > 0.1])
+        #print("--------------------------------")
 
 
     df.to_csv(r'PCA.csv')
