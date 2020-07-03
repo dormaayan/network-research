@@ -2,36 +2,8 @@ import numpy as np
 import pandas as pd
 
 
-#import matplotlib
-#from matplotlib import pyplot as plt
-#from sklearn.externals import joblib
-#from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
-
-
-#from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold, GridSearchCV, StratifiedKFold,\
-#    cross_validate, RandomizedSearchCV
-#from sklearn.ensemble import RandomForestClassifier
-#from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, \
-#    mean_absolute_error, make_scorer, brier_score_loss, roc_curve
-
-#from sklearn.preprocessing import OneHotEncoder
-from sklearn.decomposition import PCA
-
-
-from sklearn.utils import shuffle
-#from sklearn.svm import SVC
-#from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
-#from sklearn.pipeline import Pipeline
-
-#from tensorflow import keras
-
-import warnings
-warnings.filterwarnings('ignore')
-
-#matplotlib.use('Agg')
-
 
 
 CSV_PATH = "../complete-frame.csv"
@@ -108,7 +80,7 @@ my_general = ['No. Methods',
               'Avg Depth',
               'Avg Depth^2',
               'Avg Depth^3',
-              'Avg Depth^3_prod',
+              'Avg Depth^3',
               'DegPerm',
               'Dexterity',
               'No. Expressions',
@@ -135,7 +107,7 @@ test_frameworks = ['Bad API',
                    'Mockito']
 
 
-grano_production_data = [(factor + "_production") for factor in grano_general] + code_smells + ['prod_readability']
+grano_production_data = [(factor + "_prod") for factor in grano_general] + code_smells + ['prod_readability']
 grano_test_data = [(factor + "_test") for factor in grano_general] + test_smells + ['test_readability']
 my_test_data = my_general + test_frameworks
 my_production_data = [(factor + "_production") for factor in my_general]
@@ -183,11 +155,45 @@ def load_frame():
     frame = frame.dropna()
     return frame
 
+def delete_by_values(lst, values):
+    values_as_set = set(values)
+    return [x for x in lst if x not in values_as_set]
 
+def pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude):
+    res = []
+    if coverage:
+        res += line_coverage
+    if grano_test:
+        res += grano_test_data
+    if grano_production:
+        res += grano_production_data
+    if my_test:
+        res += my_test_data
+    if my_production:
+        res += my_production_data
+    return delete_by_values(res, exclude)
+
+def load_data(effective_non_effective = False,coverage = False, grano_test = False,
+              grano_production = False, my_test = False, my_production = False,
+              scale = True, exclude = []):
+    frame = load_frame()
+    if effective_non_effective:
+        frame = load_quartile(frame)
+    columns = pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude)
+    data_x = frame[columns]
+    data_y = pd.concat([frame.mutation], axis = 1)
+
+    if scale:
+        scaler = StandardScaler()
+        scaler.fit(data_x)
+        data_x = scaler.transform(data_x)
+
+    return data_x, data_y, columns, len(columns)
 
 def main():
-    s = load_frame()
-    print(s)
+    x,y,c,l = load_data(coverage = True,
+                         grano_test = True, grano_production = True, my_test = True, my_production = True)
+    print(l)
 
 
 if __name__ == '__main__':

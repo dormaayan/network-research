@@ -1,42 +1,9 @@
 # -*- coding: utf-8 -*-
 
-#import numpy as np
-#import pandas as pd
 
-
-#import matplotlib
-#from matplotlib import pyplot as plt
-#from sklearn.externals import joblib
-#from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
-
-
-
-#from sklearn.model_selection import train_test_split, RepeatedStratifiedKFold, GridSearchCV, StratifiedKFold, \
-#    cross_validate, RandomizedSearchCV
-#from sklearn.ensemble import RandomForestClassifier
-#from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, \
-#    mean_absolute_error, make_scorer, brier_score_loss, roc_curve
-
-#from sklearn.preprocessing import OneHotEncoder
-#from sklearn.decomposition import PCA
-
-
-#from sklearn.utils import shuffle
-#from sklearn.svm import SVC
-#from sklearn.neighbors import KNeighborsClassifier
-#from sklearn.preprocessing import StandardScaler
-#from sklearn.pipeline import Pipeline
-
-#from tensorflow import keras
-
-#import warnings
-#warnings.filterwarnings('ignore')  # "error", "ignore", "always", "default", "module" or "once"s
-
-#matplotlib.use('Agg')
-
+import pandas as pd
+from sklearn.decomposition import PCA
 from data_loader import load_data
-
-
 
 
 CSV_PATH = "../complete-frame.csv"
@@ -69,8 +36,6 @@ def simplePCA():
 
 
     df.to_csv(r'PCA.csv')
-
-
 
 
 def main():
