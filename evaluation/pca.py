@@ -9,13 +9,9 @@ DATA_DIR = "results"
 
 
 def simplePCA():
-    data_x, data_y, c, number_of_features = load_data(effective_non_effective = True,
-                                                      coverage = True,
-                                                      grano_test = True,
-                                                      grano_production = True,
-                                                      my_test = True,
-                                                      my_production = True,
-                                                      scale = True)
+    data_x, data_y, c, number_of_features = load_data(
+        effective_non_effective=True, coverage=True, grano_test=True,
+        grano_production=True, my_test=True, my_production=True, scale=True)
     pca = PCA()
     pca.fit(data_x)
     df = pd.DataFrame(pca.components_, columns = c)

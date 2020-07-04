@@ -121,7 +121,6 @@ def simpleGrid():
             '{:.3f}'.format(brier)]
 
 
-
 def main():
     simpleGrid()
 
