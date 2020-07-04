@@ -205,15 +205,45 @@ def strip(feature):
 
 def get_category(feature):
     if feature in line_coverage:
-        return 'line_coverage'
-    if feature  in grano_test_data:
-        return 'grano_test'
-    if feature in grano_production_data:
-        return 'grano_production'
-    if feature in my_test_data:
-        return 'my_test'
-    if feature in my_production_data:
-        return 'my_production'
+        return 'grano', 'test', 'line-coverage'
+    if feature in my_textual_test:
+        return 'mine', 'test', 'textual'
+    if feature in my_ast_shape_test:
+        return 'mine', 'test', 'ast-shape'
+    if feature in my_ast_types_test:
+        return 'mine', 'test', 'ast-types'
+    if feature in my_mccabe_style_test:
+        return 'mine', 'test', 'mccabe-style'
+    if feature in my_test_api:
+        return 'mine', 'test', 'api'
+
+    if feature in my_textual_production:
+        return 'mine', 'production', 'textual'
+    if feature in my_ast_shape_production:
+        return 'mine', 'production', 'ast-shape'
+    if feature in my_ast_types_production:
+        return 'mine', 'production', 'ast-types'
+    if feature in my_mccabe_style_production:
+        return 'mine', 'production', 'mccabe-style'
+
+    if feature in grano_size_test:
+        return 'grano', 'test', 'size'
+    if feature in grano_literature_test:
+        return 'grano', 'test', 'literature'
+    if feature in grano_complexity_test:
+        return 'grano', 'test', 'complexity'
+    if feature in grano_test_smells:
+        return 'grano', 'test', 'test-smell'
+
+    if feature in grano_size_production:
+        return 'grano', 'production', 'size'
+    if feature in grano_literature_production:
+        return 'grano', 'production', 'literature'
+    if feature in grano_complexity_production:
+        return 'grano', 'production', 'complexity'
+    if feature in grano_code_smells:
+        return 'grano', 'code', 'code-smell'
+
 
 def pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude):
     res = []

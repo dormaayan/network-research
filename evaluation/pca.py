@@ -31,7 +31,9 @@ def simplePCA():
     sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
 
     for i in sorted_res.keys():
-        print('category: {}, implication: {}'.format(get_category(i), sorted_res[i]))
+        print(i)
+        a,b,c = get_category(i)
+        print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
     df.to_csv(r'PCA.csv')
 
 
