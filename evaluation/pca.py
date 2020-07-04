@@ -8,13 +8,17 @@ CSV_MINER_PATH = "../testminereffectiveness-extended.csv"
 DATA_DIR = "results"
 
 
-def simplePCA():
-    data_x, data_y, c, number_of_features = load_data(
+def do_pca():
+    data_x, data_y, columns, number_of_features = load_data(
         effective_non_effective=True, coverage=True, grano_test=True,
         grano_production=True, my_test=True, my_production=True, scale=True)
     pca = PCA()
     pca.fit(data_x)
-    df = pd.DataFrame(pca.components_, columns = c)
+    return pca, columns
+
+def analyze_componenets():
+    pca, columns = do_pca()
+    df = pd.DataFrame(pca.components_, columns = columns)
 
     exp = pca.explained_variance_ratio_
     for i, j in df.iterrows():
@@ -37,8 +41,26 @@ def simplePCA():
     df.to_csv(r'PCA.csv')
 
 
+def get_factors():
+    pca, columns = do_pca()
+    df = pd.DataFrame(pca.components_, columns=columns)
+
+    exp = pca.explained_variance_ratio_
+    amount = 0
+    for i, j in df.iterrows():
+        if amount <=3 :
+            print("Component {}, Explains {} of the variance".format(i,exp[i]))
+            print(j[abs(j) > 0.1])
+            print("--------------------------------")
+        amount+=1
+
+
+
+
 def main():
-    simplePCA()
+    #simplePCA()
+
+    get_factors()
 
 if __name__ == '__main__':
     main()
