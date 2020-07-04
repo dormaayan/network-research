@@ -161,7 +161,7 @@ def load_frame():
     frame2 = pd.read_csv(CSV_MINER_PATH, sep=',')
 
     frame3 = pd.read_csv(CSV_MINER_PATH, sep=',')
-    frame3 = frame3.rename(columns = d)
+    frame3 = frame3.rename(columns=d)
     frame3 = frame3.drop(['Bad API', 'Junit', 'Hamcrest', 'Mockito', 'Nº','Project'], axis=1)
 
 
@@ -188,7 +188,7 @@ def get_category(feature):
     if feature in my_test_data:
         return 'my_test'
     if feature in my_production_data:
-            return 'my_production'
+        return 'my_production'
 
 def pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude):
     res = []
