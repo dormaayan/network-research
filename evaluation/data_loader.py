@@ -6,6 +6,7 @@ CSV_PATH = "../complete-frame.csv"
 CSV_MINER_PATH = "../testminereffectiveness-extended.csv"
 DATA_DIR = "results"
 
+
 line_coverage = ['line_coverage']
 
 grano_size = [
@@ -57,8 +58,6 @@ grano_complexity = [
     'TCC',
     'LCC',
     'ICH']
-
-grano_general = grano_size + grano_literature + grano_complexity
 
 my_textual = [
     'Word',
@@ -117,16 +116,39 @@ my_test_api = [
 
 my_general = my_textual + my_ast_shape + my_ast_types + my_mccabe_style
 
-grano_general_production = [(factor + "_prod") for factor in grano_general]
-grano_general_test = [(factor + "_test") for factor in grano_general]
+my_textual_test = my_textual
+my_ast_shape_test = my_ast_shape
+my_ast_types_test = my_ast_types
+my_mccabe_style_test = my_mccabe_style
 
-grano_production_data = grano_general_production + grano_code_smells + ['prod_readability']
-grano_test_data = grano_general_test + grano_test_smells + ['test_readability']
+my_textual_production = [(factor + "_production") for factor in my_textual]
+my_ast_shape_production = [(factor + "_production") for factor in my_ast_shape]
+my_ast_types_production = [(factor + "_production") for factor in my_ast_types]
+my_mccabe_style_production = [(factor + "_production") for factor in my_mccabe_style]
 
-my_general_test = my_general
-my_general_production = [(factor + "_production") for factor in my_general]
 
-my_test_data = my_general + my_test_api
+my_general_test = my_textual_test + my_ast_shape_test + my_ast_types_test + my_mccabe_style_test
+my_general_production = my_textual_production + my_ast_shape_production + my_ast_types_production + my_mccabe_style_production
+
+
+grano_size_test = [(factor + "_test") for factor in grano_size]
+grano_literature_test = [(factor + "_test") for factor in grano_literature] + ['test_readability']
+grano_complexity_test = [(factor + "_test") for factor in grano_complexity]
+
+
+grano_size_production = [(factor + "_prod") for factor in grano_size]
+grano_literature_production = [(factor + "_prod") for factor in grano_literature] + ['prod_readability']
+grano_complexity_production = [(factor + "_prod") for factor in grano_complexity]
+
+
+grano_general_production = grano_size_production + grano_literature_production + grano_complexity_production
+grano_general_test = grano_size_test + grano_literature_test + grano_complexity_test
+
+grano_production_data = grano_general_production + grano_code_smells
+grano_test_data = grano_general_test + grano_test_smells
+
+
+my_test_data = my_general_test + my_test_api
 my_production_data = my_general_production
 
 
@@ -178,6 +200,9 @@ def delete_by_values(lst, values):
     return [x for x in lst if x not in values_as_set]
 
 
+def strip(feature):
+    return feature.split('_')[0]
+
 def get_category(feature):
     if feature in line_coverage:
         return 'line_coverage'
@@ -223,8 +248,9 @@ def load_data(effective_non_effective = False,coverage = False, grano_test = Fal
     return data_x, data_y, columns, len(columns)
 
 def main():
-    x,y,c,l = load_data(coverage = True,
-                        grano_test = True, grano_production = True, my_test = True, my_production = True)
+    x,y,c,l = load_data(
+        coverage = True, grano_test = True, grano_production = True,
+        my_test = True, my_production = True)
     print(l)
 
 
