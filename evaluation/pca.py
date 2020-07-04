@@ -1,3 +1,4 @@
+import csv
 import pandas as pd
 from sklearn.decomposition import PCA
 from data_loader import load_data, get_category
@@ -21,10 +22,10 @@ def analyze_componenets():
     df = pd.DataFrame(pca.components_, columns = columns)
 
     exp = pca.explained_variance_ratio_
-    for i, j in df.iterrows():
-        print("Component {}, Explains {} of the variance".format(i,exp[i]))
-        print(j[abs(j) > 0.1])
-        print("--------------------------------")
+    #for i, j in df.iterrows():
+#        print("Component {}, Explains {} of the variance".format(i,exp[i]))
+#        print(j[abs(j) > 0.1])
+#        print("--------------------------------")
 
     res = {}
     for i, j in df.iteritems():
@@ -34,25 +35,24 @@ def analyze_componenets():
 
     sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
 
-    for i in sorted_res.keys():
-        print(i)
-        a,b,c = get_category(i)
-        print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
-    df.to_csv(r'PCA.csv')
-
+    with open(r'PCA.csv', 'w', newline='') as file:
+        writer = csv.writer(file)
+        for i in sorted_res.keys():
+            print(i)
+            a,b,c = get_category(i)
+            print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
+            writer.writerow([i,sorted_res[i],a,b,c])
+        #df.to_csv(r'PCA.csv')
 
 def get_factors():
     pca, columns = do_pca()
     df = pd.DataFrame(pca.components_, columns=columns)
 
     exp = pca.explained_variance_ratio_
-    amount = 0
     for i, j in df.iterrows():
-        if amount <=3 :
-            print("Component {}, Explains {} of the variance".format(i,exp[i]))
-            print(j[abs(j) > 0.1])
-            print("--------------------------------")
-        amount+=1
+        print("Component {}, Explains {} of the variance".format(i,exp[i]))
+        print(j[abs(j) > 0.1])
+        print("--------------------------------")
 
 
 
@@ -60,7 +60,9 @@ def get_factors():
 def main():
     #simplePCA()
 
-    get_factors()
+    #get_factors()
+    analyze_componenets()
+
 
 if __name__ == '__main__':
     main()
