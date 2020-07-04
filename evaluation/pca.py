@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 import pandas as pd
 from sklearn.decomposition import PCA
 from data_loader import load_data, get_category
@@ -19,14 +16,9 @@ def simplePCA():
                                                       my_test = True,
                                                       my_production = True,
                                                       scale = True)
-    pca = PCA() #(n_components=number_of_features)
-    #principalComponents = pca.fit_transform(data_x)
+    pca = PCA()
     pca.fit(data_x)
-    #data_x = pd.DataFrame(data = principalComponents, columns=c)
     df = pd.DataFrame(pca.components_, columns = c)
-    #print(df)
-
-    df = df.round(3)
 
     exp = pca.explained_variance_ratio_
     for i, j in df.iterrows():
@@ -44,17 +36,11 @@ def simplePCA():
 
     for i in sorted_res.keys():
         print('category: {}, implication: {}'.format(get_category(i),sorted_res[i]))
-        #print(j[abs(j) > 0.1])
-        #print("--------------------------------")
-
-
     df.to_csv(r'PCA.csv')
 
 
 def main():
-	s = simplePCA()
-
-
+    s = simplePCA()
 
 if __name__ == '__main__':
     main()

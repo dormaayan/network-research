@@ -1,8 +1,4 @@
-import numpy as np
 import pandas as pd
-
-
-
 from sklearn.preprocessing import StandardScaler
 
 
@@ -10,115 +6,133 @@ CSV_PATH = "../complete-frame.csv"
 CSV_MINER_PATH = "../testminereffectiveness-extended.csv"
 DATA_DIR = "results"
 
-
-
 line_coverage = ['line_coverage']
 
-#size, code smells, test smells, literature, complexity
+grano_size = [
+    'LOC',
+    'NOA',
+    'NOPA',
+    'NOP']
 
-#textual, ast_shape, ast_types, mccabe_style, api
+grano_code_smells = [
+    'csm_CDSBP',
+    'csm_CC',
+    'csm_FD',
+    'csm_Blob',
+    'csm_SC',
+    'csm_MC',
+    'csm_LM',
+    'csm_FE']
 
+grano_test_smells = [
+    'isAssertionRoulette',
+    'isEagerTest',
+    'isLazyTest',
+    'isMysteryGuest',
+    'isSensitiveEquality',
+    'isResourceOptimism',
+    'isForTestersOnly',
+    'isIndirectTesting']
 
-grano_general = ['LOC',
-                 'HALSTEAD',
-                 'RFC',
-                 'CBO',
-                 'MPC',
-                 'IFC',
-                 'DAC',
-                 'DAC2',
-                 'LCOM1',
-                 'LCOM2',
-                 'LCOM3',
-                 'LCOM4',
-                 'CONNECTIVITY',
-                 'LCOM5',
-                 'COH',
-                 'TCC',
-                 'LCC',
-                 'ICH',
-                 'WMC',
-                 'NOA',
-                 'NOPA',
-                 'NOP',
-                 'McCABE',
-                 'BUSWEIMER']
+grano_literature = [
+    'HALSTEAD',
+    'RFC',
+    'CBO',
+    'LCOM1',
+    'LCOM2',
+    'LCOM3',
+    'LCOM4',
+    'LCOM5',
+    'WMC',
+    'McCABE',
+    'BUSWEIMER']
 
+grano_complexity = [
+    'MPC',
+    'IFC',
+    'DAC',
+    'DAC2',
+    'CONNECTIVITY',
+    'COH',
+    'TCC',
+    'LCC',
+    'ICH']
 
-test_smells = ['isAssertionRoulette',
-               'isEagerTest',
-               'isLazyTest',
-               'isMysteryGuest',
-               'isSensitiveEquality',
-               'isResourceOptimism',
-               'isForTestersOnly',
-               'isIndirectTesting']
+grano_general = grano_size + grano_literature + grano_complexity
 
-
-code_smells = ['csm_CDSBP',
-               'csm_CC',
-               'csm_FD',
-               'csm_Blob',
-               'csm_SC',
-               'csm_MC',
-               'csm_LM',
-               'csm_FE']
-
-
-my_general = ['No. Methods',
-              'Vocabulary',
-              'Word',
-              'Special',
-              'Non Whithe Characters',
-              'No. Method Invoctions',
-              'AST size',
-              'Max Depth',
-              'Deg^2',
-              'Deg^3',
-              'Deg',
-              'Deg^-1',
-              'Deg^-2',
-              'Decendent',
-              'Avg Depth^(-2)',
-              'Avg Depth^(-1)',
-              'Avg Depth',
-              'Avg Depth^2',
-              'Avg Depth^3',
-              'Avg Depth^3',
-              'DegPerm',
-              'Dexterity',
-              'No. Expressions',
-              'No. Try',
-              'No. Catch',
-              'No. Loop',
-              'No. Break',
-              'No. Continue',
-              'No. Conditions',
-              'No. Else',
-              'Strings',
-              'Numeric Literals',
-              'Comments',
-              'No. Field Access',
-              'No. Primitives' ,
-              'No. &&',
-              'No. ||',
-              'No. Ternary']
+my_textual = [
+    'Word',
+    'Special',
+    'Non Whithe Characters',
+    'Comments',
+    'No. Methods',
+    'Vocabulary',
+    'Strings']
 
 
-test_frameworks = ['Bad API',
-                   'Junit',
-                   'Hamcrest',
-                   'Mockito']
+my_ast_shape = [
+    'AST size',
+    'Deg^2',
+    'Deg^3',
+    'Deg',
+    'Deg^-1',
+    'Deg^-2',
+    'Max Depth',
+    'Avg Depth^(-2)',
+    'Avg Depth^(-1)',
+    'Avg Depth',
+    'Avg Depth^2',
+    'Avg Depth^3',
+    'Decendent',
+    'DegPerm']
 
 
-grano_production_data = [(factor + "_prod") for factor in grano_general] + code_smells + ['prod_readability']
-grano_test_data = [(factor + "_test") for factor in grano_general] + test_smells + ['test_readability']
-my_test_data = my_general + test_frameworks
-my_production_data = [(factor + "_production") for factor in my_general]
+my_ast_types = [
+    'No. Method Invoctions',
+    'Dexterity',
+    'No. Expressions',
+    'Numeric Literals',
+    'No. Field Access',
+    'No. Primitives']
+
+
+my_mccabe_style = [
+    'No. &&',
+    'No. ||',
+    'No. Try',
+    'No. Catch',
+    'No. Loop',
+    'No. Break',
+    'No. Continue',
+    'No. Conditions',
+    'No. Else',
+    'No. Ternary'
+]
+
+my_test_api = [
+    'Bad API',
+    'Junit',
+    'Hamcrest',
+    'Mockito']
+
+my_general = my_textual + my_ast_shape + my_ast_types + my_mccabe_style
+
+grano_general_production = [(factor + "_prod") for factor in grano_general]
+grano_general_test = [(factor + "_test") for factor in grano_general]
+
+grano_production_data = grano_general_production + grano_code_smells + ['prod_readability']
+grano_test_data = grano_general_test + grano_test_smells + ['test_readability']
+
+my_general_test = my_general
+my_general_production = [(factor + "_production") for factor in my_general]
+
+my_test_data = my_general + my_test_api
+my_production_data = my_general_production
 
 
 def label_rename1(row):
     return row['path_test'].split('/')[len(row['path_test'].split('/')) - 1].split('.')[0]
+
 
 def label_rename2(row):
     return row['path_src'].split('/')[len(row['path_src'].split('/')) - 1].split('.')[0]
@@ -131,7 +145,7 @@ def load_quartile(frame):
     frame_high['mutation'] = 1
     frame = pd.concat([frame_low, frame_high], ignore_index=True)
     frame = frame.sample(frac=1).reset_index(drop=True)
-    return frame;
+    return frame
 
 
 def load_frame():
@@ -190,6 +204,7 @@ def pick_data(coverage, grano_test, grano_production, my_test, my_production, ex
         res += my_production_data
     return delete_by_values(res, exclude)
 
+
 def load_data(effective_non_effective = False,coverage = False, grano_test = False,
               grano_production = False, my_test = False, my_production = False,
               scale = True, exclude = []):
@@ -209,7 +224,7 @@ def load_data(effective_non_effective = False,coverage = False, grano_test = Fal
 
 def main():
     x,y,c,l = load_data(coverage = True,
-                         grano_test = True, grano_production = True, my_test = True, my_production = True)
+                        grano_test = True, grano_production = True, my_test = True, my_production = True)
     print(l)
 
 
