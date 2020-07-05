@@ -61,7 +61,6 @@ def main():
     #simplePCA()
 
     #get_factors()
-    analyze_componenets(60)
 
 
 if __name__ == '__main__':

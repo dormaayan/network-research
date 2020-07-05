@@ -247,7 +247,7 @@ def get_category(feature):
         return 'grano', 'code', 'code-smell'
 
 
-def pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude):
+def pick_data(coverage, grano_test, grano_production, my_test, my_production):
     res = []
     if coverage:
         res += line_coverage
@@ -259,16 +259,21 @@ def pick_data(coverage, grano_test, grano_production, my_test, my_production, ex
         res += my_test_data
     if my_production:
         res += my_production_data
-    return delete_by_values(res, exclude)
+    return res
 
 
 def load_data(effective_non_effective = False,coverage = False, grano_test = False,
               grano_production = False, my_test = False, my_production = False,
-              scale = True, exclude = []):
+              scale = True, include = []):
     frame = load_frame()
     if effective_non_effective:
         frame = load_quartile(frame)
-    columns = pick_data(coverage, grano_test, grano_production, my_test, my_production, exclude)
+    columns = []
+    if include == []:
+        columns = pick_data(coverage, grano_test, grano_production, my_test, my_production)
+    else:
+        columns = include
+
     data_x = frame[columns]
     data_y = pd.concat([frame.mutation], axis = 1)
 

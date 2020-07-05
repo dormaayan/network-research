@@ -34,9 +34,9 @@ def get_scoring():
                 brier_score=make_scorer(brier_score_loss))
 
 def create_model(optimizer='adam', activation='linear', init_mode='uniform'
-                 , dropout_rate=0.1, first_layer=40, second_layer=20):
+                 , dropout_rate=0.1, first_layer=40, second_layer=20, dim = None):
     model = keras.Sequential()
-    model.add(keras.layers.Dropout(dropout_rate, input_shape=(144,)))
+    model.add(keras.layers.Dropout(dropout_rate, input_shape=(dim,)))
     model.add(keras.layers.Dense(first_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(second_layer, kernel_initializer=init_mode, activation=activation))
     model.add(keras.layers.Dense(5, kernel_initializer=init_mode, activation=activation))
@@ -48,12 +48,17 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
     return model
 
 
-def simpleGrid():
+def simpleGrid(top_pca_features = None):
     print('Importing data')
-    data_x, data_y, features, number_of_features = load_data(
-        effective_non_effective=True, coverage=False,
-        grano_test=True, grano_production=True, my_test=True,
-        my_production=True, scale=True)
+
+    if not top_pca_features:
+        data_x, data_y, features, number_of_features = load_data(
+            effective_non_effective=True, coverage=False,
+            grano_test=True, grano_production=True, my_test=True,
+            my_production=True, scale=True)
+    else:
+        data_x, data_y, features, number_of_features = load_data(
+            effective_non_effective=True, scale=True, include=analyze_componenets(top_pca_features))
     print('Import: DONE')
 
     batch_size = [100, 50]
@@ -66,7 +71,7 @@ def simpleGrid():
     param_grid = dict(
         batch_size=batch_size, optimizer=optimizer, activation=activation,
         dropout_rate=dropout_rate, first_layer=first_layer,
-        second_layer=second_layer)
+        second_layer=second_layer, dim = number_of_features)
 
     inner_cv = StratifiedKFold(n_splits=10, shuffle=True)
     model = KerasClassifier(build_fn=create_model,verbose=0, epochs=2000, batch_size=50)
@@ -125,7 +130,7 @@ def simpleGrid():
 
 
 def main():
-    simpleGrid()
+    simpleGrid(top_pca_features = 60)
 
 if __name__ == '__main__':
     main()
