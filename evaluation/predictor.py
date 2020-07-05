@@ -71,7 +71,7 @@ def simpleGrid(top_pca_features = None):
     param_grid = dict(
         batch_size=batch_size, optimizer=optimizer, activation=activation,
         dropout_rate=dropout_rate, first_layer=first_layer,
-        second_layer=second_layer, dim = number_of_features)
+        second_layer=second_layer, dim = [number_of_features])
 
     inner_cv = StratifiedKFold(n_splits=10, shuffle=True)
     model = KerasClassifier(build_fn=create_model,verbose=0, epochs=2000, batch_size=50)
