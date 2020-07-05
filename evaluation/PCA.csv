@@ -1,145 +1,145 @@
-csm_CC,0.0730207700412729,grano,code,code-smell
-CBO_prod,0.07283004080402347,grano,production,literature
-Deg^3,0.07279684819749185,mine,test,ast-shape
+csm_CC,0.07302077004127293,grano,code,code-smell
+CBO_prod,0.0728300408040235,grano,production,literature
+Deg^3,0.07279684819749194,mine,test,ast-shape
 Deg^2_production,0.07261993022046441,mine,production,ast-shape
-NOP_prod,0.07257849057649789,grano,production,size
+NOP_prod,0.07257849057649783,grano,production,size
 Deg^2,0.07255258137680863,mine,test,ast-shape
-csm_SC,0.0714894857562221,grano,code,code-smell
-Deg^3_production,0.07122901164000214,mine,production,ast-shape
-csm_MC,0.07112069738984876,grano,code,code-smell
-No. &&_production,0.07075325483065437,mine,production,mccabe-style
-Dexterity,0.07056032365234226,mine,test,ast-types
-Strings,0.07022021417092467,mine,test,textual
-No. Primitives_production,0.07012828144840198,mine,production,ast-types
-No. Ternary_production,0.07012266210537342,mine,production,mccabe-style
-csm_Blob,0.06998126323302371,grano,code,code-smell
-No. ||_production,0.06990607998576956,mine,production,mccabe-style
-No. Methods_production,0.06976664621405969,mine,production,textual
-CBO_test,0.06975855585547992,grano,test,literature
-Dexterity_production,0.06967303524480992,mine,production,ast-types
-Numeric Literals_production,0.06926065663494747,mine,production,ast-types
-LCC_prod,0.06912504538239926,grano,production,complexity
+csm_SC,0.07148948575622223,grano,code,code-smell
+Deg^3_production,0.07122901164000213,mine,production,ast-shape
+csm_MC,0.07112069738984873,grano,code,code-smell
+No. &&_production,0.07075325483065426,mine,production,mccabe-style
+Dexterity,0.07056032365234224,mine,test,ast-types
+Strings,0.07022021417092472,mine,test,textual
+No. Primitives_production,0.0701282814484019,mine,production,ast-types
+No. Ternary_production,0.07012266210537339,mine,production,mccabe-style
+csm_Blob,0.0699812632330237,grano,code,code-smell
+No. ||_production,0.0699060799857695,mine,production,mccabe-style
+No. Methods_production,0.06976664621405972,mine,production,textual
+CBO_test,0.06975855585548002,grano,test,literature
+Dexterity_production,0.06967303524480986,mine,production,ast-types
+Numeric Literals_production,0.06926065663494742,mine,production,ast-types
+LCC_prod,0.06912504538239933,grano,production,complexity
 LCOM2_test,0.06896784696089218,grano,test,literature
-Max Depth_production,0.06894503839658735,mine,production,ast-shape
-LCC_test,0.06887852887975864,grano,test,complexity
-LCOM1_test,0.06875089813956035,grano,test,literature
+Max Depth_production,0.06894503839658737,mine,production,ast-shape
+LCC_test,0.06887852887975848,grano,test,complexity
+LCOM1_test,0.06875089813956034,grano,test,literature
 No. Loop_production,0.06870004233078113,mine,production,mccabe-style
-No. Field Access_production,0.06866948019117647,mine,production,ast-types
-DAC2_prod,0.06859647089853142,grano,production,complexity
-Strings_production,0.0683774523289379,mine,production,textual
-No. Method Invoctions,0.06827838061311801,mine,test,ast-types
-LCOM5_test,0.06822847411743829,grano,test,literature
-No. Continue_production,0.06821194321721352,mine,production,mccabe-style
+No. Field Access_production,0.06866948019117658,mine,production,ast-types
+DAC2_prod,0.0685964708985314,grano,production,complexity
+Strings_production,0.06837745232893791,mine,production,textual
+No. Method Invoctions,0.06827838061311793,mine,test,ast-types
+LCOM5_test,0.06822847411743833,grano,test,literature
+No. Continue_production,0.0682119432172134,mine,production,mccabe-style
 MPC_prod,0.06815992640315158,grano,production,complexity
-Special_production,0.06812223261535004,mine,production,textual
-csm_FE,0.06802547619143784,grano,code,code-smell
-Deg_production,0.06795239822439449,mine,production,ast-shape
-TCC_prod,0.06771571315770716,grano,production,complexity
-No. Primitives,0.06753053582057605,mine,test,ast-types
+Special_production,0.06812223261535003,mine,production,textual
+csm_FE,0.0680254761914378,grano,code,code-smell
+Deg_production,0.06795239822439457,mine,production,ast-shape
+TCC_prod,0.0677157131577072,grano,production,complexity
+No. Primitives,0.06753053582057611,mine,test,ast-types
 RFC_prod,0.06746738475816874,grano,production,literature
-No. Try_production,0.0674297019225547,mine,production,mccabe-style
-No. Else_production,0.06724327173173913,mine,production,mccabe-style
-NOA_prod,0.06717243484636407,grano,production,size
-MPC_test,0.06706326732005087,grano,test,complexity
-LCOM2_prod,0.06701712267941033,grano,production,literature
-Special,0.06692929409563836,mine,test,textual
-HALSTEAD_test,0.06682595672442725,grano,test,literature
-LOC_prod,0.06669820680612011,grano,production,size
-LCOM4_test,0.06666822530490045,grano,test,literature
-Comments_production,0.06661240806056887,mine,production,textual
-DAC_prod,0.06656046170072173,grano,production,complexity
-Numeric Literals,0.06651890699742549,mine,test,ast-types
-No. Catch_production,0.06642687950390304,mine,production,mccabe-style
-csm_LM,0.06639915115086162,grano,code,code-smell
-Deg,0.06638827304360952,mine,test,ast-shape
-No. Conditions_production,0.06626412163109692,mine,production,mccabe-style
-Word,0.06619840677956408,mine,test,textual
+No. Try_production,0.06742970192255474,mine,production,mccabe-style
+No. Else_production,0.06724327173173907,mine,production,mccabe-style
+NOA_prod,0.06717243484636412,grano,production,size
+MPC_test,0.06706326732005083,grano,test,complexity
+LCOM2_prod,0.06701712267941036,grano,production,literature
+Special,0.06692929409563834,mine,test,textual
+HALSTEAD_test,0.06682595672442719,grano,test,literature
+LOC_prod,0.06669820680612015,grano,production,size
+LCOM4_test,0.06666822530490052,grano,test,literature
+Comments_production,0.06661240806056888,mine,production,textual
+DAC_prod,0.06656046170072186,grano,production,complexity
+Numeric Literals,0.06651890699742548,mine,test,ast-types
+No. Catch_production,0.06642687950390305,mine,production,mccabe-style
+csm_LM,0.06639915115086166,grano,code,code-smell
+Deg,0.06638827304360942,mine,test,ast-shape
+No. Conditions_production,0.06626412163109688,mine,production,mccabe-style
+Word,0.06619840677956403,mine,test,textual
 AST size,0.0660656590615079,mine,test,ast-shape
-Non Whithe Characters_production,0.06603757787419148,mine,production,textual
-Vocabulary_production,0.0659697637363699,mine,production,textual
-No. Expressions,0.06592140739368241,mine,test,ast-types
-csm_CDSBP,0.06588090454395508,grano,code,code-smell
-RFC_test,0.06586076869541699,grano,test,literature
+Non Whithe Characters_production,0.06603757787419152,mine,production,textual
+Vocabulary_production,0.06596976373636994,mine,production,textual
+No. Expressions,0.06592140739368238,mine,test,ast-types
+csm_CDSBP,0.065880904543955,grano,code,code-smell
+RFC_test,0.06586076869541695,grano,test,literature
 Non Whithe Characters,0.06584369883869018,mine,test,textual
-Deg^-1,0.06568462180768203,mine,test,ast-shape
-LCOM1_prod,0.0656233076988007,grano,production,literature
-No. Method Invoctions_production,0.06522447248907703,mine,production,ast-types
-LCOM3_test,0.06522208873881721,grano,test,literature
-Bad API,0.06519897610424448,mine,test,api
-Deg^-1_production,0.0650742566642168,mine,production,ast-shape
+Deg^-1,0.06568462180768193,mine,test,ast-shape
+LCOM1_prod,0.06562330769880073,grano,production,literature
+No. Method Invoctions_production,0.06522447248907705,mine,production,ast-types
+LCOM3_test,0.06522208873881725,grano,test,literature
+Bad API,0.0651989761042445,mine,test,api
+Deg^-1_production,0.06507425666421683,mine,production,ast-shape
 Word_production,0.0650675943662337,mine,production,textual
-McCABE_test,0.06503643906087278,grano,test,literature
-line_coverage,0.06498904267093945,grano,test,line-coverage
-Vocabulary,0.06480328246389683,mine,test,textual
-Decendent,0.06461456555789641,mine,test,ast-shape
-HALSTEAD_prod,0.06439493558826426,grano,production,literature
-DAC_test,0.06426186287084054,grano,test,complexity
-NOA_test,0.06426186287084047,grano,test,size
-Max Depth,0.06419766352171472,mine,test,ast-shape
-LCOM5_prod,0.06419407944985024,grano,production,literature
-Deg^-2,0.0640982090145409,mine,test,ast-shape
-No. Methods,0.06397910380076037,mine,test,textual
-Mockito,0.06397910380076034,mine,test,api
-No. Expressions_production,0.0638766520980177,mine,production,ast-types
-No. Ternary,0.0638766267266692,mine,test,mccabe-style
-IFC_test,0.06380992522618234,grano,test,complexity
-WMC_test,0.06371878370632202,grano,test,literature
-isEagerTest,0.06350024836998831,grano,test,test-smell
-COH_prod,0.06336853652217526,grano,production,complexity
+McCABE_test,0.06503643906087275,grano,test,literature
+line_coverage,0.06498904267093955,grano,test,line-coverage
+Vocabulary,0.06480328246389686,mine,test,textual
+Decendent,0.06461456555789637,mine,test,ast-shape
+HALSTEAD_prod,0.06439493558826427,grano,production,literature
+NOA_test,0.06426186287084053,grano,test,size
+DAC_test,0.06426186287084046,grano,test,complexity
+Max Depth,0.06419766352171466,mine,test,ast-shape
+LCOM5_prod,0.0641940794498503,grano,production,literature
+Deg^-2,0.0640982090145408,mine,test,ast-shape
+No. Methods,0.06397910380076036,mine,test,textual
+Mockito,0.06397910380076036,mine,test,api
+No. Expressions_production,0.06387665209801774,mine,production,ast-types
+No. Ternary,0.06387662672666926,mine,test,mccabe-style
+IFC_test,0.0638099252261824,grano,test,complexity
+WMC_test,0.06371878370632192,grano,test,literature
+isEagerTest,0.06350024836998822,grano,test,test-smell
+COH_prod,0.06336853652217515,grano,production,complexity
 No. Else,0.06318023200101375,mine,test,mccabe-style
-No. Conditions,0.06314039791937615,mine,test,mccabe-style
-No. Try,0.06310804558145304,mine,test,mccabe-style
-McCABE_prod,0.06305860969720091,grano,production,literature
-LOC_test,0.06272757995690537,grano,test,size
-LCOM4_prod,0.0626974442964458,grano,production,literature
+No. Conditions,0.06314039791937624,mine,test,mccabe-style
+No. Try,0.06310804558145314,mine,test,mccabe-style
+McCABE_prod,0.06305860969720095,grano,production,literature
+LOC_test,0.06272757995690535,grano,test,size
+LCOM4_prod,0.06269744429644586,grano,production,literature
 Decendent_production,0.06260170219864092,mine,production,ast-shape
-No. Loop,0.06252593840113921,mine,test,mccabe-style
-LCOM3_prod,0.06246372553075417,grano,production,literature
-TCC_test,0.06236141823343025,grano,test,complexity
-Avg Depth^3_production,0.06214138975704629,mine,production,ast-shape
-No. Break_production,0.061929703640128064,mine,production,mccabe-style
-AST size_production,0.06173767732426334,mine,production,ast-shape
-DAC2_test,0.06160328646510795,grano,test,complexity
-WMC_prod,0.060813812969090005,grano,production,literature
-Comments,0.06065657867695974,mine,test,textual
-No. Catch,0.06042927399131005,mine,test,mccabe-style
-CONNECTIVITY_test,0.06033599315588866,grano,test,complexity
-isAssertionRoulette,0.060081064046843664,grano,test,test-smell
-isIndirectTesting,0.05958521471663851,grano,test,test-smell
-Avg Depth^2,0.05940174229461152,mine,test,ast-shape
-NOP_test,0.05902959588265435,grano,test,size
-Avg Depth^3,0.058834348012023654,mine,test,ast-shape
-isForTestersOnly,0.058657741349964786,grano,test,test-smell
-IFC_prod,0.058195154537320805,grano,production,complexity
-Junit,0.05753037527437825,mine,test,api
-test_readability,0.05738621841421835,grano,test,literature
-isMysteryGuest,0.057323082677446464,grano,test,test-smell
-Hamcrest,0.05695032312070829,mine,test,api
-ICH_prod,0.056588030511785334,grano,production,complexity
-prod_readability,0.05616844755271509,grano,production,literature
-Avg Depth,0.05607485909516749,mine,test,ast-shape
-Avg Depth^(-2),0.05601181060055316,mine,test,ast-shape
-Avg Depth^(-1),0.05591948804236597,mine,test,ast-shape
-BUSWEIMER_test,0.0555107599394185,grano,test,literature
-BUSWEIMER_prod,0.05410167845880566,grano,production,literature
-isResourceOptimism,0.05391467961902262,grano,test,test-smell
-COH_test,0.053683067957476044,grano,test,complexity
-Deg^-2_production,0.05359409484924593,mine,production,ast-shape
-No. &&,0.053376217178097846,mine,test,mccabe-style
-NOPA_prod,0.053236019941448526,grano,production,size
-No. Field Access,0.0528656057667638,mine,test,ast-types
-CONNECTIVITY_prod,0.05161496271574017,grano,production,complexity
-ICH_test,0.05048303776509134,grano,test,complexity
-No. Break,0.050178318694867274,mine,test,mccabe-style
-No. ||,0.04918515872334535,mine,test,mccabe-style
-isSensitiveEquality,0.048406787822002924,grano,test,test-smell
-NOPA_test,0.04828451363233116,grano,test,size
-Avg Depth^(-2)_production,0.04624030374460869,mine,production,ast-shape
-Avg Depth^(-1)_production,0.04623078798438078,mine,production,ast-shape
-Avg Depth_production,0.04622708485603266,mine,production,ast-shape
-Avg Depth^2_production,0.04595187765663965,mine,production,ast-shape
-DegPerm,0.04414162863318599,mine,test,ast-shape
-No. Continue,0.04129441556117942,mine,test,mccabe-style
-DegPerm_production,0.03924279660972297,mine,production,ast-shape
-isLazyTest,2.3522983203615964e-17,grano,test,test-smell
-csm_FD,1.1176069345004158e-17,grano,code,code-smell
+No. Loop,0.0625259384011392,mine,test,mccabe-style
+LCOM3_prod,0.06246372553075422,grano,production,literature
+TCC_test,0.062361418233430194,grano,test,complexity
+Avg Depth^3_production,0.062141389757046396,mine,production,ast-shape
+No. Break_production,0.06192970364012813,mine,production,mccabe-style
+AST size_production,0.0617376773242633,mine,production,ast-shape
+DAC2_test,0.06160328646510798,grano,test,complexity
+WMC_prod,0.06081381296909003,grano,production,literature
+Comments,0.060656578676959526,mine,test,textual
+No. Catch,0.06042927399131009,mine,test,mccabe-style
+CONNECTIVITY_test,0.06033599315588858,grano,test,complexity
+isAssertionRoulette,0.06008106404684368,grano,test,test-smell
+isIndirectTesting,0.05958521471663843,grano,test,test-smell
+Avg Depth^2,0.05940174229461154,mine,test,ast-shape
+NOP_test,0.059029595882654134,grano,test,size
+Avg Depth^3,0.0588343480120237,mine,test,ast-shape
+isForTestersOnly,0.0586577413499649,grano,test,test-smell
+IFC_prod,0.05819515453732079,grano,production,complexity
+Junit,0.05753037527437827,mine,test,api
+test_readability,0.057386218414218315,grano,test,literature
+isMysteryGuest,0.05732308267744631,grano,test,test-smell
+Hamcrest,0.0569503231207084,mine,test,api
+ICH_prod,0.05658803051178544,grano,production,complexity
+prod_readability,0.056168447552715044,grano,production,literature
+Avg Depth,0.05607485909516742,mine,test,ast-shape
+Avg Depth^(-2),0.05601181060055305,mine,test,ast-shape
+Avg Depth^(-1),0.0559194880423659,mine,test,ast-shape
+BUSWEIMER_test,0.05551075993941847,grano,test,literature
+BUSWEIMER_prod,0.05410167845880569,grano,production,literature
+isResourceOptimism,0.05391467961902255,grano,test,test-smell
+COH_test,0.05368306795747608,grano,test,complexity
+Deg^-2_production,0.05359409484924587,mine,production,ast-shape
+No. &&,0.05337621717809772,mine,test,mccabe-style
+NOPA_prod,0.05323601994144857,grano,production,size
+No. Field Access,0.052865605766763975,mine,test,ast-types
+CONNECTIVITY_prod,0.05161496271574023,grano,production,complexity
+ICH_test,0.05048303776509128,grano,test,complexity
+No. Break,0.050178318694867254,mine,test,mccabe-style
+No. ||,0.04918515872334548,mine,test,mccabe-style
+isSensitiveEquality,0.04840678782200287,grano,test,test-smell
+NOPA_test,0.04828451363233095,grano,test,size
+Avg Depth^(-2)_production,0.046240303744608795,mine,production,ast-shape
+Avg Depth^(-1)_production,0.04623078798438087,mine,production,ast-shape
+Avg Depth_production,0.04622708485603278,mine,production,ast-shape
+Avg Depth^2_production,0.04595187765663976,mine,production,ast-shape
+DegPerm,0.04414162863318604,mine,test,ast-shape
+No. Continue,0.04129441556117956,mine,test,mccabe-style
+DegPerm_production,0.0392427966097232,mine,production,ast-shape
+isLazyTest,2.5314399424593724e-17,grano,test,test-smell
+csm_FD,1.4433996798635494e-17,grano,code,code-smell

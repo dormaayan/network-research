@@ -17,15 +17,10 @@ def do_pca():
     pca.fit(data_x)
     return pca, columns
 
-def analyze_componenets():
+def analyze_componenets(n_factors):
     pca, columns = do_pca()
     df = pd.DataFrame(pca.components_, columns = columns)
-
     exp = pca.explained_variance_ratio_
-    #for i, j in df.iterrows():
-#        print("Component {}, Explains {} of the variance".format(i,exp[i]))
-#        print(j[abs(j) > 0.1])
-#        print("--------------------------------")
 
     res = {}
     for i, j in df.iteritems():
@@ -35,14 +30,19 @@ def analyze_componenets():
 
     sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
 
+    count = 0
+    top_factors = []
     with open(r'PCA.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         for i in sorted_res.keys():
+            if count < n_factors:
+                top_factors.append(i)
             print(i)
-            a,b,c = get_category(i)
+            a, b, c = get_category(i)
             print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
             writer.writerow([i,sorted_res[i],a,b,c])
-        #df.to_csv(r'PCA.csv')
+
+    return top_factors
 
 def get_factors():
     pca, columns = do_pca()
@@ -55,13 +55,11 @@ def get_factors():
         print("--------------------------------")
 
 
-
-
 def main():
     #simplePCA()
 
     #get_factors()
-    analyze_componenets()
+    analyze_componenets(60)
 
 
 if __name__ == '__main__':

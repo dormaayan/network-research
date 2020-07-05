@@ -4,6 +4,7 @@ import numpy as np
 
 
 import matplotlib
+from pca import analyze_componenets
 from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
 
@@ -57,7 +58,7 @@ def simpleGrid():
     activation = ['relu']
     optimizer = ['Adam']
     dropout_rate = [0.1, 0.2]
-    first_layer = [100, 500]
+    first_layer = [100, 50]
     second_layer = [20, 10]
 
     param_grid = dict(
