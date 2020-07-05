@@ -244,7 +244,7 @@ def get_category(feature):
     if feature in grano_complexity_production:
         return 'grano', 'production', 'complexity'
     if feature in grano_code_smells:
-        return 'grano', 'code', 'code-smell'
+        return 'grano', 'production', 'code-smell'
 
 
 def pick_data(coverage, grano_test, grano_production, my_test, my_production):
