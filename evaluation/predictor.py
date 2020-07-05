@@ -51,7 +51,7 @@ def create_model(optimizer='adam', activation='linear', init_mode='uniform'
 def simpleGrid(top_pca_features = None):
     print('Importing data')
 
-    if not top_pca_features:
+    if top_pca_features == None:
         data_x, data_y, features, number_of_features = load_data(
             effective_non_effective=True, coverage=False,
             grano_test=True, grano_production=True, my_test=True,

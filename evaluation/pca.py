@@ -13,7 +13,7 @@ DATA_DIR = "results"
 
 def do_pca():
     data_x, data_y, columns, number_of_features = load_data(
-        effective_non_effective=True, coverage=True, grano_test=True,
+        effective_non_effective=True, coverage=False, grano_test=True,
         grano_production=True, my_test=True, my_production=True, scale=True)
     pca = PCA()
     pca.fit(data_x)
