@@ -39,6 +39,7 @@ def analyze_componenets(n_factors):
         for i in sorted_res.keys():
             if count < n_factors:
                 top_factors.append(i)
+                count += 1
             print(i)
             a, b, c = get_category(i)
             print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
