@@ -60,7 +60,7 @@ def get_factors():
 def main():
     #simplePCA()
 
-    #get_factors()
+    get_factors()
 
 
 if __name__ == '__main__':
