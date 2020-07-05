@@ -34,7 +34,7 @@ def analyze_componenets(n_factors):
 
     count = 0
     top_factors = []
-    with open(r'PCA.csv', 'w', newline='') as file:
+    with open(r'PCA.csv', 'wb') as file:
         writer = csv.writer(file)
         for i in sorted_res.keys():
             if count < n_factors:
