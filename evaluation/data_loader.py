@@ -208,6 +208,7 @@ def strip(feature):
 def get_category(feature):
     if feature in line_coverage:
         return 'grano', 'test', 'line-coverage'
+
     if feature in my_textual_test:
         return 'mine', 'test', 'textual'
     if feature in my_ast_shape_test:

@@ -19,6 +19,15 @@ def do_pca():
     pca.fit(data_x)
     return pca, columns
 
+
+def convert_pca(n_factors):
+    data_x, data_y, columns, number_of_features = load_data(
+        effective_non_effective=True, coverage=False, grano_test=True,
+        grano_production=True, my_test=True, my_production=True, scale=True)
+    pca = PCA()
+    pca.fit_transform(data_x)
+    return pca, columns
+
 def analyze_componenets(n_factors):
     pca, columns = do_pca()
     df = pd.DataFrame(pca.components_, columns = columns)
@@ -34,16 +43,16 @@ def analyze_componenets(n_factors):
 
     count = 0
     top_factors = []
-    with open(r'PCA.csv', 'wb') as file:
-        writer = csv.writer(file)
-        for i in sorted_res.keys():
-            if count < n_factors:
-                top_factors.append(i)
-                count += 1
-            print(i)
-            a, b, c = get_category(i)
-            print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
-            writer.writerow([i,sorted_res[i],a,b,c])
+    #with open(r'PCA.csv', 'w', newline='') as file:
+    #    writer = csv.writer(file)
+    for i in sorted_res.keys():
+        if count < n_factors:
+            top_factors.append(i)
+            count += 1
+        print(i)
+        a, b, c = get_category(i)
+        print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
+            #writer.writerow([i,sorted_res[i],a,b,c])
 
     return top_factors
 
@@ -58,11 +67,11 @@ def get_factors():
         print("--------------------------------")
 
 
-#def main():
+def main():
     #simplePCA()
 
-#    get_factors()
+    get_factors()
 
 
-#if __name__ == '__main__':
-#    main()
+if __name__ == '__main__':
+    main()
