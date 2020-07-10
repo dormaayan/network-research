@@ -130,7 +130,7 @@ def simpleGrid(top_pca_features = None):
 
 
 def main():
-    simpleGrid(top_pca_features = 72)
+    simpleGrid(top_pca_features = 36)
 
 if __name__ == '__main__':
     main()
