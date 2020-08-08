@@ -35,24 +35,24 @@ def analyze_componenets(n_factors):
 
     res = {}
     for i, j in df.iteritems():
-        print("Feature: {} \n".format(i))
-        print((abs(j) * exp).sum())
+        #print("Feature: {} \n".format(i))
+        #print((abs(j) * exp).sum())
         res[i] = (abs(j) * exp).sum()
 
-    sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
+    #sorted_res = {k: v for k, v in sorted(res.items(), key=lambda item: item[1], reverse=True)}
+    
+    sorted_res = sorted(res.items() , reverse=True, key=lambda x: x[1])
+
 
     count = 0
     top_factors = []
-    #with open(r'PCA.csv', 'w', newline='') as file:
-    #    writer = csv.writer(file)
-    for i in sorted_res.keys():
+    for elem in sorted_res:
         if count < n_factors:
-            top_factors.append(i)
+            
+            a, b, c = get_category(elem[0])
+            print('({}) category: {},{},{} - implication: {}'.format(count, a,b,c,elem[1]))
+            top_factors.append(elem[0])
             count += 1
-        print(i)
-        a, b, c = get_category(i)
-        print('category: {},{},{} - implication: {}'.format(a,b,c,sorted_res[i]))
-            #writer.writerow([i,sorted_res[i],a,b,c])
 
     return top_factors
 
@@ -61,10 +61,10 @@ def get_factors():
     df = pd.DataFrame(pca.components_, columns=columns)
 
     exp = pca.explained_variance_ratio_
-    for i, j in df.iterrows():
-        print("Component {}, Explains {} of the variance".format(i,exp[i]))
-        print(j[abs(j) > 0.1])
-        print("--------------------------------")
+    #for i, j in df.iterrows():
+        #print("Component {}, Explains {} of the variance".format(i,exp[i]))
+        #print(j[abs(j) > 0.1])
+        #print("--------------------------------")
 
 
 def main():
