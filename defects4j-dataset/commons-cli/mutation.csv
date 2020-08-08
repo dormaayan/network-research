@@ -1,0 +1,17 @@
+CurrentTotalRuntime,TestName,TestRuntimeOriginal,KilledByTest,AnalyzedByTest,CoveredByTest,TotalKilled,TotalFailure,TotalException,TotalTimeout,LiveMutants,TotalAnalyzed
+1109,org.apache.commons.cli.OptionsTest,7,11,80,80,11,2,9,0,993,80
+7750,org.apache.commons.cli.bug.BugCLI18Test,8,47,284,294,58,2,40,0,946,364
+7964,org.apache.commons.cli.BuildTest,9,6,38,49,64,3,45,0,940,402
+10181,org.apache.commons.cli.ParseRequiredTest,10,78,223,240,142,57,68,0,862,625
+11358,org.apache.commons.cli.bug.BugCLI13Test,10,3,143,230,145,60,68,0,859,768
+13343,org.apache.commons.cli.TestHelpFormatter,12,82,181,245,227,128,79,0,777,949
+17501,org.apache.commons.cli.ApplicationTest,14,83,241,330,310,175,108,0,694,1190
+18551,org.apache.commons.cli.ArgumentIsOptionTest,14,5,111,218,315,180,108,0,689,1301
+19020,org.apache.commons.cli.OptionBuilderTest,15,35,67,105,350,212,111,0,654,1368
+20946,org.apache.commons.cli.ValuesTest,18,47,152,312,397,254,116,0,607,1520
+22403,org.apache.commons.cli.ParseTest,19,52,108,276,449,297,124,0,555,1628
+23254,org.apache.commons.cli.GnuParseTest,20,16,83,252,465,310,127,0,539,1711
+23820,org.apache.commons.cli.OptionGroupTest,22,11,50,178,476,318,130,0,528,1761
+25333,org.apache.commons.cli.ValueTest,28,30,110,319,506,340,138,0,498,1871
+29151,org.apache.commons.cli.BugsTest,32,78,266,664,584,404,152,0,420,2137
+31973,org.apache.commons.cli.PatternOptionBuilderTest,243,89,192,378,673,471,174,0,331,2329
